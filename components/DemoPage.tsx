@@ -579,18 +579,17 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
                       <X size={11} />
                     </button>
                   )}
-                  <label className="block text-sm font-medium text-slate-700 mb-2">
-                    {editMode ? (
-                      <span
-                        contentEditable
-                        suppressContentEditableWarning
-                        onBlur={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, label: e.currentTarget.textContent ?? f.label } : f))}
-                        className="outline outline-2 outline-violet-400/60 rounded px-1 cursor-text focus:outline-violet-500 bg-violet-50/40"
-                      >
-                        {field.label}
-                      </span>
-                    ) : field.label}
-                  </label>
+                  {editMode ? (
+                    <input
+                      type="text"
+                      value={field.label}
+                      onChange={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, label: e.target.value } : f))}
+                      onClick={(e) => e.stopPropagation()}
+                      className="block w-full text-sm font-medium text-slate-700 mb-2 border border-violet-300 rounded-lg px-2.5 py-1 focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white"
+                    />
+                  ) : (
+                    <label className="block text-sm font-medium text-slate-700 mb-2">{field.label}</label>
+                  )}
 
                   {/* Field preview */}
                   <div className={editMode ? "pointer-events-none opacity-40" : undefined}>
@@ -616,14 +615,13 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
                     <div className="mt-3 pt-3 border-t border-amber-200 space-y-1.5">
                       {field.options.map((opt, oi) => (
                         <div key={oi} className="flex items-center gap-2">
-                          <span
-                            contentEditable
-                            suppressContentEditableWarning
-                            onBlur={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.map((o, j) => j === oi ? (e.currentTarget.textContent ?? o) : o) } : f))}
-                            className="flex-1 text-xs border border-violet-300 rounded-lg px-2.5 py-1 outline-none focus:ring-2 focus:ring-violet-400 bg-white"
-                          >
-                            {opt}
-                          </span>
+                          <input
+                            type="text"
+                            value={opt}
+                            onChange={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.map((o, j) => j === oi ? e.target.value : o) } : f))}
+                            onClick={(e) => e.stopPropagation()}
+                            className="flex-1 text-xs border border-violet-300 rounded-lg px-2.5 py-1 focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white"
+                          />
                           <button
                             type="button"
                             onClick={() => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.filter((_, j) => j !== oi) } : f))}
