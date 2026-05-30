@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const inter = Inter({
@@ -17,10 +18,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://xilofon.com"),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const locale = await getLocale();
   return (
-    <html lang="hu" className={inter.variable}>
-      <body className="min-h-screen">{children}</body>
+    <html lang={locale} className={inter.variable}>
+      <body className="min-h-screen bg-zinc-950">{children}</body>
     </html>
   );
 }

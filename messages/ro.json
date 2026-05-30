@@ -1,0 +1,231 @@
+{
+  "Navbar": {
+    "services": "Servicii",
+    "about": "Despre noi",
+    "quote": "Solicită ofertă"
+  },
+  "Footer": {
+    "tagline": "Website-uri moderne și marketing digital pentru afaceri mici și independente. Preț fix, transparent.",
+    "navTitle": "Navigare",
+    "legalTitle": "Legal",
+    "home": "Acasă",
+    "services": "Servicii",
+    "about": "Despre noi",
+    "quote": "Solicită ofertă",
+    "aszf": "Termeni și condiții",
+    "privacy": "Politica de confidențialitate",
+    "copyright": "© {year} Xilofon Digital. Toate drepturile rezervate."
+  },
+  "LanguageSwitcher": {
+    "label": "Limbă"
+  },
+  "ContactForm": {
+    "name": "Nume complet",
+    "namePlaceholder": "Ion Popescu",
+    "email": "E-mail",
+    "emailPlaceholder": "ion@exemplu.ro",
+    "phone": "Număr de telefon",
+    "phoneOptional": "(opțional)",
+    "phonePlaceholder": "+40 721 234 567",
+    "message": "Mesaj",
+    "messagePlaceholder": "Spune-ne câteva cuvinte despre afacerea ta și ce ai nevoie...",
+    "submit": "Trimite mesajul",
+    "sending": "Se trimite...",
+    "successTitle": "Mulțumim pentru mesaj!",
+    "successText": "Te vom contacta în 1-2 zile lucrătoare.",
+    "newMessage": "Trimite un mesaj nou",
+    "errorText": "A apărut o eroare. Te rugăm să încerci din nou.",
+    "privacyNote": "Citește cum gestionăm datele tale în <link>Politica de confidențialitate</link>.",
+    "privacyLink": "Politica de confidențialitate"
+  },
+  "HomePage": {
+    "meta": {
+      "title": "Xilofon Digital | Creare website pentru afaceri mici",
+      "description": "Creare website profesional la preț fix 140 EUR/an. Optimizare SEO, gestionare Facebook, Google Business și consultanță SEO."
+    },
+    "hero": {
+      "badge": "Preț fix • 140 EUR / an • Fără surprize",
+      "title": "Website profesional,",
+      "highlight": "pe care îl controlezi tu",
+      "subtitle": "Creăm website-uri SEO-friendly pentru liber-profesioniști și afaceri mici. O taxă anuală fixă – domeniu, hosting, editare și suport incluse.",
+      "primaryCta": "Ofertă gratuită",
+      "secondaryCta": "Servicii"
+    },
+    "strip": {
+      "cookie": "Website fără cookie-uri",
+      "gdpr": "Conform GDPR",
+      "domain": "Domeniu + hosting inclus",
+      "speed": "Live în 1-2 săptămâni",
+      "support": "Suport dedicat"
+    },
+    "servicesTitle": "Cum te putem ajuta",
+    "servicesSubtitle": "Tot ce are nevoie o afacere mică pentru o prezență online puternică.",
+    "servicesMore": "Vezi toate serviciile",
+    "web": {
+      "title": "Creare website",
+      "desc": "Website profesional one-page pe care îl editezi tu. Optimizat SEO, rapid și cu formular de contact.",
+      "tag": "140 EUR / an"
+    },
+    "social": {
+      "title": "Facebook & Social Media",
+      "desc": "Gestionare strategică a conținutului, reclame și construirea prezenței pe rețelele sociale – mai mulți clienți, brand mai puternic.",
+      "tag": "Ofertă la cerere"
+    },
+    "gbp": {
+      "title": "Profil Google Business",
+      "desc": "SEO local: fii prezent pe Google Maps și colectează recenzii online.",
+      "tag": "Ofertă la cerere"
+    },
+    "seo": {
+      "title": "Consultanță SEO",
+      "desc": "Cercetare de cuvinte cheie, audit tehnic și strategie de conținut – pentru un rang mai bun pe Google.",
+      "tag": "Ofertă la cerere"
+    },
+    "pricingTitle": "Prețuri transparente",
+    "pricingSubtitle": "Un pachet, un preț. Fără costuri ascunse.",
+    "pricingPackage": "Pachet website",
+    "pricingPopular": "Cel mai popular",
+    "pricingCta": "Solicită ofertă",
+    "pricingNote": "Taxă anuală, reînnoibilă. Fără angajament.",
+    "features": [
+      "Domeniu și hosting incluse",
+      "Tu editezi – oricând",
+      "Formular de contact",
+      "SEO-friendly (baze)",
+      "Rapid și frumos pe mobil",
+      "Conform GDPR",
+      "Suport dedicat",
+      "Preț fix, fără surprize"
+    ],
+    "stepsTitle": "Cum funcționează?",
+    "stepsSubtitle": "Trei pași simpli și site-ul tău este live.",
+    "step1Title": "Ia legătura cu noi",
+    "step1Desc": "Trimite un mesaj scurt – spune-ne ce faci și ce vrei să obții.",
+    "step2Title": "Creăm website-ul tău",
+    "step2Desc": "Ne ocupăm de tot: design, text, domeniu, hosting – toate incluse.",
+    "step3Title": "Tu editezi, clienții vin",
+    "step3Desc": "Primești acces să editezi conținutul oricând, iar Google îți găsește site-ul.",
+    "testimonialsTitle": "Ce spun clienții noștri",
+    "t1Name": "Maria C.",
+    "t1Role": "Terapeut de masaj",
+    "t1Text": "Înainte mă bazam doar pe Facebook. Acum clienți noi vin prin website-ul meu și primesc mai multe rezervări în fiecare lună.",
+    "t2Name": "Andrei B.",
+    "t2Role": "Electrician",
+    "t2Text": "E incredibil ce obții pentru 140 de euro. Sunt pe prima pagină Google în orașul meu.",
+    "t3Name": "Elena N.",
+    "t3Role": "Contabil",
+    "t3Text": "Mi-era teamă de marketing digital. Echipa m-a ghidat prin tot și acum am un website profesional.",
+    "contactTitle": "Ia legătura!",
+    "contactSubtitle": "Spune-ne despre afacerea ta – te contactăm în 1-2 zile lucrătoare."
+  },
+  "LandingPage": {
+    "meta": {
+      "title": "Solicită ofertă website | Xilofon Digital",
+      "description": "Solicită ofertă gratuită! Website modern pentru liber-profesioniști și afaceri mici. Preț fix 140 EUR/an."
+    },
+    "available": "Locuri disponibile acum",
+    "title": "Obține un website profesional",
+    "highlight": "pe care îl controlezi tu",
+    "price": "– 140 EUR/an",
+    "subtitle": "Creăm website-uri SEO-friendly pentru liber-profesioniști și afaceri mici. Un mesaj și site-ul tău este live în 1-2 săptămâni.",
+    "benefits": [
+      "Website profesional în 1-2 săptămâni",
+      "Domeniu și hosting incluse",
+      "Tu îl editezi – oricând, oriunde",
+      "Găsit pe Google",
+      "Formular de contact pentru clienții tăi",
+      "Preț fix – 140 EUR / an, fără surprize",
+      "Conform GDPR, fără cookie-uri",
+      "Suport dedicat"
+    ],
+    "clientsNum": "50+",
+    "clientsLabel": "clienți mulțumiți",
+    "timeNum": "1-2 săpt.",
+    "timeLabel": "timp de livrare",
+    "priceNum": "140 €",
+    "priceLabel": "taxă anuală fixă",
+    "formTitle": "Ofertă gratuită",
+    "formSubtitle": "Răspundem în 1-2 zile lucrătoare.",
+    "callText": "Ai întrebări? Sună-ne"
+  },
+  "ServicesPage": {
+    "meta": {
+      "title": "Servicii",
+      "description": "Creare website la 140 EUR/an, gestionare Facebook și social media, profil Google Business și consultanță SEO."
+    },
+    "heroTitle": "Tot ce ai nevoie pentru",
+    "heroHighlight": "prezența ta online",
+    "heroSubtitle": "Serviciile noastre sunt concepute pentru afaceri mici și liber-profesioniști – simplu și cu prețuri transparente.",
+    "includes": "Ce este inclus?",
+    "quoteBtn": "Solicită ofertă",
+    "ctaTitle": "Nu știi ce serviciu ai nevoie? Întreabă-ne!",
+    "ctaSubtitle": "Chiar și o întrebare scurtă ne ajută să înțelegem ce ți-ar fi cu adevărat de folos.",
+    "ctaBtn": "Ofertă gratuită",
+    "web": {
+      "title": "Creare website",
+      "price": "140 EUR / an",
+      "tagline": "Totul inclus. Fără surprize.",
+      "desc": "Creăm un website profesional, SEO-friendly, cu o singură pagină, pe care îl poți edita singur. Scopul: un site care nu e doar frumos, ci aduce clienți.",
+      "includes": ["Design one-page personalizat","Înregistrare domeniu și hosting","Tu editezi – oricând, oriunde","Formular de contact pe site-ul tău","Bazele SEO (meta, alt tags, viteză)","Mobile-friendly, responsive","Certificat SSL (https)","Conform GDPR, fără cookie-uri","Suport dedicat"]
+    },
+    "social": {
+      "title": "Gestionare Facebook & Social Media",
+      "price": "Ofertă la cerere",
+      "tagline": "Prezență constantă pe rețelele sociale.",
+      "desc": "O prezență puternică pe social media construiește încredere și îți reamintește constant potențialilor clienți de afacerea ta. Gestionăm pagina ta de Facebook, creăm conținut, rulăm reclame și urmărim rezultatele.",
+      "includes": ["Gestionare pagină Facebook și postări","Planificare conținut și copywriting","Campanii de reclame Facebook","Prezență Instagram (opțional)","Raport lunar și rezultate"]
+    },
+    "gbp": {
+      "title": "Configurare profil Google Business",
+      "price": "Taxă unică + întreținere lunară",
+      "tagline": "Pune-ți afacerea pe Google Maps.",
+      "desc": "A fi pe primul loc în căutările locale poate aduce un flux constant de clienți de calitate. Configurăm și optimizăm profilul tău Google Business: fotografii, descriere, servicii, program – tot ce contează.",
+      "includes": ["Creare/optimizare profil Google Business","Încărcare fotografii și descriere","Configurare cuvinte cheie și categorii","Strategie de gestionare recenzii","Întreținere și actualizare lunară"]
+    },
+    "seo": {
+      "title": "Consultanță SEO",
+      "price": "Prețuri pe proiect",
+      "tagline": "Clasează-te mai sus pe Google.",
+      "desc": "SEO este o investiție pe termen lung: făcut corect o dată, continuă să livreze. Facem cercetare de cuvinte cheie, audituri tehnice și îți oferim un plan de acțiune clar.",
+      "includes": ["Cercetare cuvinte cheie și analiză competitori","Audit tehnic SEO","Optimizare on-page","Strategie de conținut","Consultanță link building","Raport lunar de performanță"]
+    }
+  },
+  "AboutPage": {
+    "meta": {
+      "title": "Despre noi",
+      "description": "Înțelegem afacerea ta și oferim soluții online personalizate pentru liber-profesioniști și afaceri mici."
+    },
+    "heroTitle": "Xilofon Digital",
+    "heroHighlight": "stă alături de afacerile mici",
+    "heroSubtitle": "Știm cât de greu este să construiești o prezență online când conduci singur o afacere. Facem asta ușor.",
+    "storyTitle": "De ce facem asta?",
+    "storyP1": "Am vorbit cu mulți liber-profesioniști și proprietari de afaceri mici care aveau servicii excelente dar nu puteau atrage clienți online. Unii au încercat agenții scumpe și nu au primit nimic pentru banii lor.",
+    "storyP2": "Xilofon a fost creat pentru a schimba asta. Construim website-uri care chiar funcționează – care apar pe Google, construiesc încredere și aduc clienți.",
+    "storyP3": "Totul la un preț fix, transparent – pentru că credem că un website bun nu este un lux, ci o necesitate pentru orice afacere.",
+    "priceLabel": "taxă anuală",
+    "priceSub": "Domeniu + hosting + editare + suport",
+    "clientsNum": "50+",
+    "clientsLabel": "afaceri ajutate",
+    "timeNum": "1-2 săpt.",
+    "timeLabel": "timp mediu de livrare",
+    "valuesTitle": "Valorile noastre",
+    "valuesSubtitle": "Acestea ne ghidează cu fiecare client.",
+    "val1Title": "Orientat spre rezultate",
+    "val1Desc": "Scopul nostru nu este doar un site frumos – ci un site care chiar îți aduce clienți.",
+    "val2Title": "Orientat spre oameni",
+    "val2Desc": "Știm că nu toată lumea este expert în tehnologie. De aceea te ghidăm prin fiecare pas și explicăm totul.",
+    "val3Title": "Simplitate",
+    "val3Desc": "Preț fix, proces simplu, comunicare transparentă. Fără complicații inutile.",
+    "ctaTitle": "Să lucrăm împreună!",
+    "ctaSubtitle": "Spune-ne ce faci – și vom găsi cum te putem ajuta.",
+    "ctaBtn": "Ofertă gratuită"
+  },
+  "AszfPage": {
+    "title": "Termeni și condiții",
+    "effective": "În vigoare de la: 1 ianuarie 2025"
+  },
+  "PrivacyPage": {
+    "title": "Politica de confidențialitate",
+    "effective": "În vigoare de la: 1 ianuarie 2025"
+  }
+}

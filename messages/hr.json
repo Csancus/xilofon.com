@@ -1,0 +1,231 @@
+{
+  "Navbar": {
+    "services": "Usluge",
+    "about": "O nama",
+    "quote": "Zatražite ponudu"
+  },
+  "Footer": {
+    "tagline": "Moderne web stranice i digitalni marketing za male i samostalne poduzetnike. Fiksna cijena, transparentno.",
+    "navTitle": "Navigacija",
+    "legalTitle": "Pravno",
+    "home": "Početna",
+    "services": "Usluge",
+    "about": "O nama",
+    "quote": "Zatražite ponudu",
+    "aszf": "Opći uvjeti poslovanja",
+    "privacy": "Pravila privatnosti",
+    "copyright": "© {year} Xilofon Digital. Sva prava pridržana."
+  },
+  "LanguageSwitcher": {
+    "label": "Jezik"
+  },
+  "ContactForm": {
+    "name": "Ime i prezime",
+    "namePlaceholder": "Ivan Horvat",
+    "email": "E-mail",
+    "emailPlaceholder": "ivan@primjer.hr",
+    "phone": "Broj telefona",
+    "phoneOptional": "(neobavezno)",
+    "phonePlaceholder": "+385 91 234 5678",
+    "message": "Poruka",
+    "messagePlaceholder": "Napišite nekoliko rečenica o vašem poslovanju i što trebate...",
+    "submit": "Pošaljite poruku",
+    "sending": "Slanje...",
+    "successTitle": "Hvala na vašoj poruci!",
+    "successText": "Javit ćemo se u roku 1-2 radna dana.",
+    "newMessage": "Pošaljite novu poruku",
+    "errorText": "Došlo je do pogreške. Molimo pokušajte ponovo.",
+    "privacyNote": "Pročitajte kako rukujemo vašim podacima u našoj <link>Politici privatnosti</link>.",
+    "privacyLink": "Politici privatnosti"
+  },
+  "HomePage": {
+    "meta": {
+      "title": "Xilofon Digital | Izrada web stranica za male poduzetnike",
+      "description": "Profesionalna web stranica po fiksnoj cijeni 140 EUR/god. SEO optimizacija, Facebook upravljanje, Google Business i SEO savjetovanje."
+    },
+    "hero": {
+      "badge": "Fiksna cijena • 140 EUR / god • Bez iznenađenja",
+      "title": "Profesionalna web stranica",
+      "highlight": "kojom vi upravljate",
+      "subtitle": "Izrađujemo web stranice za samostalne poduzetnike i male tvrtke. Godišnja fiksna naknada – domena, hosting, uređivanje i podrška su uključeni.",
+      "primaryCta": "Besplatna ponuda",
+      "secondaryCta": "Usluge"
+    },
+    "strip": {
+      "cookie": "Web stranica bez kolačića",
+      "gdpr": "GDPR sukladnost",
+      "domain": "Domena + hosting uključeni",
+      "speed": "Stranica uživo za 1-2 tjedna",
+      "support": "Podrška na vašem jeziku"
+    },
+    "servicesTitle": "Kako vam možemo pomoći",
+    "servicesSubtitle": "Sve što malo poduzeće treba za snažan online nastup.",
+    "servicesMore": "Pogledajte sve usluge",
+    "web": {
+      "title": "Izrada web stranice",
+      "desc": "Profesionalna jednospratna web stranica koju sami uređujete. SEO optimizirana, brza i s kontakt formom.",
+      "tag": "140 EUR / god"
+    },
+    "social": {
+      "title": "Facebook i društvene mreže",
+      "desc": "Strateško upravljanje sadržajem, oglasi i izgradnja prisutnosti na društvenim mrežama – više klijenata, jači brend.",
+      "tag": "Ponuda na upit"
+    },
+    "gbp": {
+      "title": "Google Business profil",
+      "desc": "Lokalna SEO optimizacija: budite prisutni na Google karti i prikupljajte online recenzije.",
+      "tag": "Ponuda na upit"
+    },
+    "seo": {
+      "title": "SEO savjetovanje",
+      "desc": "Istraživanje ključnih riječi, tehnički pregled i strategija sadržaja – za bolji rang na Googleu.",
+      "tag": "Ponuda na upit"
+    },
+    "pricingTitle": "Transparentne cijene",
+    "pricingSubtitle": "Jedan paket, jedna cijena. Bez skrivenih troškova.",
+    "pricingPackage": "Web paket",
+    "pricingPopular": "Najpopularnije",
+    "pricingCta": "Zatražite ponudu",
+    "pricingNote": "Godišnja naknada, obnovljiva. Bez obveze.",
+    "features": [
+      "Domena i hosting su uključeni",
+      "Vi uređujete – kad god želite",
+      "Kontakt forma",
+      "SEO optimizacija (osnove)",
+      "Brzo i lijepo na mobitelu",
+      "GDPR sukladnost",
+      "Podrška na vašem jeziku",
+      "Fiksna cijena, bez iznenađenja"
+    ],
+    "stepsTitle": "Kako to funkcionira?",
+    "stepsSubtitle": "Tri jednostavna koraka i vaša stranica je uživo.",
+    "step1Title": "Stupite u kontakt",
+    "step1Desc": "Pošaljite kratku poruku – recite nam čime se bavite i što želite postići.",
+    "step2Title": "Izrađujemo vašu stranicu",
+    "step2Desc": "Brinemo o svemu: dizajn, tekst, domena, hosting – sve uključeno.",
+    "step3Title": "Vi uređujete, klijenti dolaze",
+    "step3Desc": "Dobivate pristup za uređivanje sadržaja, a Google pronalazi vašu stranicu.",
+    "testimonialsTitle": "Što kažu naši klijenti?",
+    "t1Name": "Ana Kovač",
+    "t1Role": "Maserka",
+    "t1Text": "Prije sam bila samo na Facebooku. Sada novi klijenti dolaze kroz moju web stranicu i svaki mjesec imam više rezervacija.",
+    "t2Name": "Marko Perić",
+    "t2Role": "Električar",
+    "t2Text": "Nevjerojatno što dobivate za 140 eura. Na prvoj sam stranici Googlea u svom gradu.",
+    "t3Name": "Maja Novak",
+    "t3Role": "Računovođa",
+    "t3Text": "Bojala sam se digitalnog marketinga. Tim me proveo kroz sve, a sada imam profesionalnu web stranicu.",
+    "contactTitle": "Stupite u kontakt!",
+    "contactSubtitle": "Recite nam čime se bavite – javit ćemo se u roku 1-2 radna dana."
+  },
+  "LandingPage": {
+    "meta": {
+      "title": "Zatražite web ponudu | Xilofon Digital",
+      "description": "Zatražite besplatnu ponudu! Moderna web stranica za poduzetnike i male tvrtke. Fiksnih 140 EUR/god."
+    },
+    "available": "Slobodni termini dostupni",
+    "title": "Dobijte profesionalnu web stranicu",
+    "highlight": "kojom vi upravljate",
+    "price": "– 140 EUR/god",
+    "subtitle": "Izrađujemo web stranice za poduzetnike i male tvrtke. Jedna poruka i vaša stranica je uživo za 1-2 tjedna.",
+    "benefits": [
+      "Profesionalna web stranica za 1-2 tjedna",
+      "Domena i hosting su uključeni",
+      "Vi je uređujete – kad god, gdje god",
+      "Pronađeni na Googleu",
+      "Kontakt forma za vaše klijente",
+      "Fiksna cijena – 140 EUR / god, bez iznenađenja",
+      "GDPR sukladnost, bez kolačića",
+      "Podrška na vašem jeziku"
+    ],
+    "clientsNum": "50+",
+    "clientsLabel": "zadovoljnih klijenata",
+    "timeNum": "1-2 tj.",
+    "timeLabel": "rok isporuke",
+    "priceNum": "140 €",
+    "priceLabel": "fiksna godišnja naknada",
+    "formTitle": "Besplatna ponuda",
+    "formSubtitle": "Odgovaramo u roku 1-2 radna dana.",
+    "callText": "Imate pitanje? Nazovite nas"
+  },
+  "ServicesPage": {
+    "meta": {
+      "title": "Usluge",
+      "description": "Izrada web stranice za 140 EUR/god, upravljanje Facebook i društvenim mrežama, Google Business profil i SEO savjetovanje."
+    },
+    "heroTitle": "Sve što trebate za vaš",
+    "heroHighlight": "online nastup",
+    "heroSubtitle": "Naše usluge dizajnirane su za male tvrtke i poduzetnike – jasno i po transparentnim cijenama.",
+    "includes": "Što je uključeno?",
+    "quoteBtn": "Zatražite ponudu",
+    "ctaTitle": "Niste sigurni koja usluga vam treba? Pitajte nas!",
+    "ctaSubtitle": "Čak i kratko pitanje pomaže nam razumjeti što će vam zaista pomoći.",
+    "ctaBtn": "Besplatna ponuda",
+    "web": {
+      "title": "Izrada web stranice",
+      "price": "140 EUR / god",
+      "tagline": "Sve uključeno. Bez iznenađenja.",
+      "desc": "Izrađujemo profesionalnu, SEO optimiziranu jednospratnu web stranicu koju sami možete uređivati. Cilj je stranica koja nije samo lijepa, već dovodi klijente.",
+      "includes": ["Prilagođeni jednostraničan dizajn","Registracija domene i hosting","Vi uređujete – kad god, gdje god","Kontakt forma na vašoj stranici","SEO osnove (meta, alt tagovi, brzina)","Mobilno prilagođen, responzivan","SSL certifikat (https)","GDPR sukladnost, bez kolačića","Podrška na vašem jeziku"]
+    },
+    "social": {
+      "title": "Upravljanje Facebookom i društvenim mrežama",
+      "price": "Ponuda na upit",
+      "tagline": "Dosljedna prisutnost na društvenim mrežama.",
+      "desc": "Snažna prisutnost na društvenim mrežama gradi povjerenje i stalno podsjeća potencijalne klijente na vaše poslovanje. Upravljamo vašom Facebook stranicom, kreiramo sadržaj, vodimo oglase i pratimo rezultate.",
+      "includes": ["Upravljanje Facebook stranicom i objavama","Planiranje sadržaja i copywriting","Facebook oglasne kampanje","Instagram prisutnost (opcionalno)","Mjesečni izvještaj i rezultati"]
+    },
+    "gbp": {
+      "title": "Postavljanje Google Business profila",
+      "price": "Jednokratna naknada + mjesečno održavanje",
+      "tagline": "Budite prisutni na Google karti.",
+      "desc": "Rang na prvom mjestu u lokalnoj pretrazi može donijeti stalnu struju kvalitetnih klijenata. Postavljamo i optimiziramo vaš Google Business profil: fotografije, opis, usluge, radno vrijeme – sve što je važno.",
+      "includes": ["Kreiranje/optimizacija Google Business profila","Upload fotografija i opisa","Postavljanje ključnih riječi i kategorija","Strategija upravljanja recenzijama","Mjesečno održavanje i ažuriranje"]
+    },
+    "seo": {
+      "title": "SEO savjetovanje",
+      "price": "Cijene prema projektu",
+      "tagline": "Bolje rangirajte na Googleu.",
+      "desc": "SEO je dugoročna investicija: jednom ispravno napravljeno, stalno donosi rezultate. Radimo istraživanje ključnih riječi, tehničke preglede i dajemo vam jasan akcijski plan.",
+      "includes": ["Istraživanje ključnih riječi i analiza konkurencije","Tehnički SEO pregled","On-page optimizacija","Strategija sadržaja","Savjetovanje o izgradnji linkova","Mjesečni izvještaj o performansama"]
+    }
+  },
+  "AboutPage": {
+    "meta": {
+      "title": "O nama",
+      "description": "Upoznajemo vaše poslovanje i nudimo prilagođena online rješenja za male poduzetnike."
+    },
+    "heroTitle": "Xilofon Digital",
+    "heroHighlight": "stoji uz male poduzetnike",
+    "heroSubtitle": "Znamo koliko je teško izgraditi online prisutnost kada sami vodite posao. Pomažemo vam da to bude jednostavno.",
+    "storyTitle": "Zašto to radimo?",
+    "storyP1": "Razgovarali smo s mnogim poduzetnicima koji su imali odlične usluge, ali nisu mogli privući klijente online. Neki su isprobali skupe agencije i za novac dobili ništa.",
+    "storyP2": "Xilofon je nastao da to promijeni. Izrađujemo web stranice koje stvarno rade – koje se pojavljuju na Googleu, grade povjerenje i dovode klijente.",
+    "storyP3": "Sve po fiksnoj, transparentnoj cijeni – jer vjerujemo da dobra web stranica nije luksuz, već nužnost za svako poduzeće.",
+    "priceLabel": "godišnja naknada",
+    "priceSub": "Domena + hosting + uređivanje + podrška",
+    "clientsNum": "50+",
+    "clientsLabel": "poduzeća kojima smo pomogli",
+    "timeNum": "1-2 tj.",
+    "timeLabel": "prosječni rok isporuke",
+    "valuesTitle": "Naše vrijednosti",
+    "valuesSubtitle": "Ovo nas vodi uz svakog klijenta.",
+    "val1Title": "Orijentirani na rezultate",
+    "val1Desc": "Naš cilj nije samo lijepa stranica – već stranica koja vam stvarno dovodi klijente.",
+    "val2Title": "Orijentirani na ljude",
+    "val2Desc": "Znamo da nije svaki vlasnik tehničar. Zato vas vodimo kroz svaki korak i objašnjavamo sve.",
+    "val3Title": "Jednostavnost",
+    "val3Desc": "Fiksna cijena, jednostavan proces, transparentna komunikacija. Bez nepotrebnih komplikacija.",
+    "ctaTitle": "Surađujmo zajedno!",
+    "ctaSubtitle": "Recite nam čime se bavite – i vidjet ćemo kako možemo pomoći.",
+    "ctaBtn": "Besplatna ponuda"
+  },
+  "AszfPage": {
+    "title": "Opći uvjeti poslovanja",
+    "effective": "Na snazi od: 1. siječnja 2025."
+  },
+  "PrivacyPage": {
+    "title": "Pravila privatnosti",
+    "effective": "Na snazi od: 1. siječnja 2025."
+  }
+}

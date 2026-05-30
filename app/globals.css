@@ -7,6 +7,6 @@ html {
 body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #0f172a;
-  background: #ffffff;
+  color: #ffffff;
+  background: #09090b;
 }

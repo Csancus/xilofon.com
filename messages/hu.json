@@ -1,0 +1,231 @@
+{
+  "Navbar": {
+    "services": "Szolgáltatások",
+    "about": "Rólunk",
+    "quote": "Ajánlatkérés"
+  },
+  "Footer": {
+    "tagline": "Modern weboldal és digitális marketing kis- és egyéni vállalkozásoknak. Fix áron, átláthatóan.",
+    "navTitle": "Navigáció",
+    "legalTitle": "Jogi",
+    "home": "Főoldal",
+    "services": "Szolgáltatások",
+    "about": "Rólunk",
+    "quote": "Ajánlatkérés",
+    "aszf": "Általános Szerződési Feltételek",
+    "privacy": "Adatkezelési Tájékoztató",
+    "copyright": "© {year} Xilofon Digital. Minden jog fenntartva."
+  },
+  "LanguageSwitcher": {
+    "label": "Nyelv"
+  },
+  "ContactForm": {
+    "name": "Név",
+    "namePlaceholder": "Kovács János",
+    "email": "E-mail",
+    "emailPlaceholder": "kovacs@example.hu",
+    "phone": "Telefonszám",
+    "phoneOptional": "(opcionális)",
+    "phonePlaceholder": "+36 30 123 4567",
+    "message": "Üzenet",
+    "messagePlaceholder": "Írj pár sort a vállalkozásodról és mihez kérsz segítséget...",
+    "submit": "Üzenet küldése",
+    "sending": "Küldés...",
+    "successTitle": "Köszönjük az üzeneted!",
+    "successText": "1-2 munkanapon belül visszakeresünk.",
+    "newMessage": "Új üzenet küldése",
+    "errorText": "Hiba történt. Kérjük, próbáld újra, vagy írj e-mailt.",
+    "privacyNote": "Az adataid kezeléséről az <link>adatkezelési tájékoztatóban</link> olvashatsz.",
+    "privacyLink": "adatkezelési tájékoztatóban"
+  },
+  "HomePage": {
+    "meta": {
+      "title": "Xilofon Digital | Weboldal készítés vállalkozásoknak",
+      "description": "Modern weboldal készítés fix 140 EUR/év áron. Google-barát oldalak, Facebook kezelés, Google Business profil és SEO tanácsadás."
+    },
+    "hero": {
+      "badge": "Fix ár • 140 EUR / év • Nincs meglepetés",
+      "title": "Profi weboldal,",
+      "highlight": "amit te szerkesztesz",
+      "subtitle": "Egyéni vállalkozóknak és kis cégeknek készítünk Google-barát weboldalakat. Fix éves díjért – domain, hosting, szerkesztés és support mind benne.",
+      "primaryCta": "Ingyenes ajánlatkérés",
+      "secondaryCta": "Szolgáltatások"
+    },
+    "strip": {
+      "cookie": "Cookie-mentes oldal",
+      "gdpr": "GDPR-megfelelő",
+      "domain": "Domain + hosting benne",
+      "speed": "1-2 héten belül él az oldal",
+      "support": "Magyar nyelvű support"
+    },
+    "servicesTitle": "Amiben segíthetünk",
+    "servicesSubtitle": "Minden, amire egy kis vállalkozásnak szüksége van az online jelenléthez.",
+    "servicesMore": "Részletes szolgáltatásleírás",
+    "web": {
+      "title": "Weboldal készítés",
+      "desc": "Professzionális one-pager weboldal, amelyet te szerkesztesz. SEO-optimalizált, gyors, és kapcsolatfelvételi formmal.",
+      "tag": "140 EUR / év"
+    },
+    "social": {
+      "title": "Facebook & Social Media",
+      "desc": "Stratégiai tartalomkezelés, hirdetések és közösségi média jelenléted felépítése – több ügyfél, erősebb márka.",
+      "tag": "Ajánlatkérés"
+    },
+    "gbp": {
+      "title": "Google Business Profil",
+      "desc": "Helyi keresőoptimalizálás: legyen ott a vállalkozásod a Google Térképen, és fogadjon online véleményeket.",
+      "tag": "Ajánlatkérés"
+    },
+    "seo": {
+      "title": "SEO tanácsadás",
+      "desc": "Átfogó kulcsszókutatás, technikai audit és tartalom-stratégia – hogy magasabban szerepelj a Google találatai közt.",
+      "tag": "Ajánlatkérés"
+    },
+    "pricingTitle": "Átlátható árazás",
+    "pricingSubtitle": "Egy csomag, egy ár. Nincsenek rejtett költségek.",
+    "pricingPackage": "Weboldal csomag",
+    "pricingPopular": "Legnépszerűbb",
+    "pricingCta": "Ajánlatkérés",
+    "pricingNote": "Éves díj, megújítható. Nincs kötöttség.",
+    "features": [
+      "Domain és hosting benne van",
+      "Te szerkesztesz – bármikor",
+      "Kapcsolatfelvételi form",
+      "Google-barát (SEO alapok)",
+      "Mobilon is gyors és szép",
+      "GDPR-megfelelő",
+      "Magyar nyelvű support",
+      "Fix ár, nincsenek meglepetések"
+    ],
+    "stepsTitle": "Hogyan működik?",
+    "stepsSubtitle": "Három egyszerű lépés, és él az oldalad.",
+    "step1Title": "Kapcsolatfelvétel",
+    "step1Desc": "Küldj egy rövid üzenetet – mondd el, mivel foglalkozol, és mit szeretnél elérni.",
+    "step2Title": "Weboldal elkészítése",
+    "step2Desc": "Mi elkészítjük a weboldalad: szöveg, design, domain, hosting – minden benne van.",
+    "step3Title": "Te szerkesztesz, ügyfelek jönnek",
+    "step3Desc": "Megkapod a hozzáférést, szerkesztheted a tartalmat, és a Google megtalálja az oldalad.",
+    "testimonialsTitle": "Mit mondanak az ügyfeleink?",
+    "t1Name": "Horváth Eszter",
+    "t1Role": "Masszőr",
+    "t1Text": "Korábban csak Facebookon voltam. Most az oldalamon keresztül jönnek az új ügyfeleim, és minden hónapban több foglalást kapok.",
+    "t2Name": "Balogh Péter",
+    "t2Role": "Villanyszerelő",
+    "t2Text": "Elképesztő, hogy 140 euróért ennyit kapok. A Google-on az első oldalon vagyok a városomban.",
+    "t3Name": "Németh Katalin",
+    "t3Role": "Könyvelő",
+    "t3Text": "Eddig féltem az internet-marketingtől. A csapat végigvezetett mindenen, és most van profi weboldalam.",
+    "contactTitle": "Írj nekünk!",
+    "contactSubtitle": "Mondd el, mivel foglalkozol – 1-2 munkanapon belül visszakeresünk."
+  },
+  "LandingPage": {
+    "meta": {
+      "title": "Weboldal ajánlatkérés | Xilofon Digital",
+      "description": "Kérj ingyenes ajánlatot! Modern weboldal egyéni vállalkozóknak és kis cégeknek. Fix 140 EUR/év ár."
+    },
+    "available": "Szabad időpontok vannak",
+    "title": "Legyen profi weboldalad,",
+    "highlight": "amit te szerkesztesz",
+    "price": "– 140 EUR/év",
+    "subtitle": "Egyéni vállalkozók és kis cégek számára készítünk Google-barát weboldalakat. Egy ajánlatkérés, és 1-2 héten belül él az oldalad.",
+    "benefits": [
+      "Profi weboldal 1-2 héten belül",
+      "Domain és hosting benne van",
+      "Te szerkeszted – bármikor, bárhol",
+      "Megtalálnak a Google-on",
+      "Kapcsolatfelvételi form az ügyfeleknek",
+      "Fix ár – 140 EUR / év, nincs meglepetés",
+      "GDPR-megfelelő, cookie-mentes",
+      "Magyar nyelvű support"
+    ],
+    "clientsNum": "50+",
+    "clientsLabel": "elégedett ügyfél",
+    "timeNum": "1-2 hét",
+    "timeLabel": "átfutási idő",
+    "priceNum": "140 €",
+    "priceLabel": "fix éves díj",
+    "formTitle": "Ingyenes ajánlatkérés",
+    "formSubtitle": "1-2 munkanapon belül visszajelzünk.",
+    "callText": "Van kérdésed? Hívj minket"
+  },
+  "ServicesPage": {
+    "meta": {
+      "title": "Szolgáltatások",
+      "description": "Weboldal készítés 140 EUR/év áron, Facebook és social media kezelés, Google Business profil és SEO tanácsadás."
+    },
+    "heroTitle": "Minden, amire szükséged van az",
+    "heroHighlight": "online jelenléthez",
+    "heroSubtitle": "Szolgáltatásainkat kis vállalkozások és egyéni vállalkozók számára alakítottuk ki – érthetően, átlátható áron.",
+    "includes": "Mi van benne?",
+    "quoteBtn": "Ajánlatkérés",
+    "ctaTitle": "Nem tudod, melyik kell? Írj nekünk!",
+    "ctaSubtitle": "Rövid kérdés alapján is el tudjuk mondani, mi az, ami neked tényleg segít.",
+    "ctaBtn": "Ingyenes ajánlatkérés",
+    "web": {
+      "title": "Weboldal készítés",
+      "price": "140 EUR / év",
+      "tagline": "Minden benne van. Nincs meglepetés.",
+      "desc": "Professzionális, Google-barát one-pager weboldalt készítünk, amelyet te magad szerkeszthetsz. Célunk, hogy az oldalad ne csak szép legyen, hanem ügyfeleket is hozzon – keresőoptimalizálással, gyors betöltéssel és egyszerű kapcsolatfelvételi formmal.",
+      "includes": ["Személyre szabott one-pager design","Domain regisztráció és hosting","Te szerkeszted – bármikor, bárhol","Kapcsolatfelvételi form az oldaladon","SEO alapok (meta, alt tagek, sebesség)","Mobilbarát, reszponzív megjelenés","SSL tanúsítvány (https)","GDPR-megfelelő, cookie-mentes","Magyar nyelvű support"]
+    },
+    "social": {
+      "title": "Facebook & Social Media kezelés",
+      "price": "Ajánlatkérés alapján",
+      "tagline": "Rendszeres jelenlét a közösségi médiában.",
+      "desc": "Egy erős közösségi média jelenlét bizalmat épít és folyamatosan emlékezteti a leendő ügyfeleket a vállalkozásodra. Kezeljük a Facebook-oldaladat, tartalmat készítünk, hirdetéseket indítunk és figyelemmel kísérjük az eredményeket.",
+      "includes": ["Facebook oldal kezelése és posztolás","Tartalomtervezés és szövegírás","Facebook hirdetések futtatása","Instagram jelenlét (opcionális)","Havi riport és eredménykimutatás"]
+    },
+    "gbp": {
+      "title": "Google Business Profil építés",
+      "price": "Egyszeri díj + havi karbantartás",
+      "tagline": "Legyen ott a vállalkozásod a Google Térképen.",
+      "desc": "Helyi keresőkben az első helyen jelenni meg rengeteg minőségi ügyfelet hozhat. Beállítjuk és optimalizáljuk a Google Business profilodat: fotók, leírás, szolgáltatások, nyitvatartás – minden, ami számít.",
+      "includes": ["Google Business profil létrehozása / optimalizálása","Fotók és leírás feltöltése","Kulcsszavak és kategóriák beállítása","Vélemény-kezelés stratégia","Havi karbantartás és frissítés"]
+    },
+    "seo": {
+      "title": "SEO tanácsadás",
+      "price": "Projekt alapú árazás",
+      "tagline": "Kerülj előre a Google találatai között.",
+      "desc": "A keresőoptimalizálás hosszú távú befektetés: egyszer jól csinálni meg, és utána folyamatosan hoz eredményt. Elvégezzük a kulcsszókutatást, technikai auditot, és konkrét cselekvési tervet adunk.",
+      "includes": ["Kulcsszókutatás és versenyelemzés","Technikai SEO audit","On-page optimalizálás","Tartalom-stratégia","Linképítési tanácsadás","Havi teljesítmény-riport"]
+    }
+  },
+  "AboutPage": {
+    "meta": {
+      "title": "Rólunk",
+      "description": "Megismerjük a vállalkozásodat és személyre szabott online megoldásokat kínálunk."
+    },
+    "heroTitle": "A Xilofon csapata",
+    "heroHighlight": "a kis vállalkozások oldalán áll",
+    "heroSubtitle": "Tudjuk, milyen nehéz online jelenlétet felépíteni akkor, amikor az ember egyedül viszi a vállalkozást. Mi abban segítünk, hogy ez könnyű legyen.",
+    "storyTitle": "Miért csináljuk ezt?",
+    "storyP1": "Sok egyéni vállalkozóval és kis céggel beszélgettünk, akiknek volt egy jó szolgáltatásuk, de nem tudtak ügyfeleket szerezni online. Volt, aki kipróbált egy drága ügynökséget, és semmit sem kapott a pénzéért.",
+    "storyP2": "A Xilofon arra jött létre, hogy ezt megváltoztassa. Olyan weboldalakat készítünk, amelyek valóban működnek – amelyek megjelennek a Google-on, bizalmat sugároznak, és ügyfeleket hoznak.",
+    "storyP3": "Mindezt fix, átlátható áron – mert hisszük, hogy egy jó weboldal nem luxus, hanem alapszükséglet minden vállalkozás számára.",
+    "priceLabel": "éves díj",
+    "priceSub": "Domain + hosting + szerkesztés + support",
+    "clientsNum": "50+",
+    "clientsLabel": "vállalkozás, akinek segítettünk",
+    "timeNum": "1-2 hét",
+    "timeLabel": "átlagos átfutási idő",
+    "valuesTitle": "Az értékeink",
+    "valuesSubtitle": "Ezek vezérelnek minket minden ügyfélnél.",
+    "val1Title": "Eredményorientált",
+    "val1Desc": "Nem az a célunk, hogy szép oldalt csináljunk – hanem az, hogy a te oldalad valóban ügyfeleket hozzon.",
+    "val2Title": "Emberközpontú",
+    "val2Desc": "Értjük, hogy nem mindenki ért a digitális marketinghez. Ezért minden lépésnél kézzel fogunk és elmagyarázunk mindent.",
+    "val3Title": "Egyszerűség",
+    "val3Desc": "Fix ár, egyszerű folyamat, átlátható kommunikáció. Nincsenek felesleges bonyodalmak.",
+    "ctaTitle": "Dolgozzunk együtt!",
+    "ctaSubtitle": "Mondd el, mivel foglalkozol – és megnézzük, hogyan tudunk segíteni.",
+    "ctaBtn": "Ingyenes ajánlatkérés"
+  },
+  "AszfPage": {
+    "title": "Általános Szerződési Feltételek",
+    "effective": "Hatályos: 2025. január 1-től"
+  },
+  "PrivacyPage": {
+    "title": "Adatkezelési Tájékoztató",
+    "effective": "Hatályos: 2025. január 1-től"
+  }
+}

@@ -1,0 +1,231 @@
+{
+  "Navbar": {
+    "services": "Services",
+    "about": "About",
+    "quote": "Get a quote"
+  },
+  "Footer": {
+    "tagline": "Modern websites and digital marketing for small and solo businesses. Fixed price, transparent.",
+    "navTitle": "Navigation",
+    "legalTitle": "Legal",
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "quote": "Get a quote",
+    "aszf": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "copyright": "© {year} Xilofon Digital. All rights reserved."
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  },
+  "ContactForm": {
+    "name": "Name",
+    "namePlaceholder": "John Smith",
+    "email": "Email",
+    "emailPlaceholder": "john@example.com",
+    "phone": "Phone number",
+    "phoneOptional": "(optional)",
+    "phonePlaceholder": "+1 234 567 8900",
+    "message": "Message",
+    "messagePlaceholder": "Tell us about your business and what you need help with...",
+    "submit": "Send message",
+    "sending": "Sending...",
+    "successTitle": "Thank you for your message!",
+    "successText": "We'll get back to you within 1-2 business days.",
+    "newMessage": "Send another message",
+    "errorText": "Something went wrong. Please try again or send us an email.",
+    "privacyNote": "Read how we handle your data in our <link>Privacy Policy</link>.",
+    "privacyLink": "Privacy Policy"
+  },
+  "HomePage": {
+    "meta": {
+      "title": "Xilofon Digital | Website Design for Small Businesses",
+      "description": "Professional website creation at a fixed €140/year. SEO-friendly pages, Facebook management, Google Business and SEO consulting."
+    },
+    "hero": {
+      "badge": "Fixed price • €140 / year • No surprises",
+      "title": "Professional website,",
+      "highlight": "that you control",
+      "subtitle": "We build SEO-friendly websites for freelancers and small businesses. One fixed annual fee – domain, hosting, editing and support all included.",
+      "primaryCta": "Get a free quote",
+      "secondaryCta": "Services"
+    },
+    "strip": {
+      "cookie": "Cookie-free website",
+      "gdpr": "GDPR compliant",
+      "domain": "Domain + hosting included",
+      "speed": "Live in 1-2 weeks",
+      "support": "Dedicated support"
+    },
+    "servicesTitle": "How we can help",
+    "servicesSubtitle": "Everything a small business needs to build a strong online presence.",
+    "servicesMore": "See all services",
+    "web": {
+      "title": "Website creation",
+      "desc": "Professional one-page website that you can edit yourself. SEO-optimized, fast, and with a contact form.",
+      "tag": "€140 / year"
+    },
+    "social": {
+      "title": "Facebook & Social Media",
+      "desc": "Strategic content management, ads and building your social media presence – more clients, stronger brand.",
+      "tag": "Quote on request"
+    },
+    "gbp": {
+      "title": "Google Business Profile",
+      "desc": "Local SEO: get your business on Google Maps and start collecting online reviews.",
+      "tag": "Quote on request"
+    },
+    "seo": {
+      "title": "SEO consulting",
+      "desc": "Keyword research, technical audit and content strategy – to rank higher on Google.",
+      "tag": "Quote on request"
+    },
+    "pricingTitle": "Transparent pricing",
+    "pricingSubtitle": "One package, one price. No hidden fees.",
+    "pricingPackage": "Website package",
+    "pricingPopular": "Most popular",
+    "pricingCta": "Get a quote",
+    "pricingNote": "Annual fee, renewable. No commitment.",
+    "features": [
+      "Domain and hosting included",
+      "You edit it – anytime",
+      "Contact form",
+      "SEO-friendly (basics)",
+      "Fast and beautiful on mobile",
+      "GDPR compliant",
+      "Dedicated support",
+      "Fixed price, no surprises"
+    ],
+    "stepsTitle": "How does it work?",
+    "stepsSubtitle": "Three simple steps and your site is live.",
+    "step1Title": "Get in touch",
+    "step1Desc": "Send a short message – tell us what you do and what you want to achieve.",
+    "step2Title": "We build your website",
+    "step2Desc": "We take care of everything: design, copy, domain, hosting – all included.",
+    "step3Title": "You edit, clients come",
+    "step3Desc": "You get access to edit content anytime, and Google finds your site.",
+    "testimonialsTitle": "What our clients say",
+    "t1Name": "Sarah M.",
+    "t1Role": "Massage therapist",
+    "t1Text": "I used to rely only on Facebook. Now new clients come through my website, and I get more bookings every month.",
+    "t2Name": "Peter B.",
+    "t2Role": "Electrician",
+    "t2Text": "It's incredible what you get for €140. I'm on the first page of Google in my city.",
+    "t3Name": "Kate N.",
+    "t3Role": "Accountant",
+    "t3Text": "I was afraid of digital marketing. The team guided me through everything, and now I have a professional website.",
+    "contactTitle": "Get in touch!",
+    "contactSubtitle": "Tell us about your business – we'll get back to you within 1-2 business days."
+  },
+  "LandingPage": {
+    "meta": {
+      "title": "Website quote request | Xilofon Digital",
+      "description": "Get a free quote! Modern website for freelancers and small businesses. Fixed €140/year."
+    },
+    "available": "Slots available now",
+    "title": "Get a professional website",
+    "highlight": "that you control",
+    "price": "– €140/year",
+    "subtitle": "We build SEO-friendly websites for freelancers and small businesses. One message, and your site is live within 1-2 weeks.",
+    "benefits": [
+      "Professional website in 1-2 weeks",
+      "Domain and hosting included",
+      "You edit it – anytime, anywhere",
+      "Found on Google",
+      "Contact form for your clients",
+      "Fixed price – €140 / year, no surprises",
+      "GDPR compliant, cookie-free",
+      "Dedicated support"
+    ],
+    "clientsNum": "50+",
+    "clientsLabel": "happy clients",
+    "timeNum": "1-2 wks",
+    "timeLabel": "turnaround",
+    "priceNum": "€140",
+    "priceLabel": "fixed annual fee",
+    "formTitle": "Free quote request",
+    "formSubtitle": "We reply within 1-2 business days.",
+    "callText": "Have a question? Call us"
+  },
+  "ServicesPage": {
+    "meta": {
+      "title": "Services",
+      "description": "Website creation at €140/year, Facebook and social media management, Google Business Profile setup and SEO consulting."
+    },
+    "heroTitle": "Everything you need for your",
+    "heroHighlight": "online presence",
+    "heroSubtitle": "Our services are designed for small businesses and freelancers – straightforward and transparently priced.",
+    "includes": "What's included?",
+    "quoteBtn": "Get a quote",
+    "ctaTitle": "Not sure which service you need? Ask us!",
+    "ctaSubtitle": "Even a short question helps us understand what will actually make a difference for you.",
+    "ctaBtn": "Free quote request",
+    "web": {
+      "title": "Website creation",
+      "price": "€140 / year",
+      "tagline": "Everything included. No surprises.",
+      "desc": "We build a professional, SEO-friendly one-page website that you can edit yourself. The goal: a site that's not just beautiful, but brings you clients.",
+      "includes": ["Custom one-page design","Domain registration and hosting","You edit – anytime, anywhere","Contact form on your site","SEO basics (meta, alt tags, speed)","Mobile-friendly, responsive","SSL certificate (https)","GDPR compliant, cookie-free","Dedicated support"]
+    },
+    "social": {
+      "title": "Facebook & Social Media management",
+      "price": "Quote on request",
+      "tagline": "Consistent presence on social media.",
+      "desc": "A strong social media presence builds trust and keeps your business top-of-mind for potential clients. We manage your Facebook page, create content, run ads and track results.",
+      "includes": ["Facebook page management and posting","Content planning and copywriting","Facebook ad campaigns","Instagram presence (optional)","Monthly report and results"]
+    },
+    "gbp": {
+      "title": "Google Business Profile setup",
+      "price": "One-time fee + monthly maintenance",
+      "tagline": "Put your business on Google Maps.",
+      "desc": "Ranking first in local search can bring a steady stream of quality clients. We set up and optimize your Google Business Profile: photos, description, services, hours – everything that matters.",
+      "includes": ["Google Business Profile creation/optimization","Photo and description upload","Keywords and categories setup","Review management strategy","Monthly maintenance and updates"]
+    },
+    "seo": {
+      "title": "SEO consulting",
+      "price": "Project-based pricing",
+      "tagline": "Rank higher on Google.",
+      "desc": "SEO is a long-term investment: do it right once, and it keeps delivering. We do keyword research, technical audits, and give you a clear action plan.",
+      "includes": ["Keyword research and competitor analysis","Technical SEO audit","On-page optimization","Content strategy","Link building consulting","Monthly performance report"]
+    }
+  },
+  "AboutPage": {
+    "meta": {
+      "title": "About us",
+      "description": "We understand your business and offer tailored online solutions. Our team helps freelancers and small businesses build their online presence."
+    },
+    "heroTitle": "Xilofon Digital",
+    "heroHighlight": "stands with small businesses",
+    "heroSubtitle": "We know how hard it is to build an online presence when you're running a business solo. We make that easy.",
+    "storyTitle": "Why do we do this?",
+    "storyP1": "We've spoken with many freelancers and small business owners who had great services but couldn't attract clients online. Some tried expensive agencies and got nothing for their money.",
+    "storyP2": "Xilofon was created to change that. We build websites that actually work – that show up on Google, build trust, and bring clients.",
+    "storyP3": "All at a fixed, transparent price – because we believe a good website isn't a luxury, it's a necessity for every business.",
+    "priceLabel": "annual fee",
+    "priceSub": "Domain + hosting + editing + support",
+    "clientsNum": "50+",
+    "clientsLabel": "businesses we've helped",
+    "timeNum": "1-2 wks",
+    "timeLabel": "average turnaround",
+    "valuesTitle": "Our values",
+    "valuesSubtitle": "These guide us with every client.",
+    "val1Title": "Results-driven",
+    "val1Desc": "Our goal isn't just a beautiful site – it's a site that actually brings you clients.",
+    "val2Title": "People-first",
+    "val2Desc": "We know not everyone is a tech expert. That's why we guide you through every step and explain everything.",
+    "val3Title": "Simplicity",
+    "val3Desc": "Fixed price, simple process, transparent communication. No unnecessary complications.",
+    "ctaTitle": "Let's work together!",
+    "ctaSubtitle": "Tell us what you do – and we'll figure out how we can help.",
+    "ctaBtn": "Free quote request"
+  },
+  "AszfPage": {
+    "title": "Terms of Service",
+    "effective": "Effective from: 1 January 2025"
+  },
+  "PrivacyPage": {
+    "title": "Privacy Policy",
+    "effective": "Effective from: 1 January 2025"
+  }
+}
