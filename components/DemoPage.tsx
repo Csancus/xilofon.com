@@ -135,7 +135,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
 
       {/* Admin edit bar – fixed so it stays on screen while scrolling */}
       {editMode && (
-        <div className="fixed top-0 left-0 right-0 z-40 bg-amber-500 text-white text-xs px-4 py-2 flex items-center justify-between gap-4">
+        <div className="fixed top-0 left-0 right-0 z-[60] bg-amber-500 text-white text-xs px-4 py-2 flex items-center justify-between gap-4">
           <span className="flex items-center gap-2"><Pencil size={12} />{al.editMode}</span>
           <button onClick={() => setEditMode(false)} className="flex items-center gap-1.5 bg-white text-amber-700 font-semibold px-3 py-1 rounded-full hover:bg-amber-50 transition-colors">
             <Check size={12} /> {al.exitEdit}
