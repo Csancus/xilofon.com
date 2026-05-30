@@ -19,6 +19,13 @@ import {
 } from "lucide-react";
 import type { Demo, DemoContent, DemoWhyUs, DemoFaq, Locale } from "@/lib/demos";
 
+type CustomField = {
+  id: string;
+  type: "select" | "checkbox";
+  label: string;
+  options: string[];
+};
+
 type Props = {
   demo: Demo;
   content: DemoContent;
@@ -48,6 +55,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
   const [editMode, setEditMode] = useState(false);
   const [content, setContent] = useState<DemoContent>(initialContent);
   const [galleryImages, setGalleryImages] = useState<string[]>(demo.galleryImages);
+  const [customFields, setCustomFields] = useState<CustomField[]>([]);
   const [dismissed, setDismissed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -557,6 +565,107 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
                 <label className="block text-sm font-medium text-slate-700 mb-1.5">{locale === "hu" ? "Üzenet" : locale === "en" ? "Message" : locale === "hr" ? "Poruka" : "Mesaj"}</label>
                 <textarea name="message" required rows={4} className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 resize-none" />
               </div>
+
+              {/* Custom fields */}
+              {customFields.map((field) => (
+                <div key={field.id} className={editMode ? "relative rounded-xl border-2 border-dashed border-amber-400 p-4 bg-amber-50/40" : ""}>
+                  {editMode && (
+                    <button
+                      type="button"
+                      onClick={() => setCustomFields((fs) => fs.filter((f) => f.id !== field.id))}
+                      className="absolute top-2 right-2 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors"
+                      aria-label="Remove field"
+                    >
+                      <X size={11} />
+                    </button>
+                  )}
+                  <label className="block text-sm font-medium text-slate-700 mb-2">
+                    {editMode ? (
+                      <span
+                        contentEditable
+                        suppressContentEditableWarning
+                        onBlur={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, label: e.currentTarget.textContent ?? f.label } : f))}
+                        className="outline outline-2 outline-violet-400/60 rounded px-1 cursor-text focus:outline-violet-500 bg-violet-50/40"
+                      >
+                        {field.label}
+                      </span>
+                    ) : field.label}
+                  </label>
+
+                  {/* Field preview */}
+                  {field.type === "select" ? (
+                    <select name={field.id} className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white">
+                      <option value="">—</option>
+                      {field.options.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+                    </select>
+                  ) : (
+                    <div className="flex flex-col gap-2 pl-1">
+                      {field.options.map((opt, oi) => (
+                        <label key={oi} className="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                          <input type="checkbox" name={field.id} value={opt} className="rounded accent-violet-600 w-4 h-4" />
+                          {opt}
+                        </label>
+                      ))}
+                    </div>
+                  )}
+
+                  {/* Options editor (edit mode only) */}
+                  {editMode && (
+                    <div className="mt-3 pt-3 border-t border-amber-200 space-y-1.5">
+                      {field.options.map((opt, oi) => (
+                        <div key={oi} className="flex items-center gap-2">
+                          <span
+                            contentEditable
+                            suppressContentEditableWarning
+                            onBlur={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.map((o, j) => j === oi ? (e.currentTarget.textContent ?? o) : o) } : f))}
+                            className="flex-1 text-xs border border-violet-300 rounded-lg px-2.5 py-1 outline-none focus:ring-2 focus:ring-violet-400 bg-white"
+                          >
+                            {opt}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.filter((_, j) => j !== oi) } : f))}
+                            className="w-5 h-5 rounded-full bg-red-100 text-red-500 flex items-center justify-center hover:bg-red-200 flex-shrink-0 transition-colors"
+                          >
+                            <X size={10} />
+                          </button>
+                        </div>
+                      ))}
+                      <button
+                        type="button"
+                        onClick={() => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: [...f.options, `${locale === "hu" ? "Lehetőség" : "Option"} ${f.options.length + 1}`] } : f))}
+                        className="text-xs text-violet-600 hover:text-violet-800 font-medium transition-colors"
+                      >
+                        + {locale === "hu" ? "Lehetőség hozzáadása" : locale === "en" ? "Add option" : locale === "hr" ? "Dodaj opciju" : "Adaugă opțiune"}
+                      </button>
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {/* Add field controls (edit mode only) */}
+              {editMode && (
+                <div className="flex flex-wrap items-center gap-2 border-t border-dashed border-slate-300 pt-4">
+                  <span className="text-xs text-slate-500 font-medium">
+                    {locale === "hu" ? "Kérdés hozzáadása:" : locale === "en" ? "Add question:" : locale === "hr" ? "Dodaj pitanje:" : "Adaugă întrebare:"}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => setCustomFields((fs) => [...fs, { id: Math.random().toString(36).slice(2), type: "select", label: locale === "hu" ? "Válasszon egyet" : locale === "en" ? "Choose one" : locale === "hr" ? "Odaberite jedno" : "Alegeți una", options: [locale === "hu" ? "1. lehetőség" : "Option 1", locale === "hu" ? "2. lehetőség" : "Option 2"] }])}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-slate-300 hover:border-violet-400 hover:text-violet-700 text-slate-600 px-3 py-1.5 rounded-full transition-colors"
+                  >
+                    📋 {locale === "hu" ? "Legördülő menü" : locale === "en" ? "Dropdown" : locale === "hr" ? "Padajući izbornik" : "Listă derulantă"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setCustomFields((fs) => [...fs, { id: Math.random().toString(36).slice(2), type: "checkbox", label: locale === "hu" ? "Jelölje be a megfelelőt" : locale === "en" ? "Check all that apply" : locale === "hr" ? "Označite što odgovara" : "Bifați ce se aplică", options: [locale === "hu" ? "1. lehetőség" : "Option 1", locale === "hu" ? "2. lehetőség" : "Option 2"] }])}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-slate-300 hover:border-violet-400 hover:text-violet-700 text-slate-600 px-3 py-1.5 rounded-full transition-colors"
+                  >
+                    ☑️ {locale === "hu" ? "Jelölőnégyzetek" : locale === "en" ? "Checkboxes" : locale === "hr" ? "Potvrdni okviri" : "Casete de selectare"}
+                  </button>
+                </div>
+              )}
+
               {formState === "error" && (
                 <p className="text-red-600 text-sm">{locale === "hu" ? "Hiba történt. Kérjük, próbáld újra." : locale === "en" ? "Something went wrong. Please try again." : locale === "hr" ? "Došlo je do pogreške." : "A apărut o eroare."}</p>
               )}
