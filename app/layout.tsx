@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { getLocale } from "next-intl/server";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,7 +23,17 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const locale = await getLocale();
   return (
     <html lang={locale} className={inter.variable}>
-      <body className="min-h-screen bg-zinc-950">{children}</body>
+      <head>
+        {/* Prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var t=localStorage.getItem('xilofon-theme');if(t==='dark')document.documentElement.classList.add('dark')})()`,
+          }}
+        />
+      </head>
+      <body className="min-h-screen bg-white dark:bg-zinc-950 transition-colors duration-300">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }

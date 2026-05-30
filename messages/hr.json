@@ -41,44 +41,44 @@
   "HomePage": {
     "meta": {
       "title": "Xilofon Digital | Izrada web stranica za male poduzetnike",
-      "description": "Profesionalna web stranica po fiksnoj cijeni 140 EUR/god. SEO optimizacija, Facebook upravljanje, Google Business i SEO savjetovanje."
+      "description": "Profesionalna web stranica po fiksnoj cijeni 140 EUR/god. SEO optimizacija, Facebook kampanje, Google Business i SEO savjetovanje."
     },
     "hero": {
       "badge": "Fiksna cijena • 140 EUR / god • Bez iznenađenja",
       "title": "Profesionalna web stranica",
-      "highlight": "kojom vi upravljate",
-      "subtitle": "Izrađujemo web stranice za samostalne poduzetnike i male tvrtke. Godišnja fiksna naknada – domena, hosting, uređivanje i podrška su uključeni.",
+      "highlight": "koja dovodi klijente",
+      "subtitle": "Izrađujemo web stranice za samostalne poduzetnike i male tvrtke. Godišnja fiksna naknada – domena, hosting i godišnje održavanje su uključeni.",
       "primaryCta": "Besplatna ponuda",
       "secondaryCta": "Usluge"
     },
     "strip": {
-      "cookie": "Web stranica bez kolačića",
-      "gdpr": "GDPR sukladnost",
-      "domain": "Domena + hosting uključeni",
-      "speed": "Stranica uživo za 1-2 tjedna",
-      "support": "Podrška na vašem jeziku"
+      "cookie": "Domena i hosting uključeni",
+      "gdpr": "Stranica uživo za 1-2 tjedna",
+      "domain": "SEO optimizirana",
+      "speed": "Godišnji pregled i osvježavanje",
+      "support": "Brza i prilagođena mobitelu"
     },
     "servicesTitle": "Kako vam možemo pomoći",
     "servicesSubtitle": "Sve što malo poduzeće treba za snažan online nastup.",
     "servicesMore": "Pogledajte sve usluge",
     "web": {
       "title": "Izrada web stranice",
-      "desc": "Profesionalna jednospratna web stranica koju sami uređujete. SEO optimizirana, brza i s kontakt formom.",
+      "desc": "Personalizirana, SEO optimizirana jednospratna web stranica izrađena s pažnjom. Godišnja naknada pokriva domenu, hosting i godišnji pregled i osvježavanje.",
       "tag": "140 EUR / god"
     },
     "social": {
-      "title": "Facebook i društvene mreže",
-      "desc": "Strateško upravljanje sadržajem, oglasi i izgradnja prisutnosti na društvenim mrežama – više klijenata, jači brend.",
+      "title": "Facebook kampanje i oglasi",
+      "desc": "Upravljamo vašim Facebook kampanjama od strategije do rezultata: planiranje sadržaja, ciljani oglasi i praćenje učinka.",
       "tag": "Ponuda na upit"
     },
     "gbp": {
       "title": "Google Business profil",
-      "desc": "Lokalna SEO optimizacija: budite prisutni na Google karti i prikupljajte online recenzije.",
+      "desc": "Lokalna SEO optimizacija: budite prisutni na Google karti i prikupljajte recenzije pravih klijenata.",
       "tag": "Ponuda na upit"
     },
     "seo": {
       "title": "SEO savjetovanje",
-      "desc": "Istraživanje ključnih riječi, tehnički pregled i strategija sadržaja – za bolji rang na Googleu.",
+      "desc": "Istraživanje ključnih riječi, tehnički pregled i strategija sadržaja – da budete tamo gdje vaši klijenti traže.",
       "tag": "Ponuda na upit"
     },
     "pricingTitle": "Transparentne cijene",
@@ -89,12 +89,11 @@
     "pricingNote": "Godišnja naknada, obnovljiva. Bez obveze.",
     "features": [
       "Domena i hosting su uključeni",
-      "Vi uređujete – kad god želite",
       "Kontakt forma",
       "SEO optimizacija (osnove)",
       "Brzo i lijepo na mobitelu",
-      "GDPR sukladnost",
-      "Podrška na vašem jeziku",
+      "Personalizirani dizajn",
+      "Godišnji pregled i osvježavanje",
       "Fiksna cijena, bez iznenađenja"
     ],
     "stepsTitle": "Kako to funkcionira?",
@@ -103,18 +102,18 @@
     "step1Desc": "Pošaljite kratku poruku – recite nam čime se bavite i što želite postići.",
     "step2Title": "Izrađujemo vašu stranicu",
     "step2Desc": "Brinemo o svemu: dizajn, tekst, domena, hosting – sve uključeno.",
-    "step3Title": "Vi uređujete, klijenti dolaze",
-    "step3Desc": "Dobivate pristup za uređivanje sadržaja, a Google pronalazi vašu stranicu.",
+    "step3Title": "Pojavljujete se na Googleu",
+    "step3Desc": "Vaša stranica je živa, Google je pronalazi, a klijenti pronalaze vaše poslovanje.",
     "testimonialsTitle": "Što kažu naši klijenti?",
     "t1Name": "Ana Kovač",
     "t1Role": "Maserka",
     "t1Text": "Prije sam bila samo na Facebooku. Sada novi klijenti dolaze kroz moju web stranicu i svaki mjesec imam više rezervacija.",
-    "t2Name": "Marko Perić",
-    "t2Role": "Električar",
-    "t2Text": "Nevjerojatno što dobivate za 140 eura. Na prvoj sam stranici Googlea u svom gradu.",
+    "t2Name": "Tomislav Jurić",
+    "t2Role": "Osobni trener",
+    "t2Text": "Dva tjedna nakon objave već sam bio na prvoj stranici Googlea. Za 140 eura ovo je nevjerojatan rezultat.",
     "t3Name": "Maja Novak",
     "t3Role": "Računovođa",
-    "t3Text": "Bojala sam se digitalnog marketinga. Tim me proveo kroz sve, a sada imam profesionalnu web stranicu.",
+    "t3Text": "Bojala sam se digitalnog marketinga. Tim me proveo kroz sve, a sada imam profesionalnu web stranicu koja stvarno donosi klijente.",
     "contactTitle": "Stupite u kontakt!",
     "contactSubtitle": "Recite nam čime se bavite – javit ćemo se u roku 1-2 radna dana."
   },
@@ -125,18 +124,18 @@
     },
     "available": "Slobodni termini dostupni",
     "title": "Dobijte profesionalnu web stranicu",
-    "highlight": "kojom vi upravljate",
+    "highlight": "koja dovodi klijente",
     "price": "– 140 EUR/god",
     "subtitle": "Izrađujemo web stranice za poduzetnike i male tvrtke. Jedna poruka i vaša stranica je uživo za 1-2 tjedna.",
     "benefits": [
       "Profesionalna web stranica za 1-2 tjedna",
       "Domena i hosting su uključeni",
-      "Vi je uređujete – kad god, gdje god",
-      "Pronađeni na Googleu",
+      "SEO optimizirana, pronađena na Googleu",
       "Kontakt forma za vaše klijente",
+      "Personalizirani dizajn",
       "Fiksna cijena – 140 EUR / god, bez iznenađenja",
-      "GDPR sukladnost, bez kolačića",
-      "Podrška na vašem jeziku"
+      "Godišnji pregled i osvježavanje",
+      "Brza i prilagođena mobitelu"
     ],
     "clientsNum": "50+",
     "clientsLabel": "zadovoljnih klijenata",
@@ -151,7 +150,7 @@
   "ServicesPage": {
     "meta": {
       "title": "Usluge",
-      "description": "Izrada web stranice za 140 EUR/god, upravljanje Facebook i društvenim mrežama, Google Business profil i SEO savjetovanje."
+      "description": "Izrada web stranice za 140 EUR/god, upravljanje Facebook kampanjama, Google Business profil i SEO savjetovanje."
     },
     "heroTitle": "Sve što trebate za vaš",
     "heroHighlight": "online nastup",
@@ -164,22 +163,22 @@
     "web": {
       "title": "Izrada web stranice",
       "price": "140 EUR / god",
-      "tagline": "Sve uključeno. Bez iznenađenja.",
-      "desc": "Izrađujemo profesionalnu, SEO optimiziranu jednospratnu web stranicu koju sami možete uređivati. Cilj je stranica koja nije samo lijepa, već dovodi klijente.",
-      "includes": ["Prilagođeni jednostraničan dizajn","Registracija domene i hosting","Vi uređujete – kad god, gdje god","Kontakt forma na vašoj stranici","SEO osnove (meta, alt tagovi, brzina)","Mobilno prilagođen, responzivan","SSL certifikat (https)","GDPR sukladnost, bez kolačića","Podrška na vašem jeziku"]
+      "tagline": "Jednom izgradimo, radi godinama.",
+      "desc": "Izrađujemo personaliziranu, SEO optimiziranu jednospratnu web stranicu od nule. Godišnja naknada pokriva obnovu domene, hosting i jednom godišnji pregled i osvježavanje. Svaki dodatni zahtjev izvan tog opsega – kao što su nove sekcije ili dizajnerske promjene – naplaćuje se zasebno.",
+      "includes": ["Personalizirani one-page dizajn","Registracija domene i hosting","Kontakt forma na vašoj stranici","SEO osnove (meta, alt tagovi, brzina)","Mobilno prilagođen, responzivan","SSL certifikat (https)","Godišnji pregled: osvježavanje i trend-praćenje","Dodatni zahtjevi se naplaćuju zasebno"]
     },
     "social": {
-      "title": "Upravljanje Facebookom i društvenim mrežama",
+      "title": "Facebook kampanje i upravljanje oglasima",
       "price": "Ponuda na upit",
-      "tagline": "Dosljedna prisutnost na društvenim mrežama.",
-      "desc": "Snažna prisutnost na društvenim mrežama gradi povjerenje i stalno podsjeća potencijalne klijente na vaše poslovanje. Upravljamo vašom Facebook stranicom, kreiramo sadržaj, vodimo oglase i pratimo rezultate.",
-      "includes": ["Upravljanje Facebook stranicom i objavama","Planiranje sadržaja i copywriting","Facebook oglasne kampanje","Instagram prisutnost (opcionalno)","Mjesečni izvještaj i rezultati"]
+      "tagline": "Ciljani oglasi. Mjerljivi rezultati.",
+      "desc": "Facebook Ads je najučinkovitiji način da dosegnete točno ljude koji bi kupili vašu uslugu. Upravljamo vašim kampanjama od istraživanja publike do mjesečnih izvještaja – vi se fokusirate na klijente.",
+      "includes": ["Facebook i Instagram oglasne kampanje","Istraživanje i segmentacija publike","Oglasni tekstovi i kreativni materijali","A/B testiranje","Mjesečni izvještaj i optimizacija","Upravljanje Facebook stranicom (opcionalno)"]
     },
     "gbp": {
       "title": "Postavljanje Google Business profila",
       "price": "Jednokratna naknada + mjesečno održavanje",
       "tagline": "Budite prisutni na Google karti.",
-      "desc": "Rang na prvom mjestu u lokalnoj pretrazi može donijeti stalnu struju kvalitetnih klijenata. Postavljamo i optimiziramo vaš Google Business profil: fotografije, opis, usluge, radno vrijeme – sve što je važno.",
+      "desc": "Kada netko u vašoj blizini traži uslugu poput vaše, želite biti prvi rezultat. Postavljamo i optimiziramo vaš Google Business profil: fotografije, opis, usluge, radno vrijeme – sve što je važno.",
       "includes": ["Kreiranje/optimizacija Google Business profila","Upload fotografija i opisa","Postavljanje ključnih riječi i kategorija","Strategija upravljanja recenzijama","Mjesečno održavanje i ažuriranje"]
     },
     "seo": {
@@ -203,7 +202,7 @@
     "storyP2": "Xilofon je nastao da to promijeni. Izrađujemo web stranice koje stvarno rade – koje se pojavljuju na Googleu, grade povjerenje i dovode klijente.",
     "storyP3": "Sve po fiksnoj, transparentnoj cijeni – jer vjerujemo da dobra web stranica nije luksuz, već nužnost za svako poduzeće.",
     "priceLabel": "godišnja naknada",
-    "priceSub": "Domena + hosting + uređivanje + podrška",
+    "priceSub": "Domena + hosting + godišnji pregled",
     "clientsNum": "50+",
     "clientsLabel": "poduzeća kojima smo pomogli",
     "timeNum": "1-2 tj.",

@@ -36,12 +36,12 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col items-center gap-4 py-12 text-center">
-        <CheckCircle size={48} className="text-violet-400" />
-        <h3 className="text-xl font-semibold text-white">{t("successTitle")}</h3>
-        <p className="text-white/60">{t("successText")}</p>
+        <CheckCircle size={48} className="text-violet-500" />
+        <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{t("successTitle")}</h3>
+        <p className="text-slate-500 dark:text-white/60">{t("successText")}</p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-4 text-violet-400 font-medium hover:text-violet-300 transition-colors"
+          className="mt-4 text-violet-600 dark:text-violet-400 font-medium hover:underline"
         >
           {t("newMessage")}
         </button>
@@ -50,14 +50,14 @@ export default function ContactForm() {
   }
 
   const inputClass =
-    "px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-violet-500/50 focus:border-violet-500/50 transition";
+    "px-4 py-3 rounded-xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-white/30 focus:outline-none focus:ring-2 focus:ring-violet-400/40 dark:focus:ring-violet-500/40 focus:border-violet-400 dark:focus:border-violet-500/50 transition";
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="name" className="text-sm font-medium text-white/60">
-            {t("name")} <span className="text-violet-400">*</span>
+          <label htmlFor="name" className="text-sm font-medium text-slate-600 dark:text-white/60">
+            {t("name")} <span className="text-violet-500">*</span>
           </label>
           <input
             id="name"
@@ -71,8 +71,8 @@ export default function ContactForm() {
           />
         </div>
         <div className="flex flex-col gap-1.5">
-          <label htmlFor="email" className="text-sm font-medium text-white/60">
-            {t("email")} <span className="text-violet-400">*</span>
+          <label htmlFor="email" className="text-sm font-medium text-slate-600 dark:text-white/60">
+            {t("email")} <span className="text-violet-500">*</span>
           </label>
           <input
             id="email"
@@ -88,8 +88,8 @@ export default function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="phone" className="text-sm font-medium text-white/60">
-          {t("phone")} <span className="text-white/30 text-xs">{t("phoneOptional")}</span>
+        <label htmlFor="phone" className="text-sm font-medium text-slate-600 dark:text-white/60">
+          {t("phone")} <span className="text-slate-400 dark:text-white/30 text-xs">{t("phoneOptional")}</span>
         </label>
         <input
           id="phone"
@@ -103,8 +103,8 @@ export default function ContactForm() {
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor="message" className="text-sm font-medium text-white/60">
-          {t("message")} <span className="text-violet-400">*</span>
+        <label htmlFor="message" className="text-sm font-medium text-slate-600 dark:text-white/60">
+          {t("message")} <span className="text-violet-500">*</span>
         </label>
         <textarea
           id="message"
@@ -119,7 +119,7 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <div className="flex items-center gap-2 text-red-400 text-sm">
+        <div className="flex items-center gap-2 text-red-500 dark:text-red-400 text-sm">
           <AlertCircle size={16} />
           {t("errorText")}
         </div>
@@ -140,10 +140,10 @@ export default function ContactForm() {
         )}
       </button>
 
-      <p className="text-xs text-white/30 text-center">
+      <p className="text-xs text-slate-400 dark:text-white/30 text-center">
         {t.rich("privacyNote", {
           link: (chunks) => (
-            <Link key="privacy" href="/adatkezeles" className="underline hover:text-white/60 transition-colors">
+            <Link key="privacy" href="/adatkezeles" className="underline hover:text-slate-600 dark:hover:text-white/60 transition-colors">
               {chunks}
             </Link>
           ),

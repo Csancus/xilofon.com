@@ -27,15 +27,15 @@ export default function LanguageSwitcher({ currentLocale }: Props) {
   }
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center gap-0.5">
       {routing.locales.map((locale) => (
         <button
           key={locale}
           onClick={() => switchLocale(locale)}
           className={`text-xs font-semibold px-2 py-1 rounded transition-colors ${
             locale === currentLocale
-              ? "text-white bg-white/10"
-              : "text-white/40 hover:text-white/70"
+              ? "text-slate-900 dark:text-white bg-slate-100 dark:bg-white/10"
+              : "text-slate-400 dark:text-white/40 hover:text-slate-700 dark:hover:text-white/70"
           }`}
         >
           {labels[locale]}

@@ -2,16 +2,18 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useTheme } from "./ThemeProvider";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const t = useTranslations("Navbar");
   const locale = useLocale();
   const pathname = usePathname();
+  const { theme, toggle } = useTheme();
 
   const links = [
     { href: "/szolgaltatasok" as const, label: t("services") },
@@ -19,7 +21,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur-xl border-b border-white/[0.06]">
+    <header className="sticky top-0 z-50 bg-white/95 dark:bg-zinc-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-white/[0.06]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center">
@@ -28,7 +30,7 @@ export default function Navbar() {
               alt="Xilofon"
               width={120}
               height={40}
-              className="h-8 w-auto brightness-0 invert"
+              className="h-8 w-auto dark:brightness-0 dark:invert"
               priority
             />
           </Link>
@@ -40,8 +42,8 @@ export default function Navbar() {
                 href={l.href}
                 className={`text-sm font-medium transition-colors ${
                   pathname === l.href
-                    ? "text-white"
-                    : "text-white/50 hover:text-white/90"
+                    ? "text-slate-900 dark:text-white"
+                    : "text-slate-500 dark:text-white/50 hover:text-slate-800 dark:hover:text-white/90"
                 }`}
               >
                 {l.label}
@@ -49,8 +51,15 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher currentLocale={locale} />
+            <button
+              onClick={toggle}
+              className="p-2 rounded-lg text-slate-500 dark:text-white/50 hover:text-slate-800 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+              aria-label="Toggle theme"
+            >
+              {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
             <Link
               href="/landing"
               className="inline-flex items-center px-5 py-2 rounded-full bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-colors"
@@ -61,7 +70,7 @@ export default function Navbar() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/5"
+            className="md:hidden p-2 rounded-lg text-slate-600 dark:text-white/60 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/5"
             aria-label="Menü"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
@@ -70,19 +79,27 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-white/[0.06] bg-zinc-950 px-4 py-4 flex flex-col gap-4">
+        <div className="md:hidden border-t border-slate-200 dark:border-white/[0.06] bg-white dark:bg-zinc-950 px-4 py-4 flex flex-col gap-4">
           {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="text-base font-medium text-white/70 hover:text-white"
+              className="text-base font-medium text-slate-700 dark:text-white/70 hover:text-slate-900 dark:hover:text-white"
             >
               {l.label}
             </Link>
           ))}
-          <div className="flex items-center justify-between pt-2 border-t border-white/[0.06]">
-            <LanguageSwitcher currentLocale={locale} />
+          <div className="flex items-center justify-between pt-2 border-t border-slate-200 dark:border-white/[0.06]">
+            <div className="flex items-center gap-3">
+              <LanguageSwitcher currentLocale={locale} />
+              <button
+                onClick={toggle}
+                className="p-2 rounded-lg text-slate-500 dark:text-white/50 hover:bg-slate-100 dark:hover:bg-white/5 transition-colors"
+              >
+                {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+              </button>
+            </div>
             <Link
               href="/landing"
               onClick={() => setOpen(false)}

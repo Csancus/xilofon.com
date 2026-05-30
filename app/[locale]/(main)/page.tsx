@@ -28,25 +28,24 @@ export default async function HomePage({ params }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-zinc-950 text-white">
-        {/* gradient orbs */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-white to-indigo-50 dark:from-zinc-950 dark:via-zinc-950 dark:to-zinc-950">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-violet-600/20 blur-[120px]" />
-          <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-indigo-600/15 blur-[100px]" />
+          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-violet-400/20 dark:bg-violet-600/20 blur-[120px]" />
+          <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-indigo-400/15 dark:bg-indigo-600/15 blur-[100px]" />
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-28 md:py-36">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-violet-500/10 border border-violet-500/20 text-violet-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-violet-100 dark:bg-violet-500/10 border border-violet-200 dark:border-violet-500/20 text-violet-700 dark:text-violet-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
               {t("hero.badge")}
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6">
+            <h1 className="text-5xl md:text-7xl font-bold leading-[1.05] tracking-tight mb-6 text-slate-900 dark:text-white">
               {t("hero.title")}{" "}
-              <span className="bg-gradient-to-r from-violet-400 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-violet-600 via-purple-500 to-indigo-500 dark:from-violet-400 dark:via-purple-400 dark:to-indigo-400 bg-clip-text text-transparent">
                 {t("hero.highlight")}
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-white/60 leading-relaxed mb-10 max-w-2xl">
+            <p className="text-lg md:text-xl text-slate-600 dark:text-white/60 leading-relaxed mb-10 max-w-2xl">
               {t("hero.subtitle")}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -59,7 +58,7 @@ export default async function HomePage({ params }: Props) {
               </Link>
               <Link
                 href="/szolgaltatasok"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-white/15 hover:border-white/30 hover:bg-white/5 text-white/70 hover:text-white font-semibold text-lg transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-full border border-slate-300 dark:border-white/15 hover:border-slate-400 dark:hover:border-white/30 hover:bg-slate-50 dark:hover:bg-white/5 text-slate-700 dark:text-white/70 hover:text-slate-900 dark:hover:text-white font-semibold text-lg transition-all"
               >
                 {t("hero.secondaryCta")}
               </Link>
@@ -69,12 +68,12 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* Social proof strip */}
-      <section className="bg-zinc-900/50 border-y border-white/[0.06] py-5">
+      <section className="bg-violet-50 dark:bg-zinc-900/50 border-y border-violet-100 dark:border-white/[0.06] py-5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 text-sm text-white/50">
+          <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 text-sm text-slate-600 dark:text-white/50">
             {(["cookie", "gdpr", "domain", "speed", "support"] as const).map((key) => (
               <span key={key} className="flex items-center gap-2">
-                <Check size={14} className="text-violet-400 flex-shrink-0" />
+                <Check size={14} className="text-violet-600 dark:text-violet-400 flex-shrink-0" />
                 {t(`strip.${key}`)}
               </span>
             ))}
@@ -83,13 +82,13 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* Services */}
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white dark:bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
               {t("servicesTitle")}
             </h2>
-            <p className="text-lg text-white/50 max-w-xl mx-auto">
+            <p className="text-lg text-slate-500 dark:text-white/50 max-w-xl mx-auto">
               {t("servicesSubtitle")}
             </p>
           </div>
@@ -99,20 +98,20 @@ export default async function HomePage({ params }: Props) {
               return (
                 <div
                   key={key}
-                  className="p-7 rounded-2xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 hover:bg-white/[0.05] transition-all group"
+                  className="p-7 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.07] hover:border-violet-300 dark:hover:border-violet-500/30 shadow-sm dark:shadow-none hover:shadow-md dark:hover:shadow-none transition-all group"
                 >
                   <div className="flex items-start gap-5">
-                    <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-violet-500/10 group-hover:bg-violet-500/15 flex items-center justify-center transition-colors">
-                      <Icon size={20} className="text-violet-400" />
+                    <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-violet-50 dark:bg-violet-500/10 group-hover:bg-violet-100 dark:group-hover:bg-violet-500/15 flex items-center justify-center transition-colors">
+                      <Icon size={20} className="text-violet-600 dark:text-violet-400" />
                     </div>
                     <div>
                       <div className="flex items-center gap-3 mb-2 flex-wrap">
-                        <h3 className="text-base font-semibold text-white">{t(`${key}.title`)}</h3>
-                        <span className="text-xs font-medium bg-white/5 border border-white/10 text-white/50 px-2.5 py-1 rounded-full">
+                        <h3 className="text-base font-semibold text-slate-900 dark:text-white">{t(`${key}.title`)}</h3>
+                        <span className="text-xs font-medium bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-500 dark:text-white/50 px-2.5 py-1 rounded-full">
                           {t(`${key}.tag`)}
                         </span>
                       </div>
-                      <p className="text-white/50 text-sm leading-relaxed">{t(`${key}.desc`)}</p>
+                      <p className="text-slate-500 dark:text-white/50 text-sm leading-relaxed">{t(`${key}.desc`)}</p>
                     </div>
                   </div>
                 </div>
@@ -122,7 +121,7 @@ export default async function HomePage({ params }: Props) {
           <div className="text-center mt-10">
             <Link
               href="/szolgaltatasok"
-              className="inline-flex items-center gap-2 text-violet-400 hover:text-violet-300 font-medium transition-colors text-sm"
+              className="inline-flex items-center gap-2 text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 font-medium transition-colors text-sm"
             >
               {t("servicesMore")}
               <ArrowRight size={15} />
@@ -132,31 +131,31 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* Pricing */}
-      <section className="py-24 bg-zinc-900/30">
+      <section className="py-24 bg-slate-50 dark:bg-zinc-900/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
               {t("pricingTitle")}
             </h2>
-            <p className="text-lg text-white/50">{t("pricingSubtitle")}</p>
+            <p className="text-lg text-slate-500 dark:text-white/50">{t("pricingSubtitle")}</p>
           </div>
           <div className="max-w-sm mx-auto">
-            <div className="relative p-8 rounded-3xl bg-gradient-to-b from-violet-500/10 to-transparent border border-violet-500/30 text-center">
+            <div className="relative p-8 rounded-3xl bg-gradient-to-b from-violet-50 to-white dark:from-violet-500/10 dark:to-transparent border-2 border-violet-300 dark:border-violet-500/30 text-center shadow-lg dark:shadow-none">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                 <span className="bg-violet-600 text-white text-xs font-semibold px-4 py-1.5 rounded-full">
                   {t("pricingPopular")}
                 </span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-2">{t("pricingPackage")}</h3>
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{t("pricingPackage")}</h3>
               <div className="flex items-end justify-center gap-1 my-6">
-                <span className="text-6xl font-bold text-white">140</span>
-                <span className="text-2xl font-semibold text-white/50 mb-1.5">EUR</span>
-                <span className="text-white/40 mb-1.5">/év</span>
+                <span className="text-6xl font-bold text-slate-900 dark:text-white">140</span>
+                <span className="text-2xl font-semibold text-slate-400 dark:text-white/50 mb-1.5">EUR</span>
+                <span className="text-slate-400 dark:text-white/40 mb-1.5">/év</span>
               </div>
               <ul className="text-left space-y-3 mb-8">
                 {(t.raw("features") as string[]).map((f: string) => (
-                  <li key={f} className="flex items-center gap-3 text-white/70 text-sm">
-                    <Check size={15} className="text-violet-400 flex-shrink-0" />
+                  <li key={f} className="flex items-center gap-3 text-slate-700 dark:text-white/70 text-sm">
+                    <Check size={15} className="text-violet-600 dark:text-violet-400 flex-shrink-0" />
                     {f}
                   </li>
                 ))}
@@ -167,29 +166,29 @@ export default async function HomePage({ params }: Props) {
               >
                 {t("pricingCta")}
               </Link>
-              <p className="text-xs text-white/30 mt-4">{t("pricingNote")}</p>
+              <p className="text-xs text-slate-400 dark:text-white/30 mt-4">{t("pricingNote")}</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-white dark:bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
               {t("stepsTitle")}
             </h2>
-            <p className="text-lg text-white/50">{t("stepsSubtitle")}</p>
+            <p className="text-lg text-slate-500 dark:text-white/50">{t("stepsSubtitle")}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {(["1", "2", "3"] as const).map((n) => (
               <div key={n} className="relative">
-                <div className="text-7xl font-bold bg-gradient-to-b from-violet-500/20 to-transparent bg-clip-text text-transparent mb-4 leading-none select-none">
+                <div className="text-7xl font-bold bg-gradient-to-b from-violet-400/40 dark:from-violet-500/20 to-transparent bg-clip-text text-transparent mb-4 leading-none select-none">
                   0{n}
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">{t(`step${n}Title`)}</h3>
-                <p className="text-white/50 leading-relaxed text-sm">{t(`step${n}Desc`)}</p>
+                <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-3">{t(`step${n}Title`)}</h3>
+                <p className="text-slate-500 dark:text-white/50 leading-relaxed text-sm">{t(`step${n}Desc`)}</p>
               </div>
             ))}
           </div>
@@ -197,13 +196,13 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-zinc-900/30 relative overflow-hidden">
+      <section className="py-24 bg-slate-50 dark:bg-zinc-900/30 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-violet-600/10 blur-[120px]" />
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-violet-400/10 dark:bg-violet-600/10 blur-[120px]" />
         </div>
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
               {t("testimonialsTitle")}
             </h2>
           </div>
@@ -211,19 +210,19 @@ export default async function HomePage({ params }: Props) {
             {(["1", "2", "3"] as const).map((n) => (
               <div
                 key={n}
-                className="p-7 rounded-2xl bg-white/[0.03] border border-white/[0.07]"
+                className="p-7 rounded-2xl bg-white dark:bg-white/[0.03] border border-slate-200 dark:border-white/[0.07] shadow-sm dark:shadow-none"
               >
                 <div className="flex gap-1 mb-5">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={13} className="text-violet-400 fill-violet-400" />
+                    <Star key={j} size={13} className="text-violet-500 fill-violet-500" />
                   ))}
                 </div>
-                <p className="text-white/60 leading-relaxed mb-6 text-sm">
+                <p className="text-slate-600 dark:text-white/60 leading-relaxed mb-6 text-sm">
                   &ldquo;{t(`t${n}Text`)}&rdquo;
                 </p>
                 <div>
-                  <div className="text-sm font-semibold text-white">{t(`t${n}Name`)}</div>
-                  <div className="text-xs text-white/40">{t(`t${n}Role`)}</div>
+                  <div className="text-sm font-semibold text-slate-900 dark:text-white">{t(`t${n}Name`)}</div>
+                  <div className="text-xs text-slate-400 dark:text-white/40">{t(`t${n}Role`)}</div>
                 </div>
               </div>
             ))}
@@ -232,13 +231,13 @@ export default async function HomePage({ params }: Props) {
       </section>
 
       {/* Contact */}
-      <section id="kapcsolat" className="py-24 bg-zinc-950">
+      <section id="kapcsolat" className="py-24 bg-white dark:bg-zinc-950">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
               {t("contactTitle")}
             </h2>
-            <p className="text-lg text-white/50">{t("contactSubtitle")}</p>
+            <p className="text-lg text-slate-500 dark:text-white/50">{t("contactSubtitle")}</p>
           </div>
           <div className="max-w-lg mx-auto">
             <ContactForm />

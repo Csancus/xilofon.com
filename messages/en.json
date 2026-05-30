@@ -41,44 +41,44 @@
   "HomePage": {
     "meta": {
       "title": "Xilofon Digital | Website Design for Small Businesses",
-      "description": "Professional website creation at a fixed €140/year. SEO-friendly pages, Facebook management, Google Business and SEO consulting."
+      "description": "Professional website creation at a fixed €140/year. SEO-friendly pages, Facebook ad management, Google Business and SEO consulting."
     },
     "hero": {
       "badge": "Fixed price • €140 / year • No surprises",
-      "title": "Professional website,",
-      "highlight": "that you control",
-      "subtitle": "We build SEO-friendly websites for freelancers and small businesses. One fixed annual fee – domain, hosting, editing and support all included.",
+      "title": "Professional website",
+      "highlight": "that brings you clients",
+      "subtitle": "We build SEO-friendly websites for freelancers and small businesses. One fixed annual fee – domain, hosting and yearly maintenance all included.",
       "primaryCta": "Get a free quote",
       "secondaryCta": "Services"
     },
     "strip": {
-      "cookie": "Cookie-free website",
-      "gdpr": "GDPR compliant",
-      "domain": "Domain + hosting included",
-      "speed": "Live in 1-2 weeks",
-      "support": "Dedicated support"
+      "cookie": "Domain + hosting included",
+      "gdpr": "Live in 1-2 weeks",
+      "domain": "SEO-optimized",
+      "speed": "Annual review & refresh",
+      "support": "Fast and mobile-friendly"
     },
     "servicesTitle": "How we can help",
     "servicesSubtitle": "Everything a small business needs to build a strong online presence.",
     "servicesMore": "See all services",
     "web": {
       "title": "Website creation",
-      "desc": "Professional one-page website that you can edit yourself. SEO-optimized, fast, and with a contact form.",
+      "desc": "A custom, SEO-friendly one-page website we build with care. The annual fee covers domain, hosting and one yearly review and refresh.",
       "tag": "€140 / year"
     },
     "social": {
-      "title": "Facebook & Social Media",
-      "desc": "Strategic content management, ads and building your social media presence – more clients, stronger brand.",
+      "title": "Facebook campaigns & ads",
+      "desc": "We manage your Facebook campaigns from strategy to results: content planning, targeted ads, and monthly performance tracking.",
       "tag": "Quote on request"
     },
     "gbp": {
       "title": "Google Business Profile",
-      "desc": "Local SEO: get your business on Google Maps and start collecting online reviews.",
+      "desc": "Local SEO: get your business on Google Maps and start collecting reviews from real clients.",
       "tag": "Quote on request"
     },
     "seo": {
       "title": "SEO consulting",
-      "desc": "Keyword research, technical audit and content strategy – to rank higher on Google.",
+      "desc": "Keyword research, technical audit and content strategy – to rank where your clients are searching.",
       "tag": "Quote on request"
     },
     "pricingTitle": "Transparent pricing",
@@ -89,12 +89,11 @@
     "pricingNote": "Annual fee, renewable. No commitment.",
     "features": [
       "Domain and hosting included",
-      "You edit it – anytime",
       "Contact form",
       "SEO-friendly (basics)",
       "Fast and beautiful on mobile",
-      "GDPR compliant",
-      "Dedicated support",
+      "Custom one-page design",
+      "Annual review & refresh included",
       "Fixed price, no surprises"
     ],
     "stepsTitle": "How does it work?",
@@ -103,18 +102,18 @@
     "step1Desc": "Send a short message – tell us what you do and what you want to achieve.",
     "step2Title": "We build your website",
     "step2Desc": "We take care of everything: design, copy, domain, hosting – all included.",
-    "step3Title": "You edit, clients come",
-    "step3Desc": "You get access to edit content anytime, and Google finds your site.",
+    "step3Title": "You appear on Google",
+    "step3Desc": "Your site goes live, Google finds it, and clients start finding your business.",
     "testimonialsTitle": "What our clients say",
     "t1Name": "Sarah M.",
     "t1Role": "Massage therapist",
     "t1Text": "I used to rely only on Facebook. Now new clients come through my website, and I get more bookings every month.",
-    "t2Name": "Peter B.",
-    "t2Role": "Electrician",
-    "t2Text": "It's incredible what you get for €140. I'm on the first page of Google in my city.",
+    "t2Name": "Michael O.",
+    "t2Role": "Personal trainer",
+    "t2Text": "Two weeks after launch I was already on the first page of Google. What you get for €140 is truly remarkable.",
     "t3Name": "Kate N.",
     "t3Role": "Accountant",
-    "t3Text": "I was afraid of digital marketing. The team guided me through everything, and now I have a professional website.",
+    "t3Text": "I was afraid of digital marketing. The team guided me through everything, and now I have a professional website that actually brings clients.",
     "contactTitle": "Get in touch!",
     "contactSubtitle": "Tell us about your business – we'll get back to you within 1-2 business days."
   },
@@ -125,18 +124,18 @@
     },
     "available": "Slots available now",
     "title": "Get a professional website",
-    "highlight": "that you control",
+    "highlight": "that brings you clients",
     "price": "– €140/year",
     "subtitle": "We build SEO-friendly websites for freelancers and small businesses. One message, and your site is live within 1-2 weeks.",
     "benefits": [
-      "Professional website in 1-2 weeks",
+      "Professional website, live in 1-2 weeks",
       "Domain and hosting included",
-      "You edit it – anytime, anywhere",
-      "Found on Google",
+      "SEO-optimized, found on Google",
       "Contact form for your clients",
+      "Custom one-page design",
       "Fixed price – €140 / year, no surprises",
-      "GDPR compliant, cookie-free",
-      "Dedicated support"
+      "Annual review and refresh included",
+      "Fast and mobile-friendly"
     ],
     "clientsNum": "50+",
     "clientsLabel": "happy clients",
@@ -151,7 +150,7 @@
   "ServicesPage": {
     "meta": {
       "title": "Services",
-      "description": "Website creation at €140/year, Facebook and social media management, Google Business Profile setup and SEO consulting."
+      "description": "Website creation at €140/year, Facebook ad campaign management, Google Business Profile setup and SEO consulting."
     },
     "heroTitle": "Everything you need for your",
     "heroHighlight": "online presence",
@@ -164,22 +163,22 @@
     "web": {
       "title": "Website creation",
       "price": "€140 / year",
-      "tagline": "Everything included. No surprises.",
-      "desc": "We build a professional, SEO-friendly one-page website that you can edit yourself. The goal: a site that's not just beautiful, but brings you clients.",
-      "includes": ["Custom one-page design","Domain registration and hosting","You edit – anytime, anywhere","Contact form on your site","SEO basics (meta, alt tags, speed)","Mobile-friendly, responsive","SSL certificate (https)","GDPR compliant, cookie-free","Dedicated support"]
+      "tagline": "Built once, works for years.",
+      "desc": "We build a custom, SEO-friendly one-page website from scratch – design, copy, domain and hosting all included. The annual fee covers domain renewal, hosting and one yearly review and refresh. Any additional requests beyond this scope – such as new sections or design changes – are charged separately.",
+      "includes": ["Custom one-page design","Domain registration and hosting","Contact form on your site","SEO basics (meta, alt tags, speed)","Mobile-friendly, responsive","SSL certificate (https)","Annual review: refresh & trend update","Extra requests charged separately"]
     },
     "social": {
-      "title": "Facebook & Social Media management",
+      "title": "Facebook campaigns & ad management",
       "price": "Quote on request",
-      "tagline": "Consistent presence on social media.",
-      "desc": "A strong social media presence builds trust and keeps your business top-of-mind for potential clients. We manage your Facebook page, create content, run ads and track results.",
-      "includes": ["Facebook page management and posting","Content planning and copywriting","Facebook ad campaigns","Instagram presence (optional)","Monthly report and results"]
+      "tagline": "Targeted ads. Measurable results.",
+      "desc": "Facebook Ads is the most effective way to reach exactly the people who would buy your service. We manage your campaigns end-to-end – from audience research to monthly reporting – so you can focus on your clients.",
+      "includes": ["Facebook and Instagram ad campaigns","Audience research and targeting","Ad copy and creative assets","A/B testing","Monthly performance report and optimization","Facebook page management (optional)"]
     },
     "gbp": {
       "title": "Google Business Profile setup",
       "price": "One-time fee + monthly maintenance",
       "tagline": "Put your business on Google Maps.",
-      "desc": "Ranking first in local search can bring a steady stream of quality clients. We set up and optimize your Google Business Profile: photos, description, services, hours – everything that matters.",
+      "desc": "When someone nearby searches for a service like yours, you want to be the first result they see. We set up and optimize your Google Business Profile: photos, description, services, hours – everything that matters.",
       "includes": ["Google Business Profile creation/optimization","Photo and description upload","Keywords and categories setup","Review management strategy","Monthly maintenance and updates"]
     },
     "seo": {
@@ -203,7 +202,7 @@
     "storyP2": "Xilofon was created to change that. We build websites that actually work – that show up on Google, build trust, and bring clients.",
     "storyP3": "All at a fixed, transparent price – because we believe a good website isn't a luxury, it's a necessity for every business.",
     "priceLabel": "annual fee",
-    "priceSub": "Domain + hosting + editing + support",
+    "priceSub": "Domain + hosting + annual review",
     "clientsNum": "50+",
     "clientsLabel": "businesses we've helped",
     "timeNum": "1-2 wks",

@@ -7,7 +7,7 @@ export default async function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-zinc-950 border-t border-white/[0.06] text-white/50">
+    <footer className="bg-slate-900 dark:bg-zinc-950 border-t border-white/[0.06] text-slate-400">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           <div>
@@ -28,10 +28,10 @@ export default async function Footer() {
               {t("navTitle")}
             </h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/" className="hover:text-white/90 transition-colors">{t("home")}</Link></li>
-              <li><Link href="/szolgaltatasok" className="hover:text-white/90 transition-colors">{t("services")}</Link></li>
-              <li><Link href="/rolunk" className="hover:text-white/90 transition-colors">{t("about")}</Link></li>
-              <li><Link href="/landing" className="hover:text-white/90 transition-colors">{t("quote")}</Link></li>
+              <li><Link href="/" className="hover:text-white transition-colors">{t("home")}</Link></li>
+              <li><Link href="/szolgaltatasok" className="hover:text-white transition-colors">{t("services")}</Link></li>
+              <li><Link href="/rolunk" className="hover:text-white transition-colors">{t("about")}</Link></li>
+              <li><Link href="/landing" className="hover:text-white transition-colors">{t("quote")}</Link></li>
             </ul>
           </div>
 
@@ -40,8 +40,8 @@ export default async function Footer() {
               {t("legalTitle")}
             </h3>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/aszf" className="hover:text-white/90 transition-colors">{t("aszf")}</Link></li>
-              <li><Link href="/adatkezeles" className="hover:text-white/90 transition-colors">{t("privacy")}</Link></li>
+              <li><Link href="/aszf" className="hover:text-white transition-colors">{t("aszf")}</Link></li>
+              <li><Link href="/adatkezeles" className="hover:text-white transition-colors">{t("privacy")}</Link></li>
             </ul>
           </div>
         </div>
