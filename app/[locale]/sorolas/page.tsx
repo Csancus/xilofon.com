@@ -18,10 +18,10 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    hu: "Júniusi referencia ajánlat – 70 EUR weboldal | Xilofon Digital",
-    en: "June reference offer – €70 website | Xilofon Digital",
-    hr: "Lipanjska referentna ponuda – 70 EUR web stranica | Xilofon Digital",
-    ro: "Ofertă referință iunie – 70 EUR site | Xilofon Digital",
+    hu: "Júniusi referencia ajánlat – 94 EUR weboldal | Xilofon Digital",
+    en: "June reference offer – €94 website | Xilofon Digital",
+    hr: "Lipanjska referentna ponuda – 94 EUR web stranica | Xilofon Digital",
+    ro: "Ofertă referință iunie – 94 EUR site | Xilofon Digital",
   };
   return { title: titles[locale] ?? titles.hu };
 }
@@ -50,10 +50,10 @@ const copy: Record<Locale, {
     badge: "Június • 5 hely • Referencia ajánlat",
     spotsLeft: "Maradék helyek: 4/5",
     title: "Weboldal most",
-    highlight: "70 EUR-ért",
+    highlight: "94 EUR-ért",
     normalPrice: "Normál ár: 188 EUR / év",
-    offerPrice: "Júniusi ár: 70 EUR / év",
-    subtitle: "Júniusban 5 partnernek feleáron – 70 EUR-ért – készítünk weboldalat, referencia munka céljából. Ugyanaz a minőség, ugyanaz a csomag, fél áron.",
+    offerPrice: "Júniusi ár: 94 EUR / év",
+    subtitle: "Júniusban 5 partnernek feleáron – 94 EUR-ért – készítünk weboldalat, referencia munka céljából. Ugyanaz a minőség, ugyanaz a csomag, fél áron.",
     bullets: [
       "Személyre szabott one-page weboldal",
       "Domain és hosting benne",
@@ -86,10 +86,10 @@ const copy: Record<Locale, {
     badge: "June • 5 spots • Reference offer",
     spotsLeft: "Spots remaining: 4/5",
     title: "Website now for",
-    highlight: "€70",
+    highlight: "€94",
     normalPrice: "Regular price: €188 / year",
-    offerPrice: "June price: €70 / year",
-    subtitle: "In June we're building 5 websites at half price – €70 – for reference clients. Same quality, same package, half the price.",
+    offerPrice: "June price: €94 / year",
+    subtitle: "In June we're building 5 websites at half price – €94 – for reference clients. Same quality, same package, half the price.",
     bullets: [
       "Custom one-page website",
       "Domain and hosting included",
@@ -122,10 +122,10 @@ const copy: Record<Locale, {
     badge: "Lipanj • 5 mjesta • Referentna ponuda",
     spotsLeft: "Preostala mjesta: 4/5",
     title: "Web stranica sada za",
-    highlight: "70 EUR",
+    highlight: "94 EUR",
     normalPrice: "Redovna cijena: 188 EUR / god",
-    offerPrice: "Lipanjska cijena: 70 EUR / god",
-    subtitle: "U lipnju izrađujemo 5 web stranica po pola cijene – 70 EUR – za referentne klijente. Ista kvaliteta, isti paket, pola cijene.",
+    offerPrice: "Lipanjska cijena: 94 EUR / god",
+    subtitle: "U lipnju izrađujemo 5 web stranica po pola cijene – 94 EUR – za referentne klijente. Ista kvaliteta, isti paket, pola cijene.",
     bullets: [
       "Personalizirana one-page web stranica",
       "Domena i hosting uključeni",
@@ -158,10 +158,10 @@ const copy: Record<Locale, {
     badge: "Iunie • 5 locuri • Ofertă referință",
     spotsLeft: "Locuri rămase: 4/5",
     title: "Site acum la",
-    highlight: "70 EUR",
+    highlight: "94 EUR",
     normalPrice: "Preț normal: 188 EUR / an",
-    offerPrice: "Preț iunie: 70 EUR / an",
-    subtitle: "În iunie realizăm 5 site-uri la jumătate de preț – 70 EUR – pentru clienți de referință. Aceeași calitate, același pachet, jumătate din preț.",
+    offerPrice: "Preț iunie: 94 EUR / an",
+    subtitle: "În iunie realizăm 5 site-uri la jumătate de preț – 94 EUR – pentru clienți de referință. Aceeași calitate, același pachet, jumătate din preț.",
     bullets: [
       "Site one-page personalizat",
       "Domeniu și hosting incluse",

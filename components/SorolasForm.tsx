@@ -18,6 +18,7 @@ const labels: Record<Locale, {
   successTitle: string; successText: string;
   errorText: string;
   consentPrivacy: string; consentAszf: string; consentLabel: string;
+  interestedLabel: string; interestedYes: string; interestedNo: string;
 }> = {
   hu: {
     name: "Teljes neve", namePh: "Kovács János",
@@ -35,6 +36,8 @@ const labels: Record<Locale, {
     successText: "1-2 munkanapon belül visszajelzünk.",
     errorText: "Hiba történt. Kérjük, próbáld újra.",
     consentLabel: "Elfogadom az", consentPrivacy: "adatkezelési tájékoztatót", consentAszf: "ÁSZF-et",
+    interestedLabel: "Ha nem kerülnél be az 5 partner közé, akkor is érdekel az oldal évi 188 EUR-ért?",
+    interestedYes: "Igen, érdekel", interestedNo: "Nem most",
   },
   en: {
     name: "Full name", namePh: "John Smith",
@@ -52,6 +55,8 @@ const labels: Record<Locale, {
     successText: "We'll be in touch within 1-2 business days.",
     errorText: "Something went wrong. Please try again.",
     consentLabel: "I accept the", consentPrivacy: "Privacy Policy", consentAszf: "Terms of Service",
+    interestedLabel: "If you don't get selected as one of the 5 partners, would you still be interested in the site for €188/year?",
+    interestedYes: "Yes, I'm interested", interestedNo: "Not right now",
   },
   hr: {
     name: "Puno ime", namePh: "Ivan Horvat",
@@ -69,6 +74,8 @@ const labels: Record<Locale, {
     successText: "Javit ćemo se u roku 1-2 radna dana.",
     errorText: "Došlo je do pogreške. Molimo pokušajte ponovo.",
     consentLabel: "Prihvaćam", consentPrivacy: "Pravila privatnosti", consentAszf: "Opće uvjete poslovanja",
+    interestedLabel: "Ako ne budeš odabran/a među 5 partnera, zanima li te stranica za 188 EUR/god?",
+    interestedYes: "Da, zanima me", interestedNo: "Ne, hvala",
   },
   ro: {
     name: "Nume complet", namePh: "Ion Popescu",
@@ -86,6 +93,8 @@ const labels: Record<Locale, {
     successText: "Te vom contacta în 1-2 zile lucrătoare.",
     errorText: "A apărut o eroare. Te rugăm să încerci din nou.",
     consentLabel: "Accept", consentPrivacy: "Politica de confidențialitate", consentAszf: "Termenii și condițiile",
+    interestedLabel: "Dacă nu ești selectat/ă dintre cei 5 parteneri, te interesează site-ul la 188 EUR/an?",
+    interestedYes: "Da, mă interesează", interestedNo: "Nu acum",
   },
 };
 
@@ -97,7 +106,7 @@ export default function SorolasForm({ locale }: Props) {
   const [consent, setConsent] = useState(false);
   const [form, setForm] = useState({
     name: "", company: "", email: "", phone: "",
-    platform: "", domain: "", industry: "",
+    platform: "", domain: "", industry: "", interested: "",
   });
 
   const set = (k: keyof typeof form) =>
@@ -114,7 +123,7 @@ export default function SorolasForm({ locale }: Props) {
       const res = await fetch("/api/sorolas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, lottery: "–", interested: "–" }),
+        body: JSON.stringify({ ...form, lottery: "–" }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -204,6 +213,14 @@ export default function SorolasForm({ locale }: Props) {
           value={form.industry}
           onChange={set("industry")}
         />
+      </div>
+
+      <div>
+        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-2">{l.interestedLabel}</label>
+        <div className="space-y-2">
+          {radioOption("interested", "yes", l.interestedYes)}
+          {radioOption("interested", "no", l.interestedNo)}
+        </div>
       </div>
 
       {/* Consent checkbox */}
