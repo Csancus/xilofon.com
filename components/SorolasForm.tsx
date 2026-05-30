@@ -120,22 +120,22 @@ export default function SorolasForm({ locale }: Props) {
     return (
       <div className="text-center py-8">
         <div className="text-4xl mb-4">✅</div>
-        <h3 className="text-lg font-bold text-slate-900 mb-2">{l.successTitle}</h3>
-        <p className="text-slate-500 text-sm">{l.successText}</p>
+        <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{l.successTitle}</h3>
+        <p className="text-slate-500 dark:text-white/50 text-sm">{l.successText}</p>
       </div>
     );
   }
 
   const inputClass =
-    "w-full px-4 py-2.5 rounded-xl border border-slate-200 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 placeholder-slate-300";
+    "w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-white/[0.10] bg-white dark:bg-white/[0.05] text-slate-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 placeholder-slate-300 dark:placeholder-white/20";
 
   const radioOption = (name: string, value: string, label: string) => (
     <label
       key={value}
       className={`flex items-center gap-3 p-3 rounded-xl border cursor-pointer transition-colors ${
         form[name as keyof typeof form] === value
-          ? "border-violet-400 bg-violet-50"
-          : "border-slate-200 hover:border-violet-200"
+          ? "border-violet-400 bg-violet-50 dark:bg-violet-500/10 dark:border-violet-500"
+          : "border-slate-200 dark:border-white/[0.10] hover:border-violet-200 dark:hover:border-violet-500/40"
       }`}
     >
       <input
@@ -146,34 +146,34 @@ export default function SorolasForm({ locale }: Props) {
         onChange={() => setRadio(name as keyof typeof form, value)}
         className="accent-violet-600"
       />
-      <span className="text-sm text-slate-700">{label}</span>
+      <span className="text-sm text-slate-700 dark:text-white/70">{label}</span>
     </label>
   );
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
-        <label className="block text-xs font-semibold text-slate-600 mb-1.5">{l.name} *</label>
+        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.name} *</label>
         <input required className={inputClass} placeholder={l.namePh} value={form.name} onChange={set("name")} />
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-600 mb-1.5">{l.company}</label>
+        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.company}</label>
         <input className={inputClass} placeholder={l.companyPh} value={form.company} onChange={set("company")} />
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-600 mb-1.5">{l.email} *</label>
+        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.email} *</label>
         <input required type="email" className={inputClass} placeholder={l.emailPh} value={form.email} onChange={set("email")} />
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-600 mb-1.5">{l.phone}</label>
+        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.phone}</label>
         <input type="tel" className={inputClass} placeholder={l.phonePh} value={form.phone} onChange={set("phone")} />
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-600 mb-2">{l.platform}</label>
+        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-2">{l.platform}</label>
         <div className="space-y-2">
           {radioOption("platform", "whatsapp", l.platformWA)}
           {radioOption("platform", "email", l.platformEmail)}
@@ -181,14 +181,14 @@ export default function SorolasForm({ locale }: Props) {
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-600 mb-2">{l.domain}</label>
+        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-2">{l.domain}</label>
         <div className="space-y-2">
           {l.domainOptions.map((opt) => radioOption("domain", opt, opt))}
         </div>
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-600 mb-1.5">{l.industry}</label>
+        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.industry}</label>
         <textarea
           rows={4}
           className={`${inputClass} resize-none`}

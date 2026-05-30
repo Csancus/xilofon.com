@@ -194,14 +194,14 @@ export default async function SorolasPage({ params }: Props) {
   const c = copy[loc];
 
   return (
-    <div className="min-h-screen bg-white text-slate-900">
+    <div className="min-h-screen bg-white dark:bg-zinc-950 text-slate-900 dark:text-white">
       <Navbar />
 
       {/* Hero + Form */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-white to-indigo-50">
+      <div className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-white to-indigo-50 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-violet-400/15 blur-[120px]" />
-          <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-indigo-400/10 blur-[100px]" />
+          <div className="absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full bg-violet-400/15 dark:bg-violet-600/20 blur-[120px]" />
+          <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-indigo-400/10 dark:bg-indigo-600/15 blur-[100px]" />
         </div>
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -209,37 +209,37 @@ export default async function SorolasPage({ params }: Props) {
 
             {/* Left: value prop */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 text-amber-700 dark:text-amber-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400 animate-pulse" />
                 {c.badge}
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
                 {c.title}{" "}
-                <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-violet-600 to-indigo-500 dark:from-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
                   {c.highlight}
                 </span>
               </h1>
 
               {/* Price comparison */}
               <div className="flex items-center gap-4 mb-5">
-                <span className="text-slate-400 line-through text-lg">{c.normalPrice}</span>
-                <span className="text-violet-600 font-bold text-xl">{c.offerPrice}</span>
+                <span className="text-slate-400 dark:text-white/30 line-through text-lg">{c.normalPrice}</span>
+                <span className="text-violet-600 dark:text-violet-400 font-bold text-xl">{c.offerPrice}</span>
               </div>
 
-              <p className="text-slate-600 text-lg leading-relaxed mb-8">{c.subtitle}</p>
+              <p className="text-slate-600 dark:text-white/60 text-lg leading-relaxed mb-8">{c.subtitle}</p>
 
               {/* Spots counter */}
-              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-sm font-semibold px-4 py-2 rounded-full mb-8">
-                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2 bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-700 dark:text-green-400 text-sm font-semibold px-4 py-2 rounded-full mb-8">
+                <span className="w-2 h-2 rounded-full bg-green-500 dark:bg-green-400 animate-pulse" />
                 {c.spotsLeft}
               </div>
 
               {/* Bullets */}
               <ul className="space-y-2.5">
                 {c.bullets.map((b) => (
-                  <li key={b} className="flex items-start gap-3 text-sm text-slate-700">
-                    <Check size={15} className="text-violet-600 flex-shrink-0 mt-0.5" />
+                  <li key={b} className="flex items-start gap-3 text-sm text-slate-700 dark:text-white/70">
+                    <Check size={15} className="text-violet-600 dark:text-violet-400 flex-shrink-0 mt-0.5" />
                     {b}
                   </li>
                 ))}
@@ -248,9 +248,9 @@ export default async function SorolasPage({ params }: Props) {
 
             {/* Right: form */}
             <div>
-              <div className="p-7 rounded-2xl bg-white border border-slate-200 shadow-sm">
-                <h2 className="text-xl font-bold text-slate-900 mb-1">{c.formTitle}</h2>
-                <p className="text-slate-500 text-sm mb-6">{c.formSubtitle}</p>
+              <div className="p-7 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] shadow-sm dark:shadow-none">
+                <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{c.formTitle}</h2>
+                <p className="text-slate-500 dark:text-white/50 text-sm mb-6">{c.formSubtitle}</p>
                 <SorolasForm locale={loc} />
               </div>
             </div>
@@ -260,10 +260,10 @@ export default async function SorolasPage({ params }: Props) {
       </div>
 
       {/* Demo samples */}
-      <section className="py-16 px-4 bg-slate-50">
+      <section className="py-16 px-4 bg-slate-50 dark:bg-zinc-900">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 text-center mb-2">{c.demosTitle}</h2>
-          <p className="text-slate-500 text-center mb-10">{c.demosSubtitle}</p>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-2">{c.demosTitle}</h2>
+          <p className="text-slate-500 dark:text-white/50 text-center mb-10">{c.demosSubtitle}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {demos.map((demo) => {
               const label = demo.galleryLabel[loc];
@@ -271,14 +271,14 @@ export default async function SorolasPage({ params }: Props) {
                 <Link
                   key={demo.slug}
                   href={`/demo/${demo.slug}` as "/demo/[slug]"}
-                  className="group block rounded-2xl overflow-hidden border border-slate-200 hover:border-violet-300 hover:shadow-md transition-all bg-white"
+                  className="group block rounded-2xl overflow-hidden border border-slate-200 dark:border-white/[0.07] hover:border-violet-300 dark:hover:border-violet-500/50 hover:shadow-md transition-all bg-white dark:bg-white/[0.03]"
                 >
                   <div className={`h-20 ${demo.theme.heroBg} flex items-center justify-center text-3xl`}>
                     {demo.emoji}
                   </div>
                   <div className="p-4">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-0.5">{label.type}</div>
-                    <div className="font-bold text-slate-900 mb-1">{label.name}</div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-white/40 mb-0.5">{label.type}</div>
+                    <div className="font-bold text-slate-900 dark:text-white mb-1">{label.name}</div>
                     <div className={`text-xs font-semibold ${demo.theme.accentText} group-hover:underline`}>{c.viewDemo}</div>
                   </div>
                 </Link>
@@ -289,18 +289,18 @@ export default async function SorolasPage({ params }: Props) {
       </section>
 
       {/* Reviews */}
-      <section className="py-16 px-4 bg-white">
+      <section className="py-16 px-4 bg-white dark:bg-zinc-950">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-slate-900 text-center mb-10">{c.reviewsTitle}</h2>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-10">{c.reviewsTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {c.reviews.map((rev, i) => (
-              <div key={i} className="rounded-2xl border border-slate-200 p-6 bg-slate-50">
+              <div key={i} className="rounded-2xl border border-slate-200 dark:border-white/[0.07] p-6 bg-slate-50 dark:bg-white/[0.03]">
                 <div className="flex gap-0.5 mb-3">
                   {[1,2,3,4,5].map((s) => <Star key={s} size={13} className="fill-amber-400 text-amber-400" />)}
                 </div>
-                <p className="text-slate-700 text-sm leading-relaxed mb-4 italic">&ldquo;{rev.text}&rdquo;</p>
-                <div className="font-semibold text-slate-900 text-sm">{rev.name}</div>
-                <div className="text-xs text-slate-400">{rev.role}</div>
+                <p className="text-slate-700 dark:text-white/70 text-sm leading-relaxed mb-4 italic">&ldquo;{rev.text}&rdquo;</p>
+                <div className="font-semibold text-slate-900 dark:text-white text-sm">{rev.name}</div>
+                <div className="text-xs text-slate-400 dark:text-white/40">{rev.role}</div>
               </div>
             ))}
           </div>
@@ -308,16 +308,16 @@ export default async function SorolasPage({ params }: Props) {
       </section>
 
       {/* Other services */}
-      <section className="py-16 px-4 bg-gradient-to-br from-violet-50 to-indigo-50">
+      <section className="py-16 px-4 bg-gradient-to-br from-violet-50 to-indigo-50 dark:from-zinc-900 dark:to-zinc-950">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-slate-900 mb-10">{c.servicesTitle}</h2>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-10">{c.servicesTitle}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {c.services.map((svc, i) => (
-              <div key={i} className="rounded-2xl bg-white border border-slate-200 p-6 shadow-sm">
+              <div key={i} className="rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] p-6 shadow-sm dark:shadow-none">
                 <div className="text-3xl mb-3">{svc.emoji}</div>
-                <h3 className="font-bold text-slate-900 mb-2">{svc.title}</h3>
-                <p className="text-slate-500 text-sm mb-3">{svc.desc}</p>
-                <span className="text-xs font-semibold text-violet-600 bg-violet-50 px-2.5 py-1 rounded-full">{svc.price}</span>
+                <h3 className="font-bold text-slate-900 dark:text-white mb-2">{svc.title}</h3>
+                <p className="text-slate-500 dark:text-white/50 text-sm mb-3">{svc.desc}</p>
+                <span className="text-xs font-semibold text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 px-2.5 py-1 rounded-full">{svc.price}</span>
               </div>
             ))}
           </div>
