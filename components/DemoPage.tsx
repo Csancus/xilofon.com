@@ -398,32 +398,6 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
         </div>
       </section>
 
-      {/* FAQ */}
-      <section id="faq" className="py-16 px-4 bg-slate-50">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-2">{content.sectionFaq}</h2>
-          <div className={`w-12 h-1 ${theme.accentBg} rounded-full mx-auto mb-10`} />
-          <div className="flex flex-col gap-3">
-            {content.faq.map((item: DemoFaq, i: number) => (
-              <div key={i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
-                <button
-                  className="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-slate-900 hover:bg-slate-50 transition-colors"
-                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                >
-                  <span>{editable(item.q, (v) => setContent((c) => ({ ...c, faq: c.faq.map((f, j) => j === i ? { ...f, q: v } : f) })))}</span>
-                  <ChevronDown size={18} className={`flex-shrink-0 text-slate-400 transition-transform ${openFaq === i ? "rotate-180" : ""}`} />
-                </button>
-                {openFaq === i && (
-                  <div className="px-6 pb-4 text-slate-600 leading-relaxed text-sm border-t border-slate-100 pt-3">
-                    {editable(item.a, (v) => setContent((c) => ({ ...c, faq: c.faq.map((f, j) => j === i ? { ...f, a: v } : f) })), "p")}
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Gallery */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -470,6 +444,32 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
               e.target.value = "";
             }}
           />
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="faq" className="py-16 px-4 bg-slate-50">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-2">{content.sectionFaq}</h2>
+          <div className={`w-12 h-1 ${theme.accentBg} rounded-full mx-auto mb-10`} />
+          <div className="flex flex-col gap-3">
+            {content.faq.map((item: DemoFaq, i: number) => (
+              <div key={i} className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm">
+                <button
+                  className="w-full flex items-center justify-between px-6 py-4 text-left font-semibold text-slate-900 hover:bg-slate-50 transition-colors"
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                >
+                  <span>{editable(item.q, (v) => setContent((c) => ({ ...c, faq: c.faq.map((f, j) => j === i ? { ...f, q: v } : f) })))}</span>
+                  <ChevronDown size={18} className={`flex-shrink-0 text-slate-400 transition-transform ${openFaq === i ? "rotate-180" : ""}`} />
+                </button>
+                {openFaq === i && (
+                  <div className="px-6 pb-4 text-slate-600 leading-relaxed text-sm border-t border-slate-100 pt-3">
+                    {editable(item.a, (v) => setContent((c) => ({ ...c, faq: c.faq.map((f, j) => j === i ? { ...f, a: v } : f) })), "p")}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
