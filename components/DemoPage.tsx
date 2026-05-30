@@ -593,6 +593,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
                   </label>
 
                   {/* Field preview */}
+                  <div className={editMode ? "pointer-events-none opacity-40" : undefined}>
                   {field.type === "select" ? (
                     <select name={field.id} className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white">
                       <option value="">—</option>
@@ -608,6 +609,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
                       ))}
                     </div>
                   )}
+                  </div>
 
                   {/* Options editor (edit mode only) */}
                   {editMode && (
