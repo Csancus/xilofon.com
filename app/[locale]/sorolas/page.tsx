@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 const copy: Record<Locale, {
   badge: string;
   spotsLeft: string;
+  spotsTagline: string;
   title: string;
   highlight: string;
   normalPrice: string;
@@ -50,6 +51,7 @@ const copy: Record<Locale, {
   hu: {
     badge: "Június • 5 hely • Referencia ajánlat",
     spotsLeft: "Maradék helyek: 4/5",
+    spotsTagline: "Kedvezményes ár cserébe egy referenciáért.",
     title: "Weboldal most",
     highlight: "94 EUR-ért",
     normalPrice: "Normál ár: 188 EUR / év",
@@ -85,6 +87,7 @@ const copy: Record<Locale, {
   en: {
     badge: "June • 5 spots • Reference offer",
     spotsLeft: "Spots remaining: 4/5",
+    spotsTagline: "Special price in exchange for a reference.",
     title: "Website now for",
     highlight: "€94",
     normalPrice: "Regular price: €188 / year",
@@ -120,6 +123,7 @@ const copy: Record<Locale, {
   hr: {
     badge: "Lipanj • 5 mjesta • Referentna ponuda",
     spotsLeft: "Preostala mjesta: 4/5",
+    spotsTagline: "Posebna cijena u zamjenu za referencu.",
     title: "Web stranica sada za",
     highlight: "94 EUR",
     normalPrice: "Redovna cijena: 188 EUR / god",
@@ -155,6 +159,7 @@ const copy: Record<Locale, {
   ro: {
     badge: "Iunie • 5 locuri • Ofertă de referință",
     spotsLeft: "Locuri rămase: 4/5",
+    spotsTagline: "Preț special în schimbul unei referințe.",
     title: "Site acum la",
     highlight: "94 EUR",
     normalPrice: "Preț normal: 188 EUR / an",
@@ -220,10 +225,11 @@ export default async function SorolasPage({ params }: Props) {
             {/* Left: value prop */}
             <div>
               {/* Spots counter */}
-              <div className="inline-flex items-center gap-2 bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-700 dark:text-green-400 text-sm font-semibold px-4 py-2 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-700 dark:text-green-400 text-sm font-semibold px-4 py-2 rounded-full">
                 <span className="w-2 h-2 rounded-full bg-green-500 dark:bg-green-400 animate-pulse" />
                 {c.spotsLeft}
               </div>
+              <p className="text-xs text-slate-400 dark:text-white/30 mt-2 mb-6">{c.spotsTagline}</p>
 
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
                 {c.title}{" "}
