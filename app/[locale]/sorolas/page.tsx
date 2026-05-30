@@ -253,7 +253,10 @@ export default async function SorolasPage({ params }: Props) {
                 <p className="text-slate-500 dark:text-white/50 text-sm mb-6">{c.formSubtitle}</p>
                 <SorolasForm locale={loc} />
               </div>
-              <p className="text-xs text-slate-400 dark:text-white/30 leading-relaxed mt-3 px-1">{c.formDisclaimer}</p>
+              <div className="mt-3 flex gap-3 items-start bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 rounded-xl px-4 py-3">
+                <span className="text-lg flex-shrink-0 mt-0.5">ℹ️</span>
+                <p className="text-xs text-amber-800 dark:text-amber-300 leading-relaxed">{c.formDisclaimer}</p>
+              </div>
             </div>
 
           </div>
