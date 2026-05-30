@@ -43,7 +43,7 @@ const labels: Record<Locale, {
   en: {
     name: "Full name", namePh: "John Smith",
     email: "Email address", emailPh: "john@example.com",
-    phone: "Phone number", phonePh: "+44 7700 123456",
+    phone: "Phone number *", phonePh: "+44 7700 123456",
     platform: "How should we contact you?",
     platformWA: "WhatsApp", platformEmail: "By email",
     domain: "What domain type would you prefer?",
@@ -63,7 +63,7 @@ const labels: Record<Locale, {
   hr: {
     name: "Puno ime", namePh: "Ivan Horvat",
     email: "E-mail adresa", emailPh: "ivan@primjer.hr",
-    phone: "Broj telefona", phonePh: "+385 91 234 5678",
+    phone: "Broj telefona *", phonePh: "+385 91 234 5678",
     platform: "Kako da vas kontaktiramo?",
     platformWA: "WhatsApp", platformEmail: "E-mailom",
     domain: "",
@@ -82,7 +82,7 @@ const labels: Record<Locale, {
   ro: {
     name: "Nume complet", namePh: "Ion Popescu",
     email: "Adresă e-mail", emailPh: "ion@exemplu.ro",
-    phone: "Număr de telefon", phonePh: "+40 721 234 567",
+    phone: "Număr de telefon *", phonePh: "+40 721 234 567",
     platform: "Cum preferați să vă contactăm?",
     platformWA: "WhatsApp", platformEmail: "Prin e-mail",
     domain: "Ce tip de domeniu preferi?",
