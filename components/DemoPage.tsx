@@ -21,7 +21,7 @@ import type { Demo, DemoContent, DemoWhyUs, DemoFaq, Locale } from "@/lib/demos"
 
 type CustomField = {
   id: string;
-  type: "select" | "checkbox";
+  type: "select" | "checkbox" | "textarea";
   label: string;
   options: string[];
 };
@@ -56,6 +56,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
   const [content, setContent] = useState<DemoContent>(initialContent);
   const [galleryImages, setGalleryImages] = useState<string[]>(demo.galleryImages);
   const [customFields, setCustomFields] = useState<CustomField[]>([]);
+  const [editingFieldIds, setEditingFieldIds] = useState<Set<string>>(new Set());
   const [dismissed, setDismissed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -146,7 +147,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
         <div className={`fixed left-0 right-0 z-[60] bg-amber-500 text-white text-xs py-2 ${dismissed ? "top-0" : "top-10"}`}>
           <div className="max-w-6xl mx-auto px-4 flex items-center justify-between gap-4">
           <span className="flex items-center gap-2"><Pencil size={12} />{al.editMode}</span>
-          <button onClick={() => setEditMode(false)} className="flex items-center gap-1.5 bg-white text-amber-700 font-semibold px-3 py-1 rounded-full hover:bg-amber-50 transition-colors">
+          <button onClick={() => setEditMode(false)} className="flex items-center gap-1.5 bg-white text-amber-700 font-semibold px-3 py-1.5 rounded-full hover:bg-amber-50 transition-colors text-xs">
             <Check size={12} /> {al.exitEdit}
           </button>
           </div>
@@ -569,81 +570,95 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
               </div>
 
               {/* Custom fields */}
-              {customFields.map((field) => (
-                <div key={field.id} className={editMode ? "relative rounded-xl border-2 border-dashed border-amber-400 p-4 bg-amber-50/40" : ""}>
-                  {editMode && (
-                    <button
-                      type="button"
-                      onClick={() => setCustomFields((fs) => fs.filter((f) => f.id !== field.id))}
-                      className="absolute top-2 right-2 w-6 h-6 rounded-full bg-red-500 text-white flex items-center justify-center hover:bg-red-600 transition-colors"
-                      aria-label="Remove field"
-                    >
-                      <X size={11} />
-                    </button>
-                  )}
-                  {editMode ? (
-                    <input
-                      type="text"
-                      value={field.label}
-                      onChange={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, label: e.target.value } : f))}
-                      onClick={(e) => e.stopPropagation()}
-                      className="block w-full text-sm font-medium text-slate-700 mb-2 border border-violet-300 rounded-lg px-2.5 py-1 focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white"
-                    />
-                  ) : (
-                    <label className="block text-sm font-medium text-slate-700 mb-2">{field.label}</label>
-                  )}
-
-                  {/* Field preview */}
-                  <div className={editMode ? "pointer-events-none opacity-40" : undefined}>
-                  {field.type === "select" ? (
-                    <select name={field.id} className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white">
-                      <option value="">—</option>
-                      {field.options.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
-                    </select>
-                  ) : (
-                    <div className="flex flex-col gap-2 pl-1">
-                      {field.options.map((opt, oi) => (
-                        <label key={oi} className="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
-                          <input type="checkbox" name={field.id} value={opt} className="rounded accent-violet-600 w-4 h-4" />
-                          {opt}
-                        </label>
-                      ))}
-                    </div>
-                  )}
-                  </div>
-
-                  {/* Options editor (edit mode only) */}
-                  {editMode && (
-                    <div className="mt-3 pt-3 border-t border-amber-200 space-y-1.5">
-                      {field.options.map((opt, oi) => (
-                        <div key={oi} className="flex items-center gap-2">
-                          <input
-                            type="text"
-                            value={opt}
-                            onChange={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.map((o, j) => j === oi ? e.target.value : o) } : f))}
-                            onClick={(e) => e.stopPropagation()}
-                            className="flex-1 text-xs border border-violet-300 rounded-lg px-2.5 py-1 focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white"
-                          />
-                          <button
-                            type="button"
-                            onClick={() => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.filter((_, j) => j !== oi) } : f))}
-                            className="w-5 h-5 rounded-full bg-red-100 text-red-500 flex items-center justify-center hover:bg-red-200 flex-shrink-0 transition-colors"
-                          >
-                            <X size={10} />
+              {customFields.map((field) => {
+                const isEditing = editingFieldIds.has(field.id);
+                if (editMode && isEditing) {
+                  return (
+                    <div key={field.id} className="rounded-xl border-2 border-dashed border-amber-400 p-4 bg-amber-50/40">
+                      <input
+                        type="text"
+                        value={field.label}
+                        onChange={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, label: e.target.value } : f))}
+                        onClick={(e) => e.stopPropagation()}
+                        placeholder={locale === "hu" ? "Kérdés felirata..." : "Field label..."}
+                        className="block w-full text-sm font-medium text-slate-700 mb-3 border border-violet-300 rounded-lg px-2.5 py-1.5 focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white"
+                      />
+                      {field.type !== "textarea" && (
+                        <div className="space-y-1.5 mb-2">
+                          {field.options.map((opt, oi) => (
+                            <div key={oi} className="flex items-center gap-2">
+                              <input
+                                type="text"
+                                value={opt}
+                                onChange={(e) => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.map((o, j) => j === oi ? e.target.value : o) } : f))}
+                                onClick={(e) => e.stopPropagation()}
+                                className="flex-1 text-xs border border-violet-300 rounded-lg px-2.5 py-1 focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white"
+                              />
+                              <button type="button" onClick={() => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: f.options.filter((_, j) => j !== oi) } : f))}
+                                className="w-5 h-5 rounded-full bg-red-100 text-red-500 flex items-center justify-center hover:bg-red-200 flex-shrink-0">
+                                <X size={10} />
+                              </button>
+                            </div>
+                          ))}
+                          <button type="button"
+                            onClick={() => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: [...f.options, `${locale === "hu" ? "Lehetőség" : "Option"} ${f.options.length + 1}`] } : f))}
+                            className="text-xs text-violet-600 hover:text-violet-800 font-medium">
+                            + {locale === "hu" ? "Lehetőség hozzáadása" : locale === "en" ? "Add option" : locale === "hr" ? "Dodaj opciju" : "Adaugă opțiune"}
                           </button>
                         </div>
-                      ))}
-                      <button
-                        type="button"
-                        onClick={() => setCustomFields((fs) => fs.map((f) => f.id === field.id ? { ...f, options: [...f.options, `${locale === "hu" ? "Lehetőség" : "Option"} ${f.options.length + 1}`] } : f))}
-                        className="text-xs text-violet-600 hover:text-violet-800 font-medium transition-colors"
-                      >
-                        + {locale === "hu" ? "Lehetőség hozzáadása" : locale === "en" ? "Add option" : locale === "hr" ? "Dodaj opciju" : "Adaugă opțiune"}
-                      </button>
+                      )}
+                      <div className="flex items-center justify-between pt-3 border-t border-amber-200">
+                        <button type="button" onClick={() => setCustomFields((fs) => fs.filter((f) => f.id !== field.id))}
+                          className="text-xs text-red-500 hover:text-red-700 font-medium">
+                          {locale === "hu" ? "Törlés" : locale === "en" ? "Delete" : locale === "hr" ? "Izbriši" : "Șterge"}
+                        </button>
+                        <button type="button"
+                          onClick={() => setEditingFieldIds((s) => { const n = new Set(s); n.delete(field.id); return n; })}
+                          className="flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-white text-xs font-semibold px-4 py-1.5 rounded-full transition-colors">
+                          <Check size={12} /> {locale === "hu" ? "Kész" : locale === "en" ? "Done" : locale === "hr" ? "Gotovo" : "Gata"}
+                        </button>
+                      </div>
                     </div>
-                  )}
-                </div>
-              ))}
+                  );
+                }
+                return (
+                  <div key={field.id}>
+                    <label className="block text-sm font-medium text-slate-700 mb-1.5">{field.label}</label>
+                    {field.type === "select" ? (
+                      <select name={field.id} className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white">
+                        <option value="">—</option>
+                        {field.options.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+                      </select>
+                    ) : field.type === "textarea" ? (
+                      <textarea name={field.id} rows={3} className="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400 bg-white resize-none" />
+                    ) : (
+                      <div className="flex flex-col gap-2 pl-1">
+                        {field.options.map((opt, oi) => (
+                          <label key={oi} className="flex items-center gap-2 text-sm text-slate-700 cursor-pointer">
+                            <input type="checkbox" name={field.id} value={opt} className="rounded accent-violet-600 w-4 h-4" />
+                            {opt}
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                    {editMode && (
+                      <div className="flex gap-2 mt-1.5">
+                        <button type="button"
+                          onClick={() => setEditingFieldIds((s) => new Set(s).add(field.id))}
+                          className="text-xs text-violet-500 hover:text-violet-700 font-medium flex items-center gap-1">
+                          <Pencil size={11} /> {locale === "hu" ? "Szerkesztés" : locale === "en" ? "Edit" : locale === "hr" ? "Uredi" : "Editează"}
+                        </button>
+                        <span className="text-slate-300">·</span>
+                        <button type="button"
+                          onClick={() => setCustomFields((fs) => fs.filter((f) => f.id !== field.id))}
+                          className="text-xs text-red-400 hover:text-red-600 font-medium">
+                          {locale === "hu" ? "Törlés" : locale === "en" ? "Delete" : locale === "hr" ? "Izbriši" : "Șterge"}
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
 
               {/* Add field controls (edit mode only) */}
               {editMode && (
@@ -653,17 +668,24 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
                   </span>
                   <button
                     type="button"
-                    onClick={() => setCustomFields((fs) => [...fs, { id: Math.random().toString(36).slice(2), type: "select", label: locale === "hu" ? "Válasszon egyet" : locale === "en" ? "Choose one" : locale === "hr" ? "Odaberite jedno" : "Alegeți una", options: [locale === "hu" ? "1. lehetőség" : "Option 1", locale === "hu" ? "2. lehetőség" : "Option 2"] }])}
+                    onClick={() => { const id = Math.random().toString(36).slice(2); setCustomFields((fs) => [...fs, { id, type: "select", label: locale === "hu" ? "Válasszon egyet" : locale === "en" ? "Choose one" : locale === "hr" ? "Odaberite jedno" : "Alegeți una", options: [locale === "hu" ? "1. lehetőség" : "Option 1", locale === "hu" ? "2. lehetőség" : "Option 2"] }]); setEditingFieldIds((s) => new Set(s).add(id)); }}
                     className="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-slate-300 hover:border-violet-400 hover:text-violet-700 text-slate-600 px-3 py-1.5 rounded-full transition-colors"
                   >
                     📋 {locale === "hu" ? "Legördülő menü" : locale === "en" ? "Dropdown" : locale === "hr" ? "Padajući izbornik" : "Listă derulantă"}
                   </button>
                   <button
                     type="button"
-                    onClick={() => setCustomFields((fs) => [...fs, { id: Math.random().toString(36).slice(2), type: "checkbox", label: locale === "hu" ? "Jelölje be a megfelelőt" : locale === "en" ? "Check all that apply" : locale === "hr" ? "Označite što odgovara" : "Bifați ce se aplică", options: [locale === "hu" ? "1. lehetőség" : "Option 1", locale === "hu" ? "2. lehetőség" : "Option 2"] }])}
+                    onClick={() => { const id = Math.random().toString(36).slice(2); setCustomFields((fs) => [...fs, { id, type: "checkbox", label: locale === "hu" ? "Jelölje be a megfelelőt" : locale === "en" ? "Check all that apply" : locale === "hr" ? "Označite što odgovara" : "Bifați ce se aplică", options: [locale === "hu" ? "1. lehetőség" : "Option 1", locale === "hu" ? "2. lehetőség" : "Option 2"] }]); setEditingFieldIds((s) => new Set(s).add(id)); }}
                     className="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-slate-300 hover:border-violet-400 hover:text-violet-700 text-slate-600 px-3 py-1.5 rounded-full transition-colors"
                   >
                     ☑️ {locale === "hu" ? "Jelölőnégyzetek" : locale === "en" ? "Checkboxes" : locale === "hr" ? "Potvrdni okviri" : "Casete de selectare"}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { const id = Math.random().toString(36).slice(2); setCustomFields((fs) => [...fs, { id, type: "textarea", label: locale === "hu" ? "Üzenet" : locale === "en" ? "Message" : locale === "hr" ? "Poruka" : "Mesaj", options: [] }]); setEditingFieldIds((s) => new Set(s).add(id)); }}
+                    className="inline-flex items-center gap-1.5 text-xs font-medium bg-white border border-slate-300 hover:border-violet-400 hover:text-violet-700 text-slate-600 px-3 py-1.5 rounded-full transition-colors"
+                  >
+                    💬 {locale === "hu" ? "Üzenet doboz" : locale === "en" ? "Text area" : locale === "hr" ? "Okvir za poruku" : "Câmp text"}
                   </button>
                 </div>
               )}
