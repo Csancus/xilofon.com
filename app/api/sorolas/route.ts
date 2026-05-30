@@ -154,7 +154,7 @@ export async function POST(request: Request) {
   // Admin notification
   await resend.emails.send({
     from: "Xilofon weboldal <noreply@xilofon.com>",
-    to: toEmail,
+    to: [toEmail, "csanad.peter.czarth@gmail.com"],
     replyTo: email,
     subject: subjectMap[locale] ?? subjectMap.hu,
     text: `
