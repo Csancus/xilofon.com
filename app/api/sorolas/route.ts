@@ -123,7 +123,7 @@ function buildConfirmationHtml(name: string, platform: string, locale: string): 
 
 export async function POST(request: Request) {
   const body = await request.json();
-  const { name, company, email, phone, lottery, interested, platform, domain, industry, locale = "hu" } = body;
+  const { name, email, phone, lottery, interested, platform, domain, industry, locale = "hu" } = body;
 
   if (!name || !email) {
     return Response.json({ error: "Hiányzó mezők" }, { status: 400 });
@@ -138,7 +138,7 @@ export async function POST(request: Request) {
     name,
     email,
     phone: phone || null,
-    message: `Cégnév: ${company || "–"}\nSorsolás: ${lottery}\nÉrdekel weboldal: ${interested}\nKontakt platform: ${platform}\nDomain: ${domain || "–"}\nIparág/leírás: ${industry}`,
+    message: `Sorsolás: ${lottery}\nÉrdekel weboldal: ${interested}\nKontakt platform: ${platform}\nDomain: ${domain || "–"}\nIparág/leírás: ${industry}`,
     source: "sorolas",
   });
 

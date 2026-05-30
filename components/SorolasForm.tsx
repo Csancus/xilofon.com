@@ -8,7 +8,6 @@ type Props = { locale: Locale };
 
 const labels: Record<Locale, {
   name: string; namePh: string;
-  company: string; companyPh: string;
   email: string; emailPh: string;
   phone: string; phonePh: string;
   platform: string; platformWA: string; platformEmail: string;
@@ -23,7 +22,6 @@ const labels: Record<Locale, {
 }> = {
   hu: {
     name: "Teljes neve", namePh: "Kovács János",
-    company: "Cégnév (ha van)", companyPh: "Pl. Kovács Kft.",
     email: "E-mail cím", emailPh: "kovacs@example.hu",
     phone: "Telefonszám *", phonePh: "+36 30 123 4567",
     platform: "Hol kereshetünk inkább?",
@@ -44,7 +42,6 @@ const labels: Record<Locale, {
   },
   en: {
     name: "Full name", namePh: "John Smith",
-    company: "Company name (if applicable)", companyPh: "e.g. Smith Ltd.",
     email: "Email address", emailPh: "john@example.com",
     phone: "Phone number", phonePh: "+44 7700 123456",
     platform: "How should we contact you?",
@@ -65,7 +62,6 @@ const labels: Record<Locale, {
   },
   hr: {
     name: "Puno ime", namePh: "Ivan Horvat",
-    company: "Naziv tvrtke (ako postoji)", companyPh: "npr. Horvat d.o.o.",
     email: "E-mail adresa", emailPh: "ivan@primjer.hr",
     phone: "Broj telefona", phonePh: "+385 91 234 5678",
     platform: "Kako da vas kontaktiramo?",
@@ -86,7 +82,6 @@ const labels: Record<Locale, {
   },
   ro: {
     name: "Nume complet", namePh: "Ion Popescu",
-    company: "Denumire firmă (dacă există)", companyPh: "ex. Popescu SRL",
     email: "Adresă e-mail", emailPh: "ion@exemplu.ro",
     phone: "Număr de telefon", phonePh: "+40 721 234 567",
     platform: "Cum preferați să vă contactăm?",
@@ -115,7 +110,7 @@ export default function SorolasForm({ locale }: Props) {
   const [consent, setConsent] = useState(false);
   const [emailTouched, setEmailTouched] = useState(false);
   const [form, setForm] = useState({
-    name: "", company: "", email: "", phone: "",
+    name: "", email: "", phone: "",
     platform: "", domain: "", industry: "", interested: "",
   });
 
@@ -191,11 +186,6 @@ export default function SorolasForm({ locale }: Props) {
       </div>
 
       <div>
-        <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.company}</label>
-        <input className={inputClass} placeholder={l.companyPh} value={form.company} onChange={set("company")} />
-      </div>
-
-      <div>
         <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.email} *</label>
         <input
           required
@@ -231,7 +221,7 @@ export default function SorolasForm({ locale }: Props) {
 
       <div>
         <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-2">{l.platform}</label>
-        <div className="space-y-2">
+        <div className="grid grid-cols-2 gap-2">
           {radioOption("platform", "whatsapp", l.platformWA)}
           {radioOption("platform", "email", l.platformEmail)}
         </div>
