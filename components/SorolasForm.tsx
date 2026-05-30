@@ -243,7 +243,10 @@ export default function SorolasForm({ locale }: Props) {
           {l.domainOptions.map((opt) => radioOption("domain", opt, opt))}
         </div>
         {l.domainNote && (
-          <p className="mt-2 text-xs text-slate-400 dark:text-white/30 leading-relaxed">{l.domainNote}</p>
+          <div className="mt-3 flex items-start gap-2.5 bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 rounded-xl px-3.5 py-3">
+            <span className="text-green-500 dark:text-green-400 flex-shrink-0 text-base leading-tight mt-0.5">✓</span>
+            <p className="text-xs text-green-800 dark:text-green-300 leading-relaxed font-medium">{l.domainNote}</p>
+          </div>
         )}
       </div>
 
