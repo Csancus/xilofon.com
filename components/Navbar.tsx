@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
@@ -26,14 +25,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center gap-2.5">
-              <Image
-                src="/logo.png"
-                alt="Xilofon"
-                width={120}
-                height={40}
-                className="h-8 w-auto dark:brightness-0 dark:invert"
-                priority
-              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Xilofon" className="h-8 w-auto dark:hidden" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo-dark.png" alt="Xilofon" className="h-8 w-auto hidden dark:block" />
               <span className="font-bold text-slate-900 dark:text-white text-base hidden sm:inline">Xilofon</span>
             </Link>
 

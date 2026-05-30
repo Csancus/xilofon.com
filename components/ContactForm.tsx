@@ -10,6 +10,7 @@ type Status = "idle" | "loading" | "success" | "error";
 export default function ContactForm() {
   const t = useTranslations("ContactForm");
   const [status, setStatus] = useState<Status>("idle");
+  const [consent, setConsent] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -28,6 +29,7 @@ export default function ContactForm() {
       if (!res.ok) throw new Error();
       setStatus("success");
       setForm({ name: "", email: "", phone: "", message: "" });
+      setConsent(false);
     } catch {
       setStatus("error");
     }
@@ -36,7 +38,9 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col items-center gap-4 py-12 text-center">
-        <CheckCircle size={48} className="text-violet-500" />
+        <div className="w-16 h-16 rounded-full bg-green-50 dark:bg-green-500/10 flex items-center justify-center">
+          <CheckCircle size={32} className="text-green-500" />
+        </div>
         <h3 className="text-xl font-semibold text-slate-900 dark:text-white">{t("successTitle")}</h3>
         <p className="text-slate-500 dark:text-white/60">{t("successText")}</p>
         <button
@@ -60,14 +64,9 @@ export default function ContactForm() {
             {t("name")} <span className="text-violet-500">*</span>
           </label>
           <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            value={form.name}
-            onChange={handleChange}
-            placeholder={t("namePlaceholder")}
-            className={inputClass}
+            id="name" name="name" type="text" required
+            value={form.name} onChange={handleChange}
+            placeholder={t("namePlaceholder")} className={inputClass}
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -75,30 +74,21 @@ export default function ContactForm() {
             {t("email")} <span className="text-violet-500">*</span>
           </label>
           <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            value={form.email}
-            onChange={handleChange}
-            placeholder={t("emailPlaceholder")}
-            className={inputClass}
+            id="email" name="email" type="email" required
+            value={form.email} onChange={handleChange}
+            placeholder={t("emailPlaceholder")} className={inputClass}
           />
         </div>
       </div>
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor="phone" className="text-sm font-medium text-slate-600 dark:text-white/60">
-          {t("phone")} <span className="text-slate-400 dark:text-white/30 text-xs">{t("phoneOptional")}</span>
+          {t("phone")} <span className="text-violet-500">*</span>
         </label>
         <input
-          id="phone"
-          name="phone"
-          type="tel"
-          value={form.phone}
-          onChange={handleChange}
-          placeholder={t("phonePlaceholder")}
-          className={inputClass}
+          id="phone" name="phone" type="tel" required
+          value={form.phone} onChange={handleChange}
+          placeholder={t("phonePlaceholder")} className={inputClass}
         />
       </div>
 
@@ -107,48 +97,53 @@ export default function ContactForm() {
           {t("message")} <span className="text-violet-500">*</span>
         </label>
         <textarea
-          id="message"
-          name="message"
-          rows={4}
-          required
-          value={form.message}
-          onChange={handleChange}
+          id="message" name="message" rows={4} required
+          value={form.message} onChange={handleChange}
           placeholder={t("messagePlaceholder")}
           className={`${inputClass} resize-none`}
         />
       </div>
 
+      {/* Consent checkbox */}
+      <label className="flex items-start gap-3 cursor-pointer group">
+        <input
+          type="checkbox"
+          required
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-0.5 w-4 h-4 rounded accent-violet-600 flex-shrink-0"
+        />
+        <span className="text-xs text-slate-500 dark:text-white/50 leading-relaxed">
+          {t.rich("consent", {
+            privacyLink: (chunks) => (
+              <Link href="/adatkezeles" className="underline text-violet-600 dark:text-violet-400 hover:opacity-80">{chunks}</Link>
+            ),
+            aszfLink: (chunks) => (
+              <Link href="/aszf" className="underline text-violet-600 dark:text-violet-400 hover:opacity-80">{chunks}</Link>
+            ),
+          })}
+          {" "}<span className="text-violet-500">*</span>
+        </span>
+      </label>
+
       {status === "error" && (
-        <div className="flex items-center gap-2 text-red-500 dark:text-red-400 text-sm">
-          <AlertCircle size={16} />
-          {t("errorText")}
+        <div className="flex items-start gap-3 p-4 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-400">
+          <AlertCircle size={18} className="flex-shrink-0 mt-0.5" />
+          <span className="text-sm font-medium">{t("errorText")}</span>
         </div>
       )}
 
       <button
         type="submit"
-        disabled={status === "loading"}
-        className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-violet-600 hover:bg-violet-500 disabled:opacity-50 text-white font-semibold transition-colors"
+        disabled={status === "loading" || !consent}
+        className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-violet-600 hover:bg-violet-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold transition-colors"
       >
         {status === "loading" ? (
           <span className="animate-pulse">{t("sending")}</span>
         ) : (
-          <>
-            <Send size={16} />
-            {t("submit")}
-          </>
+          <><Send size={16} />{t("submit")}</>
         )}
       </button>
-
-      <p className="text-xs text-slate-400 dark:text-white/30 text-center">
-        {t.rich("privacyNote", {
-          link: (chunks) => (
-            <Link key="privacy" href="/adatkezeles" className="underline hover:text-slate-600 dark:hover:text-white/60 transition-colors">
-              {chunks}
-            </Link>
-          ),
-        })}
-      </p>
     </form>
   );
 }

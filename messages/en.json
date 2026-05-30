@@ -28,7 +28,6 @@
     "email": "Email",
     "emailPlaceholder": "john@example.com",
     "phone": "Phone number",
-    "phoneOptional": "(optional)",
     "phonePlaceholder": "+1 234 567 8900",
     "message": "Message",
     "messagePlaceholder": "Tell us about your business and what you need help with...",
@@ -39,7 +38,8 @@
     "newMessage": "Send another message",
     "errorText": "Something went wrong. Please try again or send us an email.",
     "privacyNote": "Read how we handle your data in our <link>Privacy Policy</link>.",
-    "privacyLink": "Privacy Policy"
+    "privacyLink": "Privacy Policy",
+    "consent": "I accept the <privacyLink>Privacy Policy</privacyLink> and <aszfLink>Terms of Service</aszfLink>."
   },
   "HomePage": {
     "meta": {

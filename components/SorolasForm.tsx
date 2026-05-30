@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { AlertCircle } from "lucide-react";
 import type { Locale } from "@/lib/demos";
 
 type Props = { locale: Locale };
@@ -16,12 +17,13 @@ const labels: Record<Locale, {
   submit: string; sending: string;
   successTitle: string; successText: string;
   errorText: string;
+  consentPrivacy: string; consentAszf: string; consentLabel: string;
 }> = {
   hu: {
     name: "Teljes neve", namePh: "Kovács János",
     company: "Cégnév (ha van)", companyPh: "Pl. Kovács Kft.",
     email: "E-mail cím", emailPh: "kovacs@example.hu",
-    phone: "Telefonszám", phonePh: "+36 30 123 4567",
+    phone: "Telefonszám *", phonePh: "+36 30 123 4567",
     platform: "Hol kereshetünk inkább?",
     platformWA: "WhatsApp (telefonon)", platformEmail: "E-mailben",
     domain: "Milyen domain típust szeretnél?",
@@ -32,6 +34,7 @@ const labels: Record<Locale, {
     successTitle: "Köszönjük!",
     successText: "1-2 munkanapon belül visszajelzünk.",
     errorText: "Hiba történt. Kérjük, próbáld újra.",
+    consentLabel: "Elfogadom az", consentPrivacy: "adatkezelési tájékoztatót", consentAszf: "ÁSZF-et",
   },
   en: {
     name: "Full name", namePh: "John Smith",
@@ -48,6 +51,7 @@ const labels: Record<Locale, {
     successTitle: "Thank you!",
     successText: "We'll be in touch within 1-2 business days.",
     errorText: "Something went wrong. Please try again.",
+    consentLabel: "I accept the", consentPrivacy: "Privacy Policy", consentAszf: "Terms of Service",
   },
   hr: {
     name: "Puno ime", namePh: "Ivan Horvat",
@@ -64,6 +68,7 @@ const labels: Record<Locale, {
     successTitle: "Hvala!",
     successText: "Javit ćemo se u roku 1-2 radna dana.",
     errorText: "Došlo je do pogreške. Molimo pokušajte ponovo.",
+    consentLabel: "Prihvaćam", consentPrivacy: "Pravila privatnosti", consentAszf: "Opće uvjete poslovanja",
   },
   ro: {
     name: "Nume complet", namePh: "Ion Popescu",
@@ -80,6 +85,7 @@ const labels: Record<Locale, {
     successTitle: "Mulțumim!",
     successText: "Te vom contacta în 1-2 zile lucrătoare.",
     errorText: "A apărut o eroare. Te rugăm să încerci din nou.",
+    consentLabel: "Accept", consentPrivacy: "Politica de confidențialitate", consentAszf: "Termenii și condițiile",
   },
 };
 
@@ -88,6 +94,7 @@ type Status = "idle" | "sending" | "success" | "error";
 export default function SorolasForm({ locale }: Props) {
   const l = labels[locale];
   const [status, setStatus] = useState<Status>("idle");
+  const [consent, setConsent] = useState(false);
   const [form, setForm] = useState({
     name: "", company: "", email: "", phone: "",
     platform: "", domain: "", industry: "",
@@ -111,6 +118,7 @@ export default function SorolasForm({ locale }: Props) {
       });
       if (!res.ok) throw new Error();
       setStatus("success");
+      setConsent(false);
     } catch {
       setStatus("error");
     }
@@ -169,7 +177,7 @@ export default function SorolasForm({ locale }: Props) {
 
       <div>
         <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.phone}</label>
-        <input type="tel" className={inputClass} placeholder={l.phonePh} value={form.phone} onChange={set("phone")} />
+        <input required type="tel" className={inputClass} placeholder={l.phonePh} value={form.phone} onChange={set("phone")} />
       </div>
 
       <div>
@@ -198,14 +206,35 @@ export default function SorolasForm({ locale }: Props) {
         />
       </div>
 
+      {/* Consent checkbox */}
+      <label className="flex items-start gap-3 cursor-pointer">
+        <input
+          type="checkbox"
+          required
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-0.5 w-4 h-4 rounded accent-violet-600 flex-shrink-0"
+        />
+        <span className="text-xs text-slate-500 dark:text-white/50 leading-relaxed">
+          {l.consentLabel}{" "}
+          <a href="/adatkezeles" target="_blank" className="underline text-violet-600 dark:text-violet-400">{l.consentPrivacy}</a>
+          {" "}&{" "}
+          <a href="/aszf" target="_blank" className="underline text-violet-600 dark:text-violet-400">{l.consentAszf}</a>
+          . <span className="text-violet-500">*</span>
+        </span>
+      </label>
+
       {status === "error" && (
-        <p className="text-red-600 text-sm">{l.errorText}</p>
+        <div className="flex items-start gap-3 p-4 rounded-xl bg-red-50 dark:bg-red-500/10 border border-red-200 dark:border-red-500/20 text-red-700 dark:text-red-400">
+          <AlertCircle size={18} className="flex-shrink-0 mt-0.5" />
+          <span className="text-sm font-medium">{l.errorText}</span>
+        </div>
       )}
 
       <button
         type="submit"
-        disabled={status === "sending"}
-        className="w-full py-3 rounded-full bg-violet-600 hover:bg-violet-500 disabled:opacity-60 text-white font-semibold transition-colors"
+        disabled={status === "sending" || !consent}
+        className="w-full py-3 rounded-full bg-violet-600 hover:bg-violet-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-colors"
       >
         {status === "sending" ? l.sending : l.submit}
       </button>

@@ -28,7 +28,6 @@
     "email": "E-mail",
     "emailPlaceholder": "ivan@primjer.hr",
     "phone": "Broj telefona",
-    "phoneOptional": "(neobavezno)",
     "phonePlaceholder": "+385 91 234 5678",
     "message": "Poruka",
     "messagePlaceholder": "Napišite nekoliko rečenica o vašem poslovanju i što trebate...",
@@ -39,7 +38,8 @@
     "newMessage": "Pošaljite novu poruku",
     "errorText": "Došlo je do pogreške. Molimo pokušajte ponovo.",
     "privacyNote": "Pročitajte kako rukujemo vašim podacima u našoj <link>Politici privatnosti</link>.",
-    "privacyLink": "Politici privatnosti"
+    "privacyLink": "Politici privatnosti",
+    "consent": "Prihvaćam <privacyLink>Pravila privatnosti</privacyLink> i <aszfLink>Opće uvjete poslovanja</aszfLink>."
   },
   "HomePage": {
     "meta": {

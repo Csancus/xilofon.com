@@ -28,7 +28,6 @@
     "email": "E-mail",
     "emailPlaceholder": "kovacs@example.hu",
     "phone": "Telefonszám",
-    "phoneOptional": "(opcionális)",
     "phonePlaceholder": "+36 30 123 4567",
     "message": "Üzenet",
     "messagePlaceholder": "Írj pár sort a vállalkozásodról és mihez kérsz segítséget...",
@@ -39,7 +38,8 @@
     "newMessage": "Új üzenet küldése",
     "errorText": "Hiba történt. Kérjük, próbáld újra, vagy írj e-mailt.",
     "privacyNote": "Az adataid kezeléséről az <link>adatkezelési tájékoztatóban</link> olvashatsz.",
-    "privacyLink": "adatkezelési tájékoztatóban"
+    "privacyLink": "adatkezelési tájékoztatóban",
+    "consent": "Elfogadom az <privacyLink>adatkezelési tájékoztatót</privacyLink> és az <aszfLink>ÁSZF</aszfLink>-et."
   },
   "HomePage": {
     "meta": {

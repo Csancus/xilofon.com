@@ -16,7 +16,7 @@ export default async function Footer() {
           <div>
             <Link href="/" className="inline-block mb-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Xilofon" className="h-7 w-auto brightness-0 invert opacity-70" />
+              <img src="/logo-dark.png" alt="Xilofon" className="h-7 w-auto opacity-80" />
             </Link>
             <p className="text-sm leading-relaxed">{t("tagline")}</p>
           </div>

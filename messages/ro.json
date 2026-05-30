@@ -28,7 +28,6 @@
     "email": "E-mail",
     "emailPlaceholder": "ion@exemplu.ro",
     "phone": "Număr de telefon",
-    "phoneOptional": "(opțional)",
     "phonePlaceholder": "+40 721 234 567",
     "message": "Mesaj",
     "messagePlaceholder": "Spune-ne câteva cuvinte despre afacerea ta și ce ai nevoie...",
@@ -39,7 +38,8 @@
     "newMessage": "Trimite un mesaj nou",
     "errorText": "A apărut o eroare. Te rugăm să încerci din nou.",
     "privacyNote": "Citește cum gestionăm datele tale în <link>Politica de confidențialitate</link>.",
-    "privacyLink": "Politica de confidențialitate"
+    "privacyLink": "Politica de confidențialitate",
+    "consent": "Accept <privacyLink>Politica de confidențialitate</privacyLink> și <aszfLink>Termenii și condițiile</aszfLink>."
   },
   "HomePage": {
     "meta": {
