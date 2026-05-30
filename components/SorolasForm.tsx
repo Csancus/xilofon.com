@@ -57,7 +57,7 @@ const labels: Record<Locale, {
     platform: "Kako da vas kontaktiramo?",
     platformWA: "WhatsApp (telefonom)", platformEmail: "E-mailom",
     domain: "Kakav naziv domene biste željeli?",
-    domainOptions: [".hr (npr. vaseime.hr)", ".com (npr. vaseime.com)", "Svejedno mi je"],
+    domainOptions: [".com (npr. vaseime.com)"],
     industry: "Kojom se djelatnošću bavite i kakvu web stranicu trebate?",
     industryPh: "npr. Maserka sam u Zagrebu, trebam jednostavnu predstavničku stranicu s rezervacijom...",
     submit: "Rezerviram mjesto", sending: "Slanje...",
