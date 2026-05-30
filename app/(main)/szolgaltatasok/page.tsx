@@ -79,13 +79,12 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      {/* Hero */}
       <section className="bg-slate-900 text-white py-20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5">
               Minden, amire szükséged van az{" "}
-              <span className="text-amber-400">online jelenléthez</span>
+              <span className="text-violet-400">online jelenléthez</span>
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed">
               Szolgáltatásainkat kis vállalkozások és egyéni vállalkozók számára alakítottuk ki – érthetően, átlátható áron.
@@ -94,30 +93,23 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
           {services.map((s, i) => (
-            <div
-              key={s.id}
-              id={s.id}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-10 items-start ${
-                i % 2 === 1 ? "lg:flex-row-reverse" : ""
-              }`}
-            >
+            <div key={s.id} id={s.id} className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
               <div className={i % 2 === 1 ? "lg:order-2" : ""}>
-                <div className="w-14 h-14 rounded-2xl bg-amber-50 flex items-center justify-center mb-5">
-                  <s.icon size={26} className="text-amber-500" />
+                <div className="w-14 h-14 rounded-2xl bg-violet-50 flex items-center justify-center mb-5">
+                  <s.icon size={26} className="text-violet-600" />
                 </div>
                 <div className="inline-block bg-slate-100 text-slate-600 text-sm font-medium px-3 py-1 rounded-full mb-3">
                   {s.price}
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-2">{s.title}</h2>
-                <p className="text-amber-600 font-medium mb-4">{s.tagline}</p>
+                <p className="text-violet-600 font-medium mb-4">{s.tagline}</p>
                 <p className="text-slate-600 leading-relaxed mb-8">{s.desc}</p>
                 <Link
                   href="/landing"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-amber-500 hover:bg-amber-400 text-white font-semibold transition-colors"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold transition-colors"
                 >
                   Ajánlatkérés
                   <ArrowRight size={16} />
@@ -129,7 +121,7 @@ export default function ServicesPage() {
                 <ul className="space-y-3">
                   {s.includes.map((item) => (
                     <li key={item} className="flex items-start gap-3 text-slate-700">
-                      <Check size={16} className="text-amber-500 mt-0.5 flex-shrink-0" />
+                      <Check size={16} className="text-violet-600 mt-0.5 flex-shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -140,8 +132,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 bg-amber-50 border-t border-amber-100">
+      <section className="py-16 bg-violet-50 border-t border-violet-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
             Nem tudod, melyik kell? Írj nekünk!
@@ -151,7 +142,7 @@ export default function ServicesPage() {
           </p>
           <Link
             href="/landing"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-white font-semibold text-lg transition-colors"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold text-lg transition-colors"
           >
             Ingyenes ajánlatkérés
             <ArrowRight size={20} />

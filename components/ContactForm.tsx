@@ -38,7 +38,7 @@ export default function ContactForm() {
         <p className="text-slate-600">1-2 munkanapon belül visszakeresünk.</p>
         <button
           onClick={() => setStatus("idle")}
-          className="mt-4 text-amber-600 font-medium hover:underline"
+          className="mt-4 text-violet-600 font-medium hover:underline"
         >
           Új üzenet küldése
         </button>
@@ -61,7 +61,7 @@ export default function ContactForm() {
             value={form.name}
             onChange={handleChange}
             placeholder="Kovács János"
-            className="px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+            className="px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-transparent transition"
           />
         </div>
         <div className="flex flex-col gap-1.5">
@@ -76,7 +76,7 @@ export default function ContactForm() {
             value={form.email}
             onChange={handleChange}
             placeholder="kovacs@example.hu"
-            className="px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+            className="px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-transparent transition"
           />
         </div>
       </div>
@@ -92,7 +92,7 @@ export default function ContactForm() {
           value={form.phone}
           onChange={handleChange}
           placeholder="+36 30 123 4567"
-          className="px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+          className="px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-transparent transition"
         />
       </div>
 
@@ -108,7 +108,7 @@ export default function ContactForm() {
           value={form.message}
           onChange={handleChange}
           placeholder="Írj pár sort a vállalkozásodról, és mihez kérsz segítséget..."
-          className="px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition resize-none"
+          className="px-4 py-3 rounded-xl border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-transparent transition resize-none"
         />
       </div>
 
@@ -122,7 +122,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 disabled:bg-amber-300 text-white font-semibold transition-colors"
+        className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-violet-600 hover:bg-violet-500 disabled:bg-violet-300 text-white font-semibold transition-colors"
       >
         {status === "loading" ? (
           <span className="animate-pulse">Küldés...</span>

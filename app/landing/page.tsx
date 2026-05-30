@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, Globe, Share2, MapPin, TrendingUp, Shield, Clock } from "lucide-react";
+import Image from "next/image";
+import { Check, Globe, Share2, MapPin, TrendingUp } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -23,11 +24,10 @@ const benefits = [
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Minimal header */}
       <header className="border-b border-slate-100 py-4 px-4">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-xl font-bold text-slate-900">
-            xilofon<span className="text-amber-500">.</span>
+          <Link href="/">
+            <Image src="/logo.png" alt="Xilofon" width={110} height={36} className="h-8 w-auto" priority />
           </Link>
           <a href="tel:+36301234567" className="text-sm text-slate-500 hover:text-slate-700">
             Van kérdésed? Hívj minket
@@ -37,7 +37,6 @@ export default function LandingPage() {
 
       <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-          {/* Left column */}
           <div>
             <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 text-sm font-medium px-3 py-1.5 rounded-full mb-6">
               <div className="w-2 h-2 rounded-full bg-green-500" />
@@ -46,7 +45,7 @@ export default function LandingPage() {
 
             <h1 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight mb-5">
               Legyen profi weboldalad,{" "}
-              <span className="text-amber-500">amit te szerkesztesz</span>
+              <span className="text-violet-600">amit te szerkesztesz</span>
               <br />
               <span className="text-2xl md:text-3xl text-slate-500 font-normal">– 140 EUR/év</span>
             </h1>
@@ -59,15 +58,14 @@ export default function LandingPage() {
             <ul className="space-y-3 mb-10">
               {benefits.map((b) => (
                 <li key={b} className="flex items-center gap-3 text-slate-700">
-                  <div className="w-5 h-5 rounded-full bg-amber-100 flex items-center justify-center flex-shrink-0">
-                    <Check size={12} className="text-amber-600" />
+                  <div className="w-5 h-5 rounded-full bg-violet-100 flex items-center justify-center flex-shrink-0">
+                    <Check size={12} className="text-violet-600" />
                   </div>
                   {b}
                 </li>
               ))}
             </ul>
 
-            {/* Trust indicators */}
             <div className="grid grid-cols-3 gap-4 border-t border-slate-100 pt-8">
               <div className="text-center">
                 <div className="text-2xl font-bold text-slate-900">50+</div>
@@ -84,7 +82,6 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Right column – form */}
           <div className="bg-slate-50 rounded-3xl p-6 md:p-8 border border-slate-100">
             <div className="mb-6">
               <h2 className="text-xl font-bold text-slate-900 mb-1">Ingyenes ajánlatkérés</h2>
@@ -94,7 +91,6 @@ export default function LandingPage() {
           </div>
         </div>
 
-        {/* Services strip */}
         <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { icon: Globe, label: "Weboldal készítés" },
@@ -103,14 +99,13 @@ export default function LandingPage() {
             { icon: TrendingUp, label: "SEO tanácsadás" },
           ].map((s) => (
             <div key={s.label} className="flex flex-col items-center gap-2 text-center p-4 rounded-xl bg-slate-50 border border-slate-100">
-              <s.icon size={22} className="text-amber-500" />
+              <s.icon size={22} className="text-violet-600" />
               <span className="text-sm font-medium text-slate-700">{s.label}</span>
             </div>
           ))}
         </div>
       </main>
 
-      {/* Minimal footer */}
       <footer className="border-t border-slate-100 py-6 px-4 mt-12">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-400">
           <span>© {new Date().getFullYear()} Xilofon Digital</span>

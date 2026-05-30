@@ -56,7 +56,7 @@ const testimonials = [
   {
     name: "Balogh Péter",
     role: "Villanyszerelő",
-    desc: "Elképesztő, hogy 140 euróért ennyit kapok. A Google-on az első oldalon vagyok a városomban.",
+    text: "Elképesztő, hogy 140 euróért ennyit kapok. A Google-on az első oldalon vagyok a városomban.",
   },
   {
     name: "Németh Katalin",
@@ -83,12 +83,12 @@ export default function HomePage() {
       <section className="bg-slate-900 text-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-amber-500/20 text-amber-400 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+            <div className="inline-flex items-center gap-2 bg-violet-500/20 text-violet-300 text-sm font-medium px-4 py-1.5 rounded-full mb-6">
               Fix ár • 140 EUR / év • Nincs meglepetés
             </div>
             <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
               Profi weboldal,{" "}
-              <span className="text-amber-400">amit te szerkesztesz</span>
+              <span className="text-violet-400">amit te szerkesztesz</span>
             </h1>
             <p className="text-xl text-slate-300 leading-relaxed mb-10 max-w-2xl">
               Egyéni vállalkozóknak és kis cégeknek készítünk Google-barát weboldalakat.
@@ -97,7 +97,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/landing"
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-amber-500 hover:bg-amber-400 text-white font-semibold text-lg transition-colors"
+                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold text-lg transition-colors"
               >
                 Ingyenes ajánlatkérés
                 <ArrowRight size={20} />
@@ -114,23 +114,23 @@ export default function HomePage() {
       </section>
 
       {/* Social proof strip */}
-      <section className="bg-amber-50 border-y border-amber-100 py-5">
+      <section className="bg-violet-50 border-y border-violet-100 py-5">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap justify-center md:justify-between items-center gap-6 text-sm text-slate-600">
             <span className="flex items-center gap-2">
-              <Check size={16} className="text-amber-500" /> Cookie-mentes oldal
+              <Check size={16} className="text-violet-600" /> Cookie-mentes oldal
             </span>
             <span className="flex items-center gap-2">
-              <Check size={16} className="text-amber-500" /> GDPR-megfelelő
+              <Check size={16} className="text-violet-600" /> GDPR-megfelelő
             </span>
             <span className="flex items-center gap-2">
-              <Check size={16} className="text-amber-500" /> Domain + hosting benne
+              <Check size={16} className="text-violet-600" /> Domain + hosting benne
             </span>
             <span className="flex items-center gap-2">
-              <Check size={16} className="text-amber-500" /> 1-2 héten belül él az oldal
+              <Check size={16} className="text-violet-600" /> 1-2 héten belül él az oldal
             </span>
             <span className="flex items-center gap-2">
-              <Check size={16} className="text-amber-500" /> Magyar nyelvű support
+              <Check size={16} className="text-violet-600" /> Magyar nyelvű support
             </span>
           </div>
         </div>
@@ -151,11 +151,11 @@ export default function HomePage() {
             {services.map((s) => (
               <div
                 key={s.title}
-                className="relative p-8 rounded-2xl border border-slate-100 hover:border-amber-200 hover:shadow-md transition-all group"
+                className="relative p-8 rounded-2xl border border-slate-100 hover:border-violet-200 hover:shadow-md transition-all group"
               >
                 <div className="flex items-start gap-5">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-amber-50 group-hover:bg-amber-100 flex items-center justify-center transition-colors">
-                    <s.icon size={22} className="text-amber-500" />
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-violet-50 group-hover:bg-violet-100 flex items-center justify-center transition-colors">
+                    <s.icon size={22} className="text-violet-600" />
                   </div>
                   <div>
                     <div className="flex items-center gap-3 mb-2">
@@ -173,7 +173,7 @@ export default function HomePage() {
           <div className="text-center mt-10">
             <Link
               href="/szolgaltatasok"
-              className="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 transition-colors"
+              className="inline-flex items-center gap-2 text-violet-600 font-semibold hover:text-violet-700 transition-colors"
             >
               Részletes szolgáltatásleírás
               <ArrowRight size={16} />
@@ -192,9 +192,9 @@ export default function HomePage() {
             <p className="text-lg text-slate-500">Egy csomag, egy ár. Nincsenek rejtett költségek.</p>
           </div>
           <div className="max-w-md mx-auto">
-            <div className="bg-white rounded-3xl border-2 border-amber-400 shadow-xl p-8 text-center relative">
+            <div className="bg-white rounded-3xl border-2 border-violet-500 shadow-xl p-8 text-center relative">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                <span className="bg-amber-500 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
+                <span className="bg-violet-600 text-white text-sm font-semibold px-4 py-1.5 rounded-full">
                   Legnépszerűbb
                 </span>
               </div>
@@ -207,14 +207,14 @@ export default function HomePage() {
               <ul className="text-left space-y-3 mb-8">
                 {features.map((f) => (
                   <li key={f} className="flex items-center gap-3 text-slate-700">
-                    <Check size={16} className="text-amber-500 flex-shrink-0" />
+                    <Check size={16} className="text-violet-600 flex-shrink-0" />
                     {f}
                   </li>
                 ))}
               </ul>
               <Link
                 href="/landing"
-                className="block w-full py-3.5 rounded-full bg-amber-500 hover:bg-amber-400 text-white font-semibold transition-colors"
+                className="block w-full py-3.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold transition-colors"
               >
                 Ajánlatkérés
               </Link>
@@ -236,7 +236,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((s) => (
               <div key={s.n} className="relative">
-                <div className="text-6xl font-bold text-amber-100 mb-4 leading-none">{s.n}</div>
+                <div className="text-6xl font-bold text-violet-100 mb-4 leading-none">{s.n}</div>
                 <h3 className="text-xl font-semibold text-slate-900 mb-3">{s.title}</h3>
                 <p className="text-slate-600 leading-relaxed">{s.desc}</p>
               </div>
@@ -258,10 +258,10 @@ export default function HomePage() {
               <div key={i} className="bg-slate-800 rounded-2xl p-6">
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
-                    <Star key={j} size={14} className="text-amber-400 fill-amber-400" />
+                    <Star key={j} size={14} className="text-violet-400 fill-violet-400" />
                   ))}
                 </div>
-                <p className="text-slate-300 leading-relaxed mb-5">&ldquo;{t.text ?? t.desc}&rdquo;</p>
+                <p className="text-slate-300 leading-relaxed mb-5">&ldquo;{t.text}&rdquo;</p>
                 <div>
                   <div className="font-semibold">{t.name}</div>
                   <div className="text-sm text-slate-400">{t.role}</div>

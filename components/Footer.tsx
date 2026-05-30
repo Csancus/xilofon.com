@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -6,10 +7,16 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           <div>
-            <Link href="/" className="text-xl font-bold text-white">
-              xilofon<span className="text-amber-500">.</span>
+            <Link href="/" className="inline-block mb-3">
+              <Image
+                src="/logo.png"
+                alt="Xilofon"
+                width={110}
+                height={36}
+                className="h-8 w-auto brightness-0 invert"
+              />
             </Link>
-            <p className="mt-3 text-sm leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Modern weboldal és digitális marketing kis- és egyéni vállalkozásoknak. Fix áron, átláthatóan.
             </p>
           </div>
