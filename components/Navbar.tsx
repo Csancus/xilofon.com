@@ -29,7 +29,7 @@ export default function Navbar() {
               <img src="/logo.png" alt="Xilofon" className="h-8 w-auto dark:hidden" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/logo-dark.png" alt="Xilofon" className="h-8 w-auto hidden dark:block" />
-              <span className="font-bold text-slate-900 dark:text-white text-base hidden sm:inline">Xilofon</span>
+              <span className="font-bold text-slate-900 dark:text-white text-base">Xilofon</span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-8">
