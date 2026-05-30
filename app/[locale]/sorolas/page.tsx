@@ -249,16 +249,17 @@ export default async function SorolasPage({ params }: Props) {
                   </li>
                 ))}
               </ul>
+
+              <a
+                href="#pelda-oldalak"
+                className="inline-flex items-center gap-2 mt-8 px-5 py-2.5 rounded-full border-2 border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-400 dark:hover:text-white font-semibold text-sm transition-colors"
+              >
+                {c.demosBtn}
+              </a>
             </div>
 
             {/* Right: form */}
             <div>
-              <a
-                href="#pelda-oldalak"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-400 dark:hover:text-white font-semibold text-sm mb-4 transition-colors"
-              >
-                {c.demosBtn}
-              </a>
               <div className="p-7 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] shadow-sm dark:shadow-none">
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{c.formTitle}</h2>
                 <p className="text-slate-500 dark:text-white/50 text-sm mb-6">{c.formSubtitle}</p>
