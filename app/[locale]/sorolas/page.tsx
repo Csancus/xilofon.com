@@ -6,7 +6,7 @@ import { demos } from "@/lib/demos";
 import type { Locale } from "@/lib/demos";
 import SorolasForm from "@/components/SorolasForm";
 import type { Metadata } from "next";
-import { Star } from "lucide-react";
+import { Star, Check } from "lucide-react";
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -17,19 +17,23 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const titles: Record<string, string> = {
-    hu: "Ingyenes weboldal sorsolás | Xilofon Digital",
-    en: "Free website giveaway | Xilofon Digital",
-    hr: "Nagradna izvlačenje web stranice | Xilofon Digital",
-    ro: "Tragere la sorți site gratuit | Xilofon Digital",
+    hu: "Júniusi referencia ajánlat – 70 EUR weboldal | Xilofon Digital",
+    en: "June reference offer – €70 website | Xilofon Digital",
+    hr: "Lipanjska referentna ponuda – 70 EUR web stranica | Xilofon Digital",
+    ro: "Ofertă referință iunie – 70 EUR site | Xilofon Digital",
   };
   return { title: titles[locale] ?? titles.hu };
 }
 
 const copy: Record<Locale, {
   badge: string;
+  spotsLeft: string;
   title: string;
   highlight: string;
+  normalPrice: string;
+  offerPrice: string;
   subtitle: string;
+  bullets: string[];
   formTitle: string;
   formSubtitle: string;
   demosTitle: string;
@@ -41,14 +45,26 @@ const copy: Record<Locale, {
   reviews: { name: string; role: string; text: string }[];
 }> = {
   hu: {
-    badge: "10 ingyenes weboldal kerül kisorsásra",
-    title: "Nyerj egy",
-    highlight: "ingyenes weboldalat",
-    subtitle: "Sorsolunk 10 ingyenes, profi weboldalat egyéni vállalkozóknak és kis cégeknek. Regisztrálj most és növeld az esélyeid!",
-    formTitle: "Regisztrálj a sorsolásba",
-    formSubtitle: "1-2 munkanapon belül visszajelzünk.",
-    demosTitle: "Ilyen weboldalt kaphatsz",
-    demosSubtitle: "Nézd meg a minta weboldalainkat – ezeket kapják a nyertesek (és aki megveszi).",
+    badge: "Június • 5 hely • Referencia ajánlat",
+    spotsLeft: "Maradék helyek: 5",
+    title: "Weboldal most",
+    highlight: "70 EUR-ért",
+    normalPrice: "Normál ár: 140 EUR / év",
+    offerPrice: "Júniusi ár: 70 EUR / év",
+    subtitle: "Júniusban 5 partnernek feleáron – 70 EUR-ért – készítünk weboldalat, referencia munka céljából. Ugyanaz a minőség, ugyanaz a csomag, fél áron.",
+    bullets: [
+      "Személyre szabott one-page weboldal",
+      "Domain és hosting benne",
+      "SEO-optimalizált, Google-barát",
+      "Formular de contact",
+      "Mobil-barát, gyors",
+      "Éves átnézés és frissítés benne",
+      "Live 1-2 héten belül",
+    ],
+    formTitle: "Foglald le a helyed",
+    formSubtitle: "Csak 5 hely van – 1-2 munkanapon belül visszajelzünk.",
+    demosTitle: "Ilyen weboldalat kapsz",
+    demosSubtitle: "Nézd meg a minta weboldalainkat – ezeket kapják a partnerek.",
     viewDemo: "Megnézem →",
     reviewsTitle: "Mit mondanak az ügyfeleink?",
     servicesTitle: "Egyéb szolgáltatásaink",
@@ -64,14 +80,26 @@ const copy: Record<Locale, {
     ],
   },
   en: {
-    badge: "10 free websites up for giveaway",
-    title: "Win a",
-    highlight: "free website",
-    subtitle: "We're giving away 10 professional websites for freelancers and small businesses. Register now and increase your chances!",
-    formTitle: "Register for the giveaway",
-    formSubtitle: "We'll get back to you within 1-2 business days.",
-    demosTitle: "This is what you could get",
-    demosSubtitle: "Browse our sample websites – this is what winners (and buyers) receive.",
+    badge: "June • 5 spots • Reference offer",
+    spotsLeft: "Spots remaining: 5",
+    title: "Website now for",
+    highlight: "€70",
+    normalPrice: "Regular price: €140 / year",
+    offerPrice: "June price: €70 / year",
+    subtitle: "In June we're building 5 websites at half price – €70 – for reference clients. Same quality, same package, half the price.",
+    bullets: [
+      "Custom one-page website",
+      "Domain and hosting included",
+      "SEO-optimized, Google-friendly",
+      "Contact form included",
+      "Mobile-friendly and fast",
+      "Annual review & refresh included",
+      "Live in 1-2 weeks",
+    ],
+    formTitle: "Reserve your spot",
+    formSubtitle: "Only 5 spots – we'll reply within 1-2 business days.",
+    demosTitle: "This is what you'll get",
+    demosSubtitle: "Browse our sample websites – this is what reference clients receive.",
     viewDemo: "View →",
     reviewsTitle: "What our clients say",
     servicesTitle: "Other services",
@@ -87,14 +115,26 @@ const copy: Record<Locale, {
     ],
   },
   hr: {
-    badge: "10 besplatnih web stranica na izvlačenju",
-    title: "Osvoji",
-    highlight: "besplatnu web stranicu",
-    subtitle: "Izvlačimo 10 besplatnih, profesionalnih web stranica za poduzetnike i male tvrtke. Prijavite se sada i povećajte svoje šanse!",
-    formTitle: "Prijava za izvlačenje",
-    formSubtitle: "Javit ćemo se u roku 1-2 radna dana.",
-    demosTitle: "Ovako može izgledati vaša web stranica",
-    demosSubtitle: "Pogledajte naše uzorke – to dobivaju pobjednici (i kupci).",
+    badge: "Lipanj • 5 mjesta • Referentna ponuda",
+    spotsLeft: "Preostala mjesta: 5",
+    title: "Web stranica sada za",
+    highlight: "70 EUR",
+    normalPrice: "Redovna cijena: 140 EUR / god",
+    offerPrice: "Lipanjska cijena: 70 EUR / god",
+    subtitle: "U lipnju izrađujemo 5 web stranica po pola cijene – 70 EUR – za referentne klijente. Ista kvaliteta, isti paket, pola cijene.",
+    bullets: [
+      "Personalizirana one-page web stranica",
+      "Domena i hosting uključeni",
+      "SEO optimizirana, Google prilagođena",
+      "Kontakt forma uključena",
+      "Prilagođena mobitelu i brza",
+      "Godišnji pregled i osvježavanje",
+      "Dostupna za 1-2 tjedna",
+    ],
+    formTitle: "Rezervirajte svoje mjesto",
+    formSubtitle: "Samo 5 mjesta – javit ćemo se u roku 1-2 radna dana.",
+    demosTitle: "Ovo ćete dobiti",
+    demosSubtitle: "Pogledajte naše uzorke – to dobivaju referentni klijenti.",
     viewDemo: "Pogledaj →",
     reviewsTitle: "Što kažu naši klijenti?",
     servicesTitle: "Ostale usluge",
@@ -110,14 +150,26 @@ const copy: Record<Locale, {
     ],
   },
   ro: {
-    badge: "10 site-uri gratuite la tragere la sorți",
-    title: "Câștigă un",
-    highlight: "site gratuit",
-    subtitle: "Tragem la sorți 10 site-uri profesionale pentru liber-profesioniști și afaceri mici. Înscrie-te acum și crește-ți șansele!",
-    formTitle: "Înscrie-te la tragerea la sorți",
-    formSubtitle: "Te vom contacta în 1-2 zile lucrătoare.",
-    demosTitle: "Asta ai putea primi",
-    demosSubtitle: "Răsfoiește exemplele noastre de site-uri – asta primesc câștigătorii (și cumpărătorii).",
+    badge: "Iunie • 5 locuri • Ofertă referință",
+    spotsLeft: "Locuri rămase: 5",
+    title: "Site acum la",
+    highlight: "70 EUR",
+    normalPrice: "Preț normal: 140 EUR / an",
+    offerPrice: "Preț iunie: 70 EUR / an",
+    subtitle: "În iunie realizăm 5 site-uri la jumătate de preț – 70 EUR – pentru clienți de referință. Aceeași calitate, același pachet, jumătate din preț.",
+    bullets: [
+      "Site one-page personalizat",
+      "Domeniu și hosting incluse",
+      "Optimizat SEO, prieten cu Google",
+      "Formular de contact inclus",
+      "Rapid și adaptat pentru mobil",
+      "Revizuire anuală inclusă",
+      "Live în 1-2 săptămâni",
+    ],
+    formTitle: "Rezervă-ți locul",
+    formSubtitle: "Doar 5 locuri – te contactăm în 1-2 zile lucrătoare.",
+    demosTitle: "Asta vei primi",
+    demosSubtitle: "Răsfoiește exemplele noastre – asta primesc clienții de referință.",
     viewDemo: "Vezi →",
     reviewsTitle: "Ce spun clienții noștri",
     servicesTitle: "Alte servicii",
@@ -167,19 +219,44 @@ export default async function SorolasPage({ params }: Props) {
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            {/* Left */}
+
+            {/* Left: value prop */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2 bg-amber-50 border border-amber-200 text-amber-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
                 {c.badge}
               </div>
+
               <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-4">
                 {c.title}{" "}
                 <span className="bg-gradient-to-r from-violet-600 to-indigo-500 bg-clip-text text-transparent">
                   {c.highlight}
                 </span>
               </h1>
-              <p className="text-slate-600 text-lg leading-relaxed">{c.subtitle}</p>
+
+              {/* Price comparison */}
+              <div className="flex items-center gap-4 mb-5">
+                <span className="text-slate-400 line-through text-lg">{c.normalPrice}</span>
+                <span className="text-violet-600 font-bold text-xl">{c.offerPrice}</span>
+              </div>
+
+              <p className="text-slate-600 text-lg leading-relaxed mb-8">{c.subtitle}</p>
+
+              {/* Spots counter */}
+              <div className="inline-flex items-center gap-2 bg-green-50 border border-green-200 text-green-700 text-sm font-semibold px-4 py-2 rounded-full mb-8">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                {c.spotsLeft}
+              </div>
+
+              {/* Bullets */}
+              <ul className="space-y-2.5">
+                {c.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-3 text-sm text-slate-700">
+                    <Check size={15} className="text-violet-600 flex-shrink-0 mt-0.5" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
             </div>
 
             {/* Right: form */}
@@ -190,6 +267,7 @@ export default async function SorolasPage({ params }: Props) {
                 <SorolasForm locale={loc} />
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -202,7 +280,6 @@ export default async function SorolasPage({ params }: Props) {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {demos.map((demo) => {
               const label = demo.galleryLabel[loc];
-              const demoContent = demo.content[loc];
               return (
                 <Link
                   key={demo.slug}
@@ -260,7 +337,6 @@ export default async function SorolasPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Footer bar */}
       <div className="border-t border-slate-200 py-6 px-4 text-center text-sm text-slate-400">
         © {new Date().getFullYear()} Xilofon Digital
       </div>
