@@ -12,7 +12,7 @@ const labels: Record<Locale, {
   email: string; emailPh: string;
   phone: string; phonePh: string;
   platform: string; platformWA: string; platformEmail: string;
-  domain: string; domainOptions: string[];
+  domain: string; domainOptions: string[]; domainNote?: string;
   industry: string; industryPh: string;
   submit: string; sending: string;
   successTitle: string; successText: string;
@@ -68,8 +68,9 @@ const labels: Record<Locale, {
     phone: "Broj telefona", phonePh: "+385 91 234 5678",
     platform: "Kako da vas kontaktiramo?",
     platformWA: "WhatsApp (telefonom)", platformEmail: "E-mailom",
-    domain: "Kakav naziv domene biste željeli?",
-    domainOptions: [".com (npr. vaseime.com)"],
+    domain: "Odgovara li vam .com domena?",
+    domainOptions: ["Da, npr. vaseime.com", "Ne"],
+    domainNote: "Mogućnost SEO optimizacije neovisna je o nazivu domene. .com je međunarodna, pouzdana domena za sve.",
     industry: "Kojom se djelatnošću bavite i kakvu web stranicu trebate?",
     industryPh: "npr. Maserka sam u Zagrebu, trebam jednostavnu predstavničku stranicu s rezervacijom...",
     submit: "Rezerviram mjesto", sending: "Slanje...",
@@ -237,6 +238,9 @@ export default function SorolasForm({ locale }: Props) {
         <div className="space-y-2">
           {l.domainOptions.map((opt) => radioOption("domain", opt, opt))}
         </div>
+        {l.domainNote && (
+          <p className="mt-2 text-xs text-slate-400 dark:text-white/30 leading-relaxed">{l.domainNote}</p>
+        )}
       </div>
 
       <div>
