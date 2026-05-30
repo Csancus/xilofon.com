@@ -123,7 +123,7 @@ export default function SorolasForm({ locale }: Props) {
       const res = await fetch("/api/sorolas", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, lottery: "–" }),
+        body: JSON.stringify({ ...form, lottery: "–", locale }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
