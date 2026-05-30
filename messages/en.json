@@ -14,7 +14,9 @@
     "quote": "Get a quote",
     "aszf": "Terms of Service",
     "privacy": "Privacy Policy",
-    "copyright": "© {year} Xilofon Digital. All rights reserved."
+    "copyright": "© {year} Xilofon Digital. All rights reserved.",
+    "demosTitle": "Website samples",
+    "demosAll": "All samples"
   },
   "LanguageSwitcher": {
     "label": "Language"

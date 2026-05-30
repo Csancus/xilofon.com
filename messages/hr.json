@@ -14,7 +14,9 @@
     "quote": "Zatražite ponudu",
     "aszf": "Opći uvjeti poslovanja",
     "privacy": "Pravila privatnosti",
-    "copyright": "© {year} Xilofon Digital. Sva prava pridržana."
+    "copyright": "© {year} Xilofon Digital. Sva prava pridržana.",
+    "demosTitle": "Uzorci web stranica",
+    "demosAll": "Svi uzorci"
   },
   "LanguageSwitcher": {
     "label": "Jezik"

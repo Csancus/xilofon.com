@@ -14,7 +14,9 @@
     "quote": "Ajánlatkérés",
     "aszf": "Általános Szerződési Feltételek",
     "privacy": "Adatkezelési Tájékoztató",
-    "copyright": "© {year} Xilofon Digital. Minden jog fenntartva."
+    "copyright": "© {year} Xilofon Digital. Minden jog fenntartva.",
+    "demosTitle": "Weboldal minták",
+    "demosAll": "Összes minta"
   },
   "LanguageSwitcher": {
     "label": "Nyelv"

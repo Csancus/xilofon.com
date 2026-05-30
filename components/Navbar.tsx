@@ -24,32 +24,34 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-white/95 dark:bg-zinc-950/80 backdrop-blur-xl border-b border-slate-200 dark:border-white/[0.06]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/logo.png"
-              alt="Xilofon"
-              width={120}
-              height={40}
-              className="h-8 w-auto dark:brightness-0 dark:invert"
-              priority
-            />
-          </Link>
+          <div className="flex items-center gap-8">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo.png"
+                alt="Xilofon"
+                width={120}
+                height={40}
+                className="h-8 w-auto dark:brightness-0 dark:invert"
+                priority
+              />
+            </Link>
 
-          <nav className="hidden md:flex items-center gap-8">
-            {links.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`text-sm font-medium transition-colors ${
-                  pathname === l.href
-                    ? "text-slate-900 dark:text-white"
-                    : "text-slate-500 dark:text-white/50 hover:text-slate-800 dark:hover:text-white/90"
-                }`}
-              >
-                {l.label}
-              </Link>
-            ))}
-          </nav>
+            <nav className="hidden md:flex items-center gap-8">
+              {links.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className={`text-sm font-medium transition-colors ${
+                    pathname === l.href
+                      ? "text-slate-900 dark:text-white"
+                      : "text-slate-500 dark:text-white/50 hover:text-slate-800 dark:hover:text-white/90"
+                  }`}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
           <div className="hidden md:flex items-center gap-3">
             <LanguageSwitcher currentLocale={locale} />
