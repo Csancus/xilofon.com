@@ -54,12 +54,12 @@ const copy: Record<Locale, {
     highlight: "94 EUR-ért",
     normalPrice: "Normál ár: 188 EUR / év",
     offerPrice: "Júniusi ár: 94 EUR / év",
-    subtitle: "Júniusban 5 partnernek feleáron – 94 EUR-ért – készítünk weboldalat, referencia munka céljából. Ugyanaz a minőség, ugyanaz a csomag, fél áron.",
+    subtitle: "Júniusban 5 partnernek feleáron – 94 EUR-ért – készítünk weboldalat, referencia munka céljából.",
     bullets: [
       "Személyre szabott one-page weboldal",
       "Domain és hosting benne",
       "SEO-optimalizált, Google-barát",
-      "Formular de contact",
+      "Kapcsolati űrlap benne",
       "Mobil-barát, gyors",
       "Éves átnézés és frissítés benne",
       "Live 1-2 héten belül",
@@ -91,7 +91,7 @@ const copy: Record<Locale, {
     highlight: "€94",
     normalPrice: "Regular price: €188 / year",
     offerPrice: "June price: €94 / year",
-    subtitle: "In June we're building 5 websites at half price – €94 – for reference clients. Same quality, same package, half the price.",
+    subtitle: "In June we're building 5 websites at half price – €94 – for reference clients.",
     bullets: [
       "Custom one-page website",
       "Domain and hosting included",
@@ -128,7 +128,7 @@ const copy: Record<Locale, {
     highlight: "94 EUR",
     normalPrice: "Redovna cijena: 188 EUR / god",
     offerPrice: "Lipanjska cijena: 94 EUR / god",
-    subtitle: "U lipnju izrađujemo 5 web stranica po pola cijene – 94 EUR – za referentne klijente. Ista kvaliteta, isti paket, pola cijene.",
+    subtitle: "U lipnju izrađujemo 5 web stranica po pola cijene – 94 EUR – za referentne klijente.",
     bullets: [
       "Personalizirana one-page web stranica",
       "Domena i hosting uključeni",
@@ -142,7 +142,7 @@ const copy: Record<Locale, {
     formSubtitle: "Još samo 4/5 mjesta – javit ćemo se u roku 1-2 radna dana.",
     demosTitle: "Ovo ćete dobiti",
     demosSubtitle: "Pogledajte naše uzorke – to dobivaju referentni klijenti.",
-    viewDemo: "Pogledaj →",
+    viewDemo: "Pogledajte →",
     reviewsTitle: "Što kažu naši klijenti?",
     servicesTitle: "Ostale usluge",
     services: [
@@ -159,13 +159,13 @@ const copy: Record<Locale, {
     demosBtn: "Primjeri stranica ↓",
   },
   ro: {
-    badge: "Iunie • 5 locuri • Ofertă referință",
+    badge: "Iunie • 5 locuri • Ofertă de referință",
     spotsLeft: "Locuri rămase: 4/5",
     title: "Site acum la",
     highlight: "94 EUR",
     normalPrice: "Preț normal: 188 EUR / an",
     offerPrice: "Preț iunie: 94 EUR / an",
-    subtitle: "În iunie realizăm 5 site-uri la jumătate de preț – 94 EUR – pentru clienți de referință. Aceeași calitate, același pachet, jumătate din preț.",
+    subtitle: "În iunie realizăm 5 site-uri la jumătate de preț – 94 EUR – pentru clienți de referință.",
     bullets: [
       "Site one-page personalizat",
       "Domeniu și hosting incluse",
@@ -184,7 +184,7 @@ const copy: Record<Locale, {
     servicesTitle: "Alte servicii",
     services: [
       { emoji: "📱", title: "Campanii Facebook", desc: "Reclame targetate și managementul campaniilor", price: "Ofertă la cerere" },
-      { emoji: "📍", title: "Profil Google Business", desc: "SEO local, prezență pe Google Maps", price: "Taxă unică + lunar" },
+      { emoji: "📍", title: "Profil Google Business", desc: "SEO local, prezență pe Google Maps", price: "O dată + lunar" },
       { emoji: "🔍", title: "Consultanță SEO", desc: "Cercetare cuvinte cheie, audit tehnic, strategie", price: "Pe proiect" },
     ],
     reviews: [
