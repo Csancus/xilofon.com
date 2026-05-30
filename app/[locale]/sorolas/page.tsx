@@ -222,7 +222,7 @@ export default async function SorolasPage({ params }: Props) {
           <div className="absolute top-20 right-0 w-[400px] h-[400px] rounded-full bg-indigo-400/10 dark:bg-indigo-600/15 blur-[100px]" />
         </div>
 
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 sm:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
             {/* Left: value prop */}
