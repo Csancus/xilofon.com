@@ -241,9 +241,9 @@ export default async function SorolasPage({ params }: Props) {
               </h1>
 
               {/* Price comparison */}
-              <div className="flex flex-wrap items-center gap-3 mb-5">
-                <span className="text-slate-400 dark:text-white/30 line-through text-base whitespace-nowrap">{c.normalPrice}</span>
-                <span className="text-violet-600 dark:text-violet-400 font-bold text-lg whitespace-nowrap">{c.offerPrice}</span>
+              <div className="flex items-center gap-2 mb-5 overflow-hidden">
+                <span className="text-slate-400 dark:text-white/30 line-through text-xs sm:text-sm md:text-base whitespace-nowrap">{c.normalPrice}</span>
+                <span className="text-violet-600 dark:text-violet-400 font-bold text-xs sm:text-base md:text-lg whitespace-nowrap">{c.offerPrice}</span>
               </div>
 
               <p className="text-slate-600 dark:text-white/60 text-lg leading-relaxed mb-8">{c.subtitle}</p>
