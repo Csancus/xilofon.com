@@ -45,6 +45,7 @@ const copy: Record<Locale, {
   services: { emoji: string; title: string; desc: string; price: string }[];
   reviews: { name: string; role: string; text: string }[];
   formDisclaimer: string;
+  demosBtn: string;
 }> = {
   hu: {
     badge: "Június • 5 hely • Referencia ajánlat",
@@ -81,6 +82,7 @@ const copy: Record<Locale, {
       { name: "Németh Katalin", role: "Könyvelő", text: "Eddig féltem az internet-marketingtől. A csapat végigvezetett mindenen, és most van egy profi weboldalam, ami valóban ügyfeleket hoz." },
     ],
     formDisclaimer: "A programba jelentkező vállalkozások közül a Xilofon választja ki az együttműködésre legalkalmasabb projekteket. A programban részt vevő partnerek hozzájárulnak ahhoz, hogy az elkészült weboldal referenciaanyagként megjelenjen a Xilofon kommunikációjában.",
+    demosBtn: "Példaoldalakhoz ↓",
   },
   en: {
     badge: "June • 5 spots • Reference offer",
@@ -117,6 +119,7 @@ const copy: Record<Locale, {
       { name: "Kate N.", role: "Accountant", text: "I was afraid of digital marketing. The team guided me through everything, and now I have a professional website that actually brings clients." },
     ],
     formDisclaimer: "Xilofon selects the most suitable projects from all applicants. Partners participating in the program agree that the completed website may be used as a reference in Xilofon's communications.",
+    demosBtn: "See sample sites ↓",
   },
   hr: {
     badge: "Lipanj • 5 mjesta • Referentna ponuda",
@@ -153,6 +156,7 @@ const copy: Record<Locale, {
       { name: "Maja Novak", role: "Računovođa", text: "Bojala sam se digitalnog marketinga. Tim me proveo kroz sve, a sada imam profesionalnu web stranicu koja stvarno donosi klijente." },
     ],
     formDisclaimer: "Xilofon odabire najprikladnije projekte među svim prijavama. Partneri koji sudjeluju u programu pristaju da dovršena web stranica može biti korištena kao referenca u Xilofonovim komunikacijama.",
+    demosBtn: "Primjeri stranica ↓",
   },
   ro: {
     badge: "Iunie • 5 locuri • Ofertă referință",
@@ -189,6 +193,7 @@ const copy: Record<Locale, {
       { name: "Elena N.", role: "Contabil", text: "Mi-era teamă de marketing digital. Echipa m-a ghidat prin tot și acum am un website profesional care chiar aduce clienți." },
     ],
     formDisclaimer: "Xilofon selectează proiectele cele mai potrivite dintre toate aplicațiile. Partenerii care participă în program sunt de acord ca site-ul realizat să fie utilizat ca material de referință în comunicările Xilofon.",
+    demosBtn: "Vezi exemple ↓",
   },
 };
 
@@ -248,6 +253,12 @@ export default async function SorolasPage({ params }: Props) {
 
             {/* Right: form */}
             <div>
+              <a
+                href="#pelda-oldalak"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 dark:text-violet-400 hover:text-violet-500 mb-4 transition-colors"
+              >
+                {c.demosBtn}
+              </a>
               <div className="p-7 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] shadow-sm dark:shadow-none">
                 <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{c.formTitle}</h2>
                 <p className="text-slate-500 dark:text-white/50 text-sm mb-6">{c.formSubtitle}</p>
@@ -264,7 +275,7 @@ export default async function SorolasPage({ params }: Props) {
       </div>
 
       {/* Demo samples */}
-      <section className="py-16 px-4 bg-slate-50 dark:bg-zinc-900">
+      <section id="pelda-oldalak" className="py-16 px-4 bg-slate-50 dark:bg-zinc-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-2">{c.demosTitle}</h2>
           <p className="text-slate-500 dark:text-white/50 text-center mb-10">{c.demosSubtitle}</p>
@@ -326,6 +337,21 @@ export default async function SorolasPage({ params }: Props) {
                 <span className="text-xs font-semibold text-violet-600 dark:text-violet-400 bg-violet-50 dark:bg-violet-500/10 px-2.5 py-1 rounded-full">{svc.price}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Repeat form at bottom */}
+      <section className="py-16 px-4 bg-white dark:bg-zinc-950">
+        <div className="max-w-lg mx-auto">
+          <div className="p-7 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] shadow-sm dark:shadow-none">
+            <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{c.formTitle}</h2>
+            <p className="text-slate-500 dark:text-white/50 text-sm mb-6">{c.formSubtitle}</p>
+            <SorolasForm locale={loc} />
+          </div>
+          <div className="mt-3 flex gap-3 items-start bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 rounded-xl px-4 py-3">
+            <span className="text-lg flex-shrink-0 mt-0.5">ℹ️</span>
+            <p className="text-xs text-amber-800 dark:text-amber-300 leading-relaxed">{c.formDisclaimer}</p>
           </div>
         </div>
       </section>
