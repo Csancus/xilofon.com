@@ -37,6 +37,7 @@ export default async function Footer() {
               <li><Link href="/szolgaltatasok" className="hover:text-white transition-colors">{t("services")}</Link></li>
               <li><Link href="/rolunk" className="hover:text-white transition-colors">{t("about")}</Link></li>
               <li><Link href="/landing" className="hover:text-white transition-colors">{t("quote")}</Link></li>
+              <li><Link href="/sorolas" className="hover:text-white transition-colors">{t("sorolas")}</Link></li>
             </ul>
           </div>
 

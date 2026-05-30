@@ -25,7 +25,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center gap-2.5">
               <Image
                 src="/logo.png"
                 alt="Xilofon"
@@ -34,6 +34,7 @@ export default function Navbar() {
                 className="h-8 w-auto dark:brightness-0 dark:invert"
                 priority
               />
+              <span className="font-bold text-slate-900 dark:text-white text-base hidden sm:inline">Xilofon</span>
             </Link>
 
             <nav className="hidden md:flex items-center gap-8">
