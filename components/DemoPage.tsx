@@ -172,7 +172,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
       )}
 
       {/* Business navbar */}
-      <header className={`sticky top-0 z-30 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm`} style={{ top: dismissed ? 0 : undefined }}>
+      <header className={`sticky z-30 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm ${!dismissed && editMode ? "top-[72px]" : !dismissed ? "top-10" : editMode ? "top-8" : "top-0"}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <span className="font-bold text-slate-900 text-lg truncate max-w-[180px] sm:max-w-none">{content.businessName}</span>
@@ -247,19 +247,19 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
         <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="flex items-center gap-2.5">
             <MapPin size={18} className="flex-shrink-0 opacity-80" />
-            <span className="text-sm font-medium leading-tight">{content.address}</span>
+            <span className="text-sm font-medium leading-tight">{editable(content.address, (v) => setContent((c) => ({ ...c, address: v })))}</span>
           </div>
-          <a href={`tel:${content.phone}`} className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+          <div className="flex items-center gap-2.5">
             <Phone size={18} className="flex-shrink-0 opacity-80" />
-            <span className="text-sm font-medium">{content.phone}</span>
-          </a>
-          <a href={`mailto:${content.email}`} className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
+            <span className="text-sm font-medium">{editable(content.phone, (v) => setContent((c) => ({ ...c, phone: v })))}</span>
+          </div>
+          <div className="flex items-center gap-2.5">
             <Mail size={18} className="flex-shrink-0 opacity-80" />
-            <span className="text-sm font-medium">{content.email}</span>
-          </a>
+            <span className="text-sm font-medium">{editable(content.email, (v) => setContent((c) => ({ ...c, email: v })))}</span>
+          </div>
           <div className="flex items-center gap-2.5">
             <Clock size={18} className="flex-shrink-0 opacity-80" />
-            <span className="text-sm font-medium leading-tight">{content.hours[0]}</span>
+            <span className="text-sm font-medium leading-tight">{editable(content.hours[0], (v) => setContent((c) => ({ ...c, hours: c.hours.map((h, i) => i === 0 ? v : h) })))}</span>
           </div>
         </div>
       </section>
