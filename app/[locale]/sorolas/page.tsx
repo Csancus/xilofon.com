@@ -60,7 +60,7 @@ const copy: Record<Locale, {
       "Domain és hosting benne",
       "SEO-optimalizált, Google-barát",
       "Mobil-barát, gyors",
-      "Live 1-2 héten belül",
+      "1-2 héten belül kész",
     ],
     formTitle: "Foglald le a helyed",
     formSubtitle: "Már csak 4/5 hely szabad – 1-2 munkanapon belül visszajelzünk.",
