@@ -110,8 +110,6 @@ function buildConfirmationHtml(name: string, platform: string, locale: string): 
             <p style="margin:0;font-size:13px;font-weight:600;color:#7c3aed;">${c.team}</p>
             <p style="margin:6px 0 0;font-size:12px;color:#94a3b8;">
               <a href="https://xilofon.com" style="color:#7c3aed;text-decoration:none;">xilofon.com</a>
-              &nbsp;·&nbsp;
-              <a href="mailto:info@xilofon.com" style="color:#7c3aed;text-decoration:none;">info@xilofon.com</a>
             </p>
           </td>
         </tr>
