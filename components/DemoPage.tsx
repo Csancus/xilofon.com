@@ -120,7 +120,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <Link
-                href="/landing"
+                href="/sorolas"
                 className="inline-flex items-center gap-1 bg-white text-violet-700 font-semibold text-xs px-3 py-1.5 rounded-full hover:bg-violet-50 transition-colors"
               >
                 {content.bannerCta} <ChevronRight size={12} />
