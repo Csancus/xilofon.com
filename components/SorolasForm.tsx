@@ -143,6 +143,7 @@ export default function SorolasForm({ locale }: Props) {
       if (!res.ok) throw new Error();
       setStatus("success");
       setConsent(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch {
       setStatus("error");
     }
