@@ -47,10 +47,10 @@ const copy: Record<Locale, {
 }> = {
   hu: {
     badge: "Június • 5 hely • Referencia ajánlat",
-    spotsLeft: "Maradék helyek: 5",
+    spotsLeft: "Maradék helyek: 4/5",
     title: "Weboldal most",
     highlight: "70 EUR-ért",
-    normalPrice: "Normál ár: 140 EUR / év",
+    normalPrice: "Normál ár: 188 EUR / év",
     offerPrice: "Júniusi ár: 70 EUR / év",
     subtitle: "Júniusban 5 partnernek feleáron – 70 EUR-ért – készítünk weboldalat, referencia munka céljából. Ugyanaz a minőség, ugyanaz a csomag, fél áron.",
     bullets: [
@@ -76,16 +76,16 @@ const copy: Record<Locale, {
     ],
     reviews: [
       { name: "Horváth Eszter", role: "Masszőr", text: "Korábban csak Facebookon voltam. Most az oldalamon keresztül jönnek az új ügyfeleim, és minden hónapban több foglalást kapok." },
-      { name: "Fekete Dávid", role: "Személyi edző", text: "Két héttel az indítás után már az első oldalon voltam a Google-on a városomban. 140 euróért ez elképesztő eredmény." },
+      { name: "Fekete Dávid", role: "Személyi edző", text: "Két héttel az indítás után már az első oldalon voltam a Google-on a városomban. 188 euróért ez elképesztő eredmény." },
       { name: "Németh Katalin", role: "Könyvelő", text: "Eddig féltem az internet-marketingtől. A csapat végigvezetett mindenen, és most van egy profi weboldalam, ami valóban ügyfeleket hoz." },
     ],
   },
   en: {
     badge: "June • 5 spots • Reference offer",
-    spotsLeft: "Spots remaining: 5",
+    spotsLeft: "Spots remaining: 4/5",
     title: "Website now for",
     highlight: "€70",
-    normalPrice: "Regular price: €140 / year",
+    normalPrice: "Regular price: €188 / year",
     offerPrice: "June price: €70 / year",
     subtitle: "In June we're building 5 websites at half price – €70 – for reference clients. Same quality, same package, half the price.",
     bullets: [
@@ -111,16 +111,16 @@ const copy: Record<Locale, {
     ],
     reviews: [
       { name: "Sarah M.", role: "Massage therapist", text: "I used to rely only on Facebook. Now new clients come through my website, and I get more bookings every month." },
-      { name: "Michael O.", role: "Personal trainer", text: "Two weeks after launch I was already on the first page of Google. What you get for €140 is truly remarkable." },
+      { name: "Michael O.", role: "Personal trainer", text: "Two weeks after launch I was already on the first page of Google. What you get for €188 is truly remarkable." },
       { name: "Kate N.", role: "Accountant", text: "I was afraid of digital marketing. The team guided me through everything, and now I have a professional website that actually brings clients." },
     ],
   },
   hr: {
     badge: "Lipanj • 5 mjesta • Referentna ponuda",
-    spotsLeft: "Preostala mjesta: 5",
+    spotsLeft: "Preostala mjesta: 4/5",
     title: "Web stranica sada za",
     highlight: "70 EUR",
-    normalPrice: "Redovna cijena: 140 EUR / god",
+    normalPrice: "Redovna cijena: 188 EUR / god",
     offerPrice: "Lipanjska cijena: 70 EUR / god",
     subtitle: "U lipnju izrađujemo 5 web stranica po pola cijene – 70 EUR – za referentne klijente. Ista kvaliteta, isti paket, pola cijene.",
     bullets: [
@@ -146,16 +146,16 @@ const copy: Record<Locale, {
     ],
     reviews: [
       { name: "Ana Kovač", role: "Maserka", text: "Prije sam bila samo na Facebooku. Sada novi klijenti dolaze kroz moju web stranicu i svaki mjesec imam više rezervacija." },
-      { name: "Tomislav Jurić", role: "Osobni trener", text: "Dva tjedna nakon objave već sam bio na prvoj stranici Googlea. Za 140 eura ovo je nevjerojatan rezultat." },
+      { name: "Tomislav Jurić", role: "Osobni trener", text: "Dva tjedna nakon objave već sam bio na prvoj stranici Googlea. Za 188 eura ovo je nevjerojatan rezultat." },
       { name: "Maja Novak", role: "Računovođa", text: "Bojala sam se digitalnog marketinga. Tim me proveo kroz sve, a sada imam profesionalnu web stranicu koja stvarno donosi klijente." },
     ],
   },
   ro: {
     badge: "Iunie • 5 locuri • Ofertă referință",
-    spotsLeft: "Locuri rămase: 5",
+    spotsLeft: "Locuri rămase: 4/5",
     title: "Site acum la",
     highlight: "70 EUR",
-    normalPrice: "Preț normal: 140 EUR / an",
+    normalPrice: "Preț normal: 188 EUR / an",
     offerPrice: "Preț iunie: 70 EUR / an",
     subtitle: "În iunie realizăm 5 site-uri la jumătate de preț – 70 EUR – pentru clienți de referință. Aceeași calitate, același pachet, jumătate din preț.",
     bullets: [
@@ -181,7 +181,7 @@ const copy: Record<Locale, {
     ],
     reviews: [
       { name: "Maria C.", role: "Terapeut de masaj", text: "Înainte mă bazam doar pe Facebook. Acum clienți noi vin prin website-ul meu și primesc mai multe rezervări în fiecare lună." },
-      { name: "Andrei B.", role: "Antrenor personal", text: "La două săptămâni după lansare eram deja pe prima pagină Google. Ce obții pentru 140 de euro este cu adevărat remarcabil." },
+      { name: "Andrei B.", role: "Antrenor personal", text: "La două săptămâni după lansare eram deja pe prima pagină Google. Ce obții pentru 188 de euro este cu adevărat remarcabil." },
       { name: "Elena N.", role: "Contabil", text: "Mi-era teamă de marketing digital. Echipa m-a ghidat prin tot și acum am un website profesional care chiar aduce clienți." },
     ],
   },
@@ -209,9 +209,10 @@ export default async function SorolasPage({ params }: Props) {
 
             {/* Left: value prop */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 text-amber-700 dark:text-amber-400 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500 dark:bg-amber-400 animate-pulse" />
-                {c.badge}
+              {/* Spots counter */}
+              <div className="inline-flex items-center gap-2 bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-700 dark:text-green-400 text-sm font-semibold px-4 py-2 rounded-full mb-6">
+                <span className="w-2 h-2 rounded-full bg-green-500 dark:bg-green-400 animate-pulse" />
+                {c.spotsLeft}
               </div>
 
               <h1 className="text-4xl md:text-5xl font-bold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
@@ -222,18 +223,12 @@ export default async function SorolasPage({ params }: Props) {
               </h1>
 
               {/* Price comparison */}
-              <div className="flex items-center gap-4 mb-5">
-                <span className="text-slate-400 dark:text-white/30 line-through text-lg">{c.normalPrice}</span>
-                <span className="text-violet-600 dark:text-violet-400 font-bold text-xl">{c.offerPrice}</span>
+              <div className="flex flex-wrap items-center gap-3 mb-5">
+                <span className="text-slate-400 dark:text-white/30 line-through text-base whitespace-nowrap">{c.normalPrice}</span>
+                <span className="text-violet-600 dark:text-violet-400 font-bold text-lg whitespace-nowrap">{c.offerPrice}</span>
               </div>
 
               <p className="text-slate-600 dark:text-white/60 text-lg leading-relaxed mb-8">{c.subtitle}</p>
-
-              {/* Spots counter */}
-              <div className="inline-flex items-center gap-2 bg-green-50 dark:bg-green-500/10 border border-green-200 dark:border-green-500/20 text-green-700 dark:text-green-400 text-sm font-semibold px-4 py-2 rounded-full mb-8">
-                <span className="w-2 h-2 rounded-full bg-green-500 dark:bg-green-400 animate-pulse" />
-                {c.spotsLeft}
-              </div>
 
               {/* Bullets */}
               <ul className="space-y-2.5">

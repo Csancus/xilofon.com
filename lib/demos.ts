@@ -62,6 +62,7 @@ export type DemoContent = {
   contactFormSuccess: string;
   bannerText: string;
   bannerCta: string;
+  sectionGallery: string;
 };
 
 export type DemoTheme = {
@@ -82,6 +83,7 @@ export type Demo = {
   slug: string;
   emoji: string;
   heroImageUrl: string;
+  galleryImages: string[];
   galleryLabel: Record<Locale, { type: string; name: string }>;
   theme: DemoTheme;
   content: Record<Locale, DemoContent>;
@@ -148,6 +150,12 @@ export const demos: Demo[] = [
     slug: "cukraszda",
     emoji: "🎂",
     heroImageUrl: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1400&q=80",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1551024601-bec78aea704b?w=800&q=80",
+      "https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=800&q=80",
+      "https://images.unsplash.com/photo-1621303837174-89787a7d4729?w=800&q=80",
+      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&q=80",
+    ],
     galleryLabel: {
       hu: { type: "Cukrászda", name: "Édes Percek" },
       en: { type: "Pastry shop", name: "Sweet Moments" },
@@ -214,6 +222,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Köszönjük! Hamarosan visszajelzünk.",
         bannerText: "Ez egy minta weboldal. Ilyen weboldalad is lehet.",
         bannerCta: "Kérj ajánlatot",
+        sectionGallery: "Alkotásaink",
       },
       en: {
         businessName: "Sweet Moments Bakery",
@@ -273,6 +282,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Thank you! We'll be in touch soon.",
         bannerText: "This is a sample website. You could have one just like it.",
         bannerCta: "Get a quote",
+        sectionGallery: "Our Creations",
       },
       hr: {
         businessName: "Slatki Trenuci Slastičarna",
@@ -332,6 +342,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Hvala! Javit ćemo se uskoro.",
         bannerText: "Ovo je primjer web stranice. I vi možete imati ovakvu.",
         bannerCta: "Zatražite ponudu",
+        sectionGallery: "Naše kreacije",
       },
       ro: {
         businessName: "Clipe Dulci Cofetărie",
@@ -391,6 +402,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Mulțumim! Te contactăm în curând.",
         bannerText: "Acesta este un site demonstrativ. Poți avea unul la fel.",
         bannerCta: "Solicită ofertă",
+        sectionGallery: "Creațiile noastre",
       },
     },
   },
@@ -400,6 +412,12 @@ export const demos: Demo[] = [
     slug: "pizzazo",
     emoji: "🍕",
     heroImageUrl: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1400&q=80",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=800&q=80",
+      "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=800&q=80",
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
+      "https://images.unsplash.com/photo-1528137871618-79d2761e3fd5?w=800&q=80",
+    ],
     galleryLabel: {
       hu: { type: "Pizzázó", name: "Napoli Pizzéria" },
       en: { type: "Pizza restaurant", name: "Napoli Pizzeria" },
@@ -466,6 +484,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Köszönjük! Hamarosan visszajelzünk.",
         bannerText: "Ez egy minta weboldal. Ilyen weboldalad is lehet.",
         bannerCta: "Kérj ajánlatot",
+        sectionGallery: "Ételeink",
       },
       en: {
         businessName: "Napoli Pizzeria",
@@ -525,6 +544,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Thank you! We'll be in touch soon.",
         bannerText: "This is a sample website. You could have one just like it.",
         bannerCta: "Get a quote",
+        sectionGallery: "Our Dishes",
       },
       hr: {
         businessName: "Napoli Pizzeria",
@@ -584,6 +604,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Hvala! Javit ćemo se uskoro.",
         bannerText: "Ovo je primjer web stranice. I vi možete imati ovakvu.",
         bannerCta: "Zatražite ponudu",
+        sectionGallery: "Naša jela",
       },
       ro: {
         businessName: "Napoli Pizzeria",
@@ -643,6 +664,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Mulțumim! Te contactăm în curând.",
         bannerText: "Acesta este un site demonstrativ. Poți avea unul la fel.",
         bannerCta: "Solicită ofertă",
+        sectionGallery: "Preparatele noastre",
       },
     },
   },
@@ -652,6 +674,12 @@ export const demos: Demo[] = [
     slug: "borapalas",
     emoji: "🌿",
     heroImageUrl: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1400&q=80",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80",
+      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800&q=80",
+      "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=80",
+      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&q=80",
+    ],
     galleryLabel: {
       hu: { type: "Bőrápolás", name: "Tiszta Bőr Stúdió" },
       en: { type: "Skin care", name: "Clear Skin Studio" },
@@ -718,6 +746,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Köszönjük! Hamarosan visszajelzünk.",
         bannerText: "Ez egy minta weboldal. Ilyen weboldalad is lehet.",
         bannerCta: "Kérj ajánlatot",
+        sectionGallery: "Munkáink",
       },
       en: {
         businessName: "Clear Skin Studio",
@@ -777,6 +806,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Thank you! We'll be in touch soon.",
         bannerText: "This is a sample website. You could have one just like it.",
         bannerCta: "Get a quote",
+        sectionGallery: "Our Work",
       },
       hr: {
         businessName: "Čista Koža Studio",
@@ -836,6 +866,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Hvala! Javit ćemo se uskoro.",
         bannerText: "Ovo je primjer web stranice. I vi možete imati ovakvu.",
         bannerCta: "Zatražite ponudu",
+        sectionGallery: "Naši radovi",
       },
       ro: {
         businessName: "Studio Piele Curată",
@@ -895,6 +926,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Mulțumim! Te contactăm în curând.",
         bannerText: "Acesta este un site demonstrativ. Poți avea unul la fel.",
         bannerCta: "Solicită ofertă",
+        sectionGallery: "Lucrările noastre",
       },
     },
   },
@@ -904,6 +936,12 @@ export const demos: Demo[] = [
     slug: "ingatlan",
     emoji: "🏠",
     heroImageUrl: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1400&q=80",
+    galleryImages: [
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
+    ],
     galleryLabel: {
       hu: { type: "Ingatlanközvetítő", name: "Molnár Ingatlan" },
       en: { type: "Real estate agent", name: "Mason Realty" },
@@ -970,6 +1008,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Köszönjük! Hamarosan visszajelzünk.",
         bannerText: "Ez egy minta weboldal. Ilyen weboldalad is lehet.",
         bannerCta: "Kérj ajánlatot",
+        sectionGallery: "Referenciáink",
       },
       en: {
         businessName: "Mason Realty",
@@ -1029,6 +1068,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Thank you! We'll be in touch soon.",
         bannerText: "This is a sample website. You could have one just like it.",
         bannerCta: "Get a quote",
+        sectionGallery: "Our Portfolio",
       },
       hr: {
         businessName: "Milić Nekretnine",
@@ -1088,6 +1128,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Hvala! Javit ćemo se uskoro.",
         bannerText: "Ovo je primjer web stranice. I vi možete imati ovakvu.",
         bannerCta: "Zatražite ponudu",
+        sectionGallery: "Naš portfelj",
       },
       ro: {
         businessName: "Marin Imobiliare",
@@ -1147,6 +1188,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Mulțumim! Te contactăm în curând.",
         bannerText: "Acesta este un site demonstrativ. Poți avea unul la fel.",
         bannerCta: "Solicită ofertă",
+        sectionGallery: "Portofoliul nostru",
       },
     },
   },

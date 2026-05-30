@@ -148,7 +148,7 @@ export default async function HomePage({ params }: Props) {
               </div>
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">{t("pricingPackage")}</h3>
               <div className="flex items-end justify-center gap-1 my-6">
-                <span className="text-6xl font-bold text-slate-900 dark:text-white">140</span>
+                <span className="text-6xl font-bold text-slate-900 dark:text-white">188</span>
                 <span className="text-2xl font-semibold text-slate-400 dark:text-white/50 mb-1.5">EUR</span>
                 <span className="text-slate-400 dark:text-white/40 mb-1.5">/év</span>
               </div>

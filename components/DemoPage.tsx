@@ -47,11 +47,13 @@ function getIcon(name: string) {
 export default function DemoPage({ demo, content: initialContent, locale }: Props) {
   const [editMode, setEditMode] = useState(false);
   const [content, setContent] = useState<DemoContent>(initialContent);
+  const [galleryImages, setGalleryImages] = useState<string[]>(demo.galleryImages);
   const [dismissed, setDismissed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const { theme } = demo;
   const al = adminLabels[locale];
 
@@ -411,6 +413,55 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
         </div>
       </section>
 
+      {/* Gallery */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-2">
+            {editable(content.sectionGallery, (v) => setContent((c) => ({ ...c, sectionGallery: v })))}
+          </h2>
+          <div className={`w-12 h-1 ${theme.accentBg} rounded-full mx-auto mb-10`} />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {galleryImages.map((src, i) => (
+              <div key={i} className="relative group rounded-2xl overflow-hidden aspect-square bg-slate-100">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt="" className="w-full h-full object-cover transition-transform group-hover:scale-105" />
+                {editMode && (
+                  <button
+                    onClick={() => setGalleryImages((imgs) => imgs.filter((_, j) => j !== i))}
+                    className="absolute top-2 right-2 w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow"
+                    aria-label="Remove"
+                  >
+                    <X size={14} />
+                  </button>
+                )}
+              </div>
+            ))}
+            {editMode && (
+              <button
+                onClick={() => fileInputRef.current?.click()}
+                className="rounded-2xl aspect-square border-2 border-dashed border-slate-300 hover:border-violet-400 flex flex-col items-center justify-center gap-2 text-slate-400 hover:text-violet-500 transition-colors bg-slate-50"
+              >
+                <span className="text-3xl">+</span>
+                <span className="text-xs font-medium">Kép hozzáadása</span>
+              </button>
+            )}
+          </div>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/*"
+            multiple
+            className="hidden"
+            onChange={(e) => {
+              const files = Array.from(e.target.files ?? []);
+              const urls = files.map((f) => URL.createObjectURL(f));
+              setGalleryImages((imgs) => [...imgs, ...urls]);
+              e.target.value = "";
+            }}
+          />
+        </div>
+      </section>
+
       {/* Map + Contact details */}
       <section className="py-16 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
@@ -431,31 +482,31 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
             </div>
             {/* Contact details */}
             <div className="flex flex-col justify-center gap-5">
-              <a href={`tel:${content.phone}`} className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 hover:border-slate-300 bg-slate-50 transition-colors group">
+              <div className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 bg-slate-50">
                 <div className={`w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center flex-shrink-0`}>
                   <Phone size={20} className={theme.iconText} />
                 </div>
                 <div>
                   <div className="text-xs text-slate-400 uppercase tracking-wide mb-0.5">{locale === "hu" ? "Telefon" : locale === "en" ? "Phone" : locale === "hr" ? "Telefon" : "Telefon"}</div>
-                  <div className="font-bold text-slate-900">{content.phone}</div>
+                  <div className="font-bold text-slate-900">{editable(content.phone, (v) => setContent((c) => ({ ...c, phone: v })))}</div>
                 </div>
-              </a>
-              <a href={`mailto:${content.email}`} className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 hover:border-slate-300 bg-slate-50 transition-colors group">
+              </div>
+              <div className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 bg-slate-50">
                 <div className={`w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center flex-shrink-0`}>
                   <Mail size={20} className={theme.iconText} />
                 </div>
                 <div>
                   <div className="text-xs text-slate-400 uppercase tracking-wide mb-0.5">E-mail</div>
-                  <div className="font-bold text-slate-900">{content.email}</div>
+                  <div className="font-bold text-slate-900">{editable(content.email, (v) => setContent((c) => ({ ...c, email: v })))}</div>
                 </div>
-              </a>
+              </div>
               <div className="flex items-center gap-4 p-5 rounded-2xl border border-slate-200 bg-slate-50">
                 <div className={`w-12 h-12 rounded-xl ${theme.iconBg} flex items-center justify-center flex-shrink-0`}>
                   <MapPin size={20} className={theme.iconText} />
                 </div>
                 <div>
                   <div className="text-xs text-slate-400 uppercase tracking-wide mb-0.5">{locale === "hu" ? "Cím" : locale === "en" ? "Address" : locale === "hr" ? "Adresa" : "Adresă"}</div>
-                  <div className="font-bold text-slate-900">{content.address}</div>
+                  <div className="font-bold text-slate-900">{editable(content.address, (v) => setContent((c) => ({ ...c, address: v })))}</div>
                 </div>
               </div>
               <div className="flex items-start gap-4 p-5 rounded-2xl border border-slate-200 bg-slate-50">
@@ -465,7 +516,9 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
                 <div>
                   <div className="text-xs text-slate-400 uppercase tracking-wide mb-1">{locale === "hu" ? "Nyitvatartás" : locale === "en" ? "Opening hours" : locale === "hr" ? "Radno vrijeme" : "Program"}</div>
                   {content.hours.map((h, i) => (
-                    <div key={i} className="text-sm text-slate-700 font-medium">{h}</div>
+                    <div key={i} className="text-sm text-slate-700 font-medium">
+                      {editable(h, (v) => setContent((c) => ({ ...c, hours: c.hours.map((hr, j) => j === i ? v : hr) })))}
+                    </div>
                   ))}
                 </div>
               </div>
