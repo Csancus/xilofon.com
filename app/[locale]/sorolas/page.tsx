@@ -207,6 +207,14 @@ export default async function SorolasPage({ params }: Props) {
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-slate-900 dark:text-white">
       <Navbar />
 
+      {/* Floating CTA */}
+      <a
+        href="#bottom-form"
+        className="fixed bottom-6 right-6 z-50 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm shadow-lg shadow-violet-600/30 transition-colors"
+      >
+        {c.formTitle} →
+      </a>
+
       {/* Hero + Form */}
       <div className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-white to-indigo-50 dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950">
         <div className="absolute inset-0 pointer-events-none">
@@ -343,7 +351,7 @@ export default async function SorolasPage({ params }: Props) {
       </section>
 
       {/* Repeat form at bottom */}
-      <section className="py-16 px-4 bg-white dark:bg-zinc-950">
+      <section id="bottom-form" className="py-16 px-4 bg-white dark:bg-zinc-950">
         <div className="max-w-lg mx-auto">
           <div className="p-7 rounded-2xl bg-white dark:bg-white/[0.04] border border-slate-200 dark:border-white/[0.08] shadow-sm dark:shadow-none">
             <h2 className="text-xl font-bold text-slate-900 dark:text-white mb-1">{c.formTitle}</h2>
