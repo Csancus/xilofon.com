@@ -161,7 +161,6 @@ export async function POST(request: Request) {
 Új sorsolás jelentkezés érkezett.
 
 Név: ${name}
-Cégnév: ${company || "–"}
 E-mail: ${email}
 Telefon: ${phone || "–"}
 Érdekel weboldal különben is: ${interested}
