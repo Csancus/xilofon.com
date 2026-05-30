@@ -1,10 +1,10 @@
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
-import Image from "next/image";
 import { demos } from "@/lib/demos";
 import type { Locale } from "@/lib/demos";
 import SorolasForm from "@/components/SorolasForm";
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 import { Star, Check } from "lucide-react";
 
@@ -194,21 +194,7 @@ export default async function SorolasPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      {/* Logo bar */}
-      <div className="border-b border-slate-200 py-4 px-4">
-        <div className="max-w-6xl mx-auto">
-          <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="Xilofon Digital"
-              width={120}
-              height={40}
-              className="h-8 w-auto"
-              priority
-            />
-          </Link>
-        </div>
-      </div>
+      <Navbar />
 
       {/* Hero + Form */}
       <div className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-white to-indigo-50">

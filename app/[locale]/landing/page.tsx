@@ -1,9 +1,8 @@
-import Image from "next/image";
 import { Check, Phone } from "lucide-react";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { Link } from "@/i18n/navigation";
 import ContactForm from "@/components/ContactForm";
+import Navbar from "@/components/Navbar";
 import type { Metadata } from "next";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -27,21 +26,7 @@ export default async function LandingPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-slate-900 dark:text-white">
-      {/* Logo bar */}
-      <div className="border-b border-slate-200 dark:border-white/[0.06] py-4 px-4">
-        <div className="max-w-6xl mx-auto">
-          <Link href="/">
-            <Image
-              src="/logo.png"
-              alt="Xilofon Digital"
-              width={120}
-              height={40}
-              className="h-8 w-auto dark:brightness-0 dark:invert"
-              priority
-            />
-          </Link>
-        </div>
-      </div>
+      <Navbar />
 
       {/* Main content */}
       <div className="relative overflow-hidden">
