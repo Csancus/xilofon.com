@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
 import { getLocale } from "next-intl/server";
@@ -16,14 +15,8 @@ export default async function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           <div>
             <Link href="/" className="inline-block mb-4">
-              <Image
-                src="/logo.png"
-                alt="Xilofon"
-                width={110}
-                height={36}
-                style={{ height: "28px", width: "auto" }}
-                className="brightness-0 invert opacity-70"
-              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Xilofon" className="h-7 w-auto brightness-0 invert opacity-70" />
             </Link>
             <p className="text-sm leading-relaxed">{t("tagline")}</p>
           </div>
