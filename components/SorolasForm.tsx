@@ -211,7 +211,17 @@ export default function SorolasForm({ locale }: Props) {
 
       <div>
         <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.phone}</label>
-        <input required type="tel" className={inputClass} placeholder={l.phonePh} value={form.phone} onChange={set("phone")} />
+        <input
+          required
+          type="tel"
+          className={inputClass}
+          placeholder={l.phonePh}
+          value={form.phone}
+          onChange={(e) => {
+            const clean = e.target.value.replace(/[^\d+]/g, "").replace(/(?<=.)\+/g, "");
+            setForm((f) => ({ ...f, phone: clean }));
+          }}
+        />
       </div>
 
       <div>
