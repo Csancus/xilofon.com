@@ -484,7 +484,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Köszönjük! Hamarosan visszajelzünk.",
         bannerText: "Ez egy minta weboldal. Ilyen weboldalad is lehet.",
         bannerCta: "Kérj ajánlatot",
-        sectionGallery: "Ételeink",
+        sectionGallery: "Életképek",
       },
       en: {
         businessName: "Napoli Pizzeria",
@@ -544,7 +544,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Thank you! We'll be in touch soon.",
         bannerText: "This is a sample website. You could have one just like it.",
         bannerCta: "Get a quote",
-        sectionGallery: "Our Dishes",
+        sectionGallery: "Snapshots",
       },
       hr: {
         businessName: "Napoli Pizzeria",
@@ -604,7 +604,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Hvala! Javit ćemo se uskoro.",
         bannerText: "Ovo je primjer web stranice. I vi možete imati ovakvu.",
         bannerCta: "Zatražite ponudu",
-        sectionGallery: "Naša jela",
+        sectionGallery: "Trenutci",
       },
       ro: {
         businessName: "Napoli Pizzeria",
@@ -664,7 +664,7 @@ export const demos: Demo[] = [
         contactFormSuccess: "Mulțumim! Te contactăm în curând.",
         bannerText: "Acesta este un site demonstrativ. Poți avea unul la fel.",
         bannerCta: "Solicită ofertă",
-        sectionGallery: "Preparatele noastre",
+        sectionGallery: "Momente",
       },
     },
   },
