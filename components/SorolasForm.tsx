@@ -75,8 +75,8 @@ const labels: Record<Locale, {
     successText: "Javit ćemo se u roku 1-2 radna dana.",
     errorText: "Došlo je do pogreške. Molimo pokušajte ponovo.",
     consentLabel: "Prihvaćam", consentPrivacy: "Pravila privatnosti", consentAszf: "Opće uvjete poslovanja",
-    interestedLabel: "Ako ne budete odabrani/e među 5 partnera, zanima li vas stranica za 188 EUR/god?",
-    interestedYes: "Da, zanima me", interestedNo: "Ne, hvala",
+    interestedLabel: "",
+    interestedYes: "", interestedNo: "",
     emailError: "Unesite valjanu e-mail adresu (npr. ime@domena.hr)",
   },
   ro: {
@@ -250,13 +250,13 @@ export default function SorolasForm({ locale }: Props) {
         />
       </div>
 
-      <div>
+      {l.interestedLabel && <div>
         <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-2">{l.interestedLabel}</label>
         <div className="space-y-2">
           {radioOption("interested", "yes", l.interestedYes)}
           {radioOption("interested", "no", l.interestedNo)}
         </div>
-      </div>
+      </div>}
 
       {/* Consent checkbox */}
       <label className="flex items-start gap-3 cursor-pointer">
