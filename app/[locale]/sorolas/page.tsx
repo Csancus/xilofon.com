@@ -5,6 +5,7 @@ import { demos } from "@/lib/demos";
 import type { Locale } from "@/lib/demos";
 import SorolasForm from "@/components/SorolasForm";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 import { Star, Check } from "lucide-react";
 
@@ -323,9 +324,7 @@ export default async function SorolasPage({ params }: Props) {
         </div>
       </section>
 
-      <div className="border-t border-slate-200 py-6 px-4 text-center text-sm text-slate-400">
-        © {new Date().getFullYear()} Xilofon Digital
-      </div>
+      <Footer />
     </div>
   );
 }

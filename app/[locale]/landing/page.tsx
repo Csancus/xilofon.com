@@ -3,6 +3,7 @@ import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import ContactForm from "@/components/ContactForm";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import type { Metadata } from "next";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -94,6 +95,7 @@ export default async function LandingPage({ params }: Props) {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
