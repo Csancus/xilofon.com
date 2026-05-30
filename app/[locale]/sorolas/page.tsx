@@ -255,7 +255,7 @@ export default async function SorolasPage({ params }: Props) {
             <div>
               <a
                 href="#pelda-oldalak"
-                className="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 dark:text-violet-400 hover:text-violet-500 mb-4 transition-colors"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border-2 border-violet-600 dark:border-violet-400 text-violet-600 dark:text-violet-400 hover:bg-violet-600 hover:text-white dark:hover:bg-violet-400 dark:hover:text-white font-semibold text-sm mb-4 transition-colors"
               >
                 {c.demosBtn}
               </a>
