@@ -271,6 +271,8 @@ export default async function SorolasPage({ params }: Props) {
                 <Link
                   key={demo.slug}
                   href={`/demo/${demo.slug}` as "/demo/[slug]"}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group block rounded-2xl overflow-hidden border border-slate-200 dark:border-white/[0.07] hover:border-violet-300 dark:hover:border-violet-500/50 hover:shadow-md transition-all bg-white dark:bg-white/[0.03]"
                 >
                   <div className={`h-20 ${demo.theme.heroBg} flex items-center justify-center text-3xl`}>

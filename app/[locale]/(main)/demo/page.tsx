@@ -97,6 +97,8 @@ export default async function DemoGalleryPage({ params }: Props) {
               <Link
                 key={demo.slug}
                 href={`/demo/${demo.slug}` as "/demo/[slug]"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group block rounded-2xl overflow-hidden border border-slate-200 dark:border-white/[0.07] hover:border-violet-300 dark:hover:border-violet-500/40 hover:shadow-lg dark:hover:shadow-violet-500/10 transition-all"
               >
                 {/* Color preview strip */}

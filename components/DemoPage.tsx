@@ -25,11 +25,11 @@ type Props = {
   locale: Locale;
 };
 
-const adminLabels: Record<Locale, { adminBtn: string; editMode: string; exitEdit: string }> = {
-  hu: { adminBtn: "Szerkesztés", editMode: "Szerkesztési mód aktív – kattints bármely szövegre a módosításhoz", exitEdit: "Kilépés" },
-  en: { adminBtn: "Edit", editMode: "Edit mode active – click any text to modify", exitEdit: "Exit" },
-  hr: { adminBtn: "Uredi", editMode: "Način uređivanja aktivan – kliknite bilo koji tekst", exitEdit: "Izlaz" },
-  ro: { adminBtn: "Editează", editMode: "Modul editare activ – fă clic pe orice text", exitEdit: "Ieșire" },
+const adminLabels: Record<Locale, { adminBtn: string; editMode: string; exitEdit: string; back: string }> = {
+  hu: { adminBtn: "Szerkesztés", editMode: "Szerkesztési mód aktív – kattints bármely szövegre a módosításhoz", exitEdit: "Kilépés", back: "← Vissza" },
+  en: { adminBtn: "Edit", editMode: "Edit mode active – click any text to modify", exitEdit: "Exit", back: "← Back" },
+  hr: { adminBtn: "Uredi", editMode: "Način uređivanja aktivan – kliknite bilo koji tekst", exitEdit: "Izlaz", back: "← Natrag" },
+  ro: { adminBtn: "Editează", editMode: "Modul editare activ – fă clic pe orice text", exitEdit: "Ieșire", back: "← Înapoi" },
 };
 
 const iconMap: Record<string, string> = {
@@ -106,8 +106,16 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
       {!dismissed && (
         <div className="sticky top-0 z-50 bg-violet-600 text-white text-sm">
           <div className="max-w-6xl mx-auto px-4 py-2.5 flex items-center justify-between gap-4">
-            <span className="font-medium hidden sm:block">{content.bannerText}</span>
-            <span className="font-medium sm:hidden text-xs">{content.bannerText}</span>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => window.history.back()}
+                className="text-white/80 hover:text-white font-medium text-xs flex-shrink-0 hover:underline transition-colors"
+              >
+                {al.back}
+              </button>
+              <span className="text-white/30 hidden sm:block">|</span>
+              <span className="font-medium hidden sm:block">{content.bannerText}</span>
+            </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <Link
                 href="/landing"

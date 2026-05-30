@@ -44,6 +44,8 @@ export default async function Footer() {
                 <li key={d.slug}>
                   <Link
                     href={`/demo/${d.slug}` as "/demo/[slug]"}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="hover:text-white transition-colors"
                   >
                     {d.emoji} {d.galleryLabel[locale].type}
