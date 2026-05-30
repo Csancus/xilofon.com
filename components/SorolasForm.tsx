@@ -19,6 +19,7 @@ const labels: Record<Locale, {
   errorText: string;
   consentPrivacy: string; consentAszf: string; consentLabel: string;
   interestedLabel: string; interestedYes: string; interestedNo: string;
+  emailError: string;
 }> = {
   hu: {
     name: "Teljes neve", namePh: "Kovács János",
@@ -38,6 +39,7 @@ const labels: Record<Locale, {
     consentLabel: "Elfogadom az", consentPrivacy: "adatkezelési tájékoztatót", consentAszf: "ÁSZF-et",
     interestedLabel: "Ha nem kerülnél be az 5 partner közé, akkor is érdekel az oldal évi 188 EUR-ért?",
     interestedYes: "Igen, érdekel", interestedNo: "Nem most",
+    emailError: "Kérjük, adj meg egy érvényes e-mail címet (pl. nev@domain.hu)",
   },
   en: {
     name: "Full name", namePh: "John Smith",
@@ -57,6 +59,7 @@ const labels: Record<Locale, {
     consentLabel: "I accept the", consentPrivacy: "Privacy Policy", consentAszf: "Terms of Service",
     interestedLabel: "If you don't get selected as one of the 5 partners, would you still be interested in the site for €188/year?",
     interestedYes: "Yes, I'm interested", interestedNo: "Not right now",
+    emailError: "Please enter a valid email address (e.g. name@domain.com)",
   },
   hr: {
     name: "Puno ime", namePh: "Ivan Horvat",
@@ -76,6 +79,7 @@ const labels: Record<Locale, {
     consentLabel: "Prihvaćam", consentPrivacy: "Pravila privatnosti", consentAszf: "Opće uvjete poslovanja",
     interestedLabel: "Ako ne budeš odabran/a među 5 partnera, zanima li te stranica za 188 EUR/god?",
     interestedYes: "Da, zanima me", interestedNo: "Ne, hvala",
+    emailError: "Unesite valjanu e-mail adresu (npr. ime@domena.hr)",
   },
   ro: {
     name: "Nume complet", namePh: "Ion Popescu",
@@ -95,6 +99,7 @@ const labels: Record<Locale, {
     consentLabel: "Accept", consentPrivacy: "Politica de confidențialitate", consentAszf: "Termenii și condițiile",
     interestedLabel: "Dacă nu ești selectat/ă dintre cei 5 parteneri, te interesează site-ul la 188 EUR/an?",
     interestedYes: "Da, mă interesează", interestedNo: "Nu acum",
+    emailError: "Introduceți o adresă de e-mail validă (ex. nume@domeniu.ro)",
   },
 };
 
@@ -104,6 +109,7 @@ export default function SorolasForm({ locale }: Props) {
   const l = labels[locale];
   const [status, setStatus] = useState<Status>("idle");
   const [consent, setConsent] = useState(false);
+  const [emailTouched, setEmailTouched] = useState(false);
   const [form, setForm] = useState({
     name: "", company: "", email: "", phone: "",
     platform: "", domain: "", industry: "", interested: "",
@@ -116,8 +122,13 @@ export default function SorolasForm({ locale }: Props) {
   const setRadio = (k: keyof typeof form, v: string) =>
     setForm((f) => ({ ...f, [k]: v }));
 
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email);
+  const showEmailError = emailTouched && !emailValid;
+
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    setEmailTouched(true);
+    if (!emailValid) return;
     setStatus("sending");
     try {
       const res = await fetch("/api/sorolas", {
@@ -181,7 +192,21 @@ export default function SorolasForm({ locale }: Props) {
 
       <div>
         <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.email} *</label>
-        <input required type="email" className={inputClass} placeholder={l.emailPh} value={form.email} onChange={set("email")} />
+        <input
+          required
+          type="email"
+          className={`${inputClass} ${showEmailError ? "border-red-400 focus:ring-red-400" : ""}`}
+          placeholder={l.emailPh}
+          value={form.email}
+          onChange={set("email")}
+          onBlur={() => setEmailTouched(true)}
+        />
+        {showEmailError && (
+          <div className="flex items-center gap-1.5 mt-1.5 text-red-500 dark:text-red-400 text-xs">
+            <AlertCircle size={13} className="flex-shrink-0" />
+            {l.emailError}
+          </div>
+        )}
       </div>
 
       <div>
