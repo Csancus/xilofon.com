@@ -77,9 +77,9 @@ function buildConfirmationHtml(name: string, platform: string, locale: string): 
 
         <!-- Header -->
         <tr>
-          <td style="background:${accentColor};padding:32px 40px;text-align:center;">
-            <div style="font-size:28px;font-weight:900;color:#fff;letter-spacing:-0.5px;">✕ Xilofon</div>
-            <div style="color:rgba(255,255,255,0.7);font-size:13px;margin-top:4px;">Digital</div>
+          <td style="background:${accentColor};padding:28px 40px;text-align:center;">
+            <img src="https://xilofon.com/logo-dark.png" alt="Xilofon Digital" width="56" height="56" style="display:inline-block;width:56px;height:56px;object-fit:contain;" />
+            <div style="color:rgba(255,255,255,0.85);font-size:14px;font-weight:600;margin-top:8px;letter-spacing:0.5px;">Xilofon Digital</div>
           </td>
         </tr>
 
