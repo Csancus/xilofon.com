@@ -25,11 +25,11 @@ type Props = {
   locale: Locale;
 };
 
-const adminLabels: Record<Locale, { adminBtn: string; editMode: string; exitEdit: string; back: string }> = {
-  hu: { adminBtn: "Szerkesztés", editMode: "Szerkesztési mód aktív – kattints bármely szövegre a módosításhoz", exitEdit: "Kilépés", back: "← Vissza" },
-  en: { adminBtn: "Edit", editMode: "Edit mode active – click any text to modify", exitEdit: "Exit", back: "← Back" },
-  hr: { adminBtn: "Uredi", editMode: "Način uređivanja aktivan – kliknite bilo koji tekst", exitEdit: "Izlaz", back: "← Natrag" },
-  ro: { adminBtn: "Editează", editMode: "Modul editare activ – fă clic pe orice text", exitEdit: "Ieșire", back: "← Înapoi" },
+const adminLabels: Record<Locale, { adminBtn: string; editMode: string; exitEdit: string; back: string; editHint: string }> = {
+  hu: { adminBtn: "Szerkesztés", editMode: "Szerkesztési mód aktív – kattints bármely szövegre a módosításhoz", exitEdit: "Kilépés", back: "← Vissza", editHint: "Kattints ide a szerkesztéshez!" },
+  en: { adminBtn: "Edit", editMode: "Edit mode active – click any text to modify", exitEdit: "Exit", back: "← Back", editHint: "Click here to edit!" },
+  hr: { adminBtn: "Uredi", editMode: "Način uređivanja aktivan – kliknite bilo koji tekst", exitEdit: "Izlaz", back: "← Natrag", editHint: "Kliknite ovdje za uređivanje!" },
+  ro: { adminBtn: "Editează", editMode: "Modul editare activ – fă clic pe orice text", exitEdit: "Ieșire", back: "← Înapoi", editHint: "Apasă aici pentru editare!" },
 };
 
 const iconMap: Record<string, string> = {
@@ -131,9 +131,9 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
         </div>
       )}
 
-      {/* Admin edit bar */}
+      {/* Admin edit bar – fixed so it stays on screen while scrolling */}
       {editMode && (
-        <div className="sticky top-0 z-40 bg-amber-500 text-white text-xs px-4 py-2 flex items-center justify-between gap-4">
+        <div className="fixed top-0 left-0 right-0 z-40 bg-amber-500 text-white text-xs px-4 py-2 flex items-center justify-between gap-4">
           <span className="flex items-center gap-2"><Pencil size={12} />{al.editMode}</span>
           <button onClick={() => setEditMode(false)} className="flex items-center gap-1.5 bg-white text-amber-700 font-semibold px-3 py-1 rounded-full hover:bg-amber-50 transition-colors">
             <Check size={12} /> {al.exitEdit}
@@ -141,14 +141,24 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
         </div>
       )}
 
-      {/* Admin floating button */}
+      {/* Admin floating button with pulse hint */}
       {!editMode && (
-        <button
-          onClick={() => setEditMode(true)}
-          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-slate-800 text-white text-sm font-medium px-4 py-2.5 rounded-full shadow-lg hover:bg-slate-700 transition-colors"
-        >
-          <Pencil size={14} />{al.adminBtn}
-        </button>
+        <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+          {/* Tooltip hint */}
+          <div className="bg-slate-900 text-white text-xs font-medium px-3 py-1.5 rounded-full shadow-lg whitespace-nowrap animate-bounce">
+            {al.editHint} ↓
+          </div>
+          {/* Button with ping ring */}
+          <div className="relative">
+            <span className="absolute inset-0 rounded-full bg-slate-500 animate-ping opacity-40" />
+            <button
+              onClick={() => setEditMode(true)}
+              className="relative flex items-center gap-2 bg-slate-800 text-white text-sm font-medium px-4 py-2.5 rounded-full shadow-lg hover:bg-slate-700 transition-colors"
+            >
+              <Pencil size={14} />{al.adminBtn}
+            </button>
+          </div>
+        </div>
       )}
 
       {/* Business navbar */}
