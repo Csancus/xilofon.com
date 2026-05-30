@@ -233,7 +233,7 @@ export default async function SorolasPage({ params }: Props) {
                 {c.spotsLeft}
               </div>
 
-              <h1 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight mb-4 text-slate-900 dark:text-white">
                 {c.title}{" "}
                 <span className="bg-gradient-to-r from-violet-600 to-indigo-500 dark:from-violet-400 dark:to-indigo-400 bg-clip-text text-transparent">
                   {c.highlight}
