@@ -2,6 +2,7 @@
   "Navbar": {
     "services": "Usluge",
     "about": "O nama",
+    "demos": "Uzorci",
     "quote": "Zatražite ponudu"
   },
   "Footer": {
@@ -118,6 +119,9 @@
     "t3Name": "Maja Novak",
     "t3Role": "Računovođa",
     "t3Text": "Bojala sam se digitalnog marketinga. Tim me proveo kroz sve, a sada imam profesionalnu web stranicu koja stvarno donosi klijente.",
+    "demosTitle": "Ovako izgledaju naše stranice",
+    "demosSubtitle": "Isprobajte uzorke — sve se može prilagoditi, a možete i zatražiti individualnu ponudu.",
+    "viewDemo": "Pogledajte →",
     "contactTitle": "Stupite u kontakt!",
     "contactSubtitle": "Recite nam čime se bavite – javit ćemo se u roku 1-2 radna dana."
   },

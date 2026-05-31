@@ -2,6 +2,7 @@
   "Navbar": {
     "services": "Services",
     "about": "About",
+    "demos": "Sample sites",
     "quote": "Get a quote"
   },
   "Footer": {
@@ -118,6 +119,9 @@
     "t3Name": "Kate N.",
     "t3Role": "Accountant",
     "t3Text": "I was afraid of digital marketing. The team guided me through everything, and now I have a professional website that actually brings clients.",
+    "demosTitle": "This is what we build",
+    "demosSubtitle": "Try out our sample websites — everything can be customised, and you can request a personalised quote.",
+    "viewDemo": "View →",
     "contactTitle": "Get in touch!",
     "contactSubtitle": "Tell us about your business – we'll get back to you within 1-2 business days."
   },

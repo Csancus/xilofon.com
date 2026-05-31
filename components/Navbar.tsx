@@ -22,6 +22,7 @@ export default function Navbar() {
   const links = [
     { href: "/szolgaltatasok" as const, label: t("services") },
     { href: "/rolunk" as const, label: t("about") },
+    { href: "/demo" as const, label: t("demos") },
   ];
 
   return (

@@ -2,6 +2,7 @@
   "Navbar": {
     "services": "Szolgáltatások",
     "about": "Rólunk",
+    "demos": "Példaoldalak",
     "quote": "Ajánlatkérés"
   },
   "Footer": {
@@ -118,6 +119,9 @@
     "t3Name": "Németh Katalin",
     "t3Role": "Könyvelő",
     "t3Text": "Eddig féltem az internet-marketingtől. A csapat végigvezetett mindenen, és most van egy profi weboldalam, ami valóban ügyfeleket hoz.",
+    "demosTitle": "Ilyen weboldalat készítünk",
+    "demosSubtitle": "Próbáld ki a minta weboldalainkat – természetesen mindent lehet változtatni, és egyedi ajánlatot is kérhetsz.",
+    "viewDemo": "Megnézem →",
     "contactTitle": "Írj nekünk!",
     "contactSubtitle": "Mondd el, mivel foglalkozol – 1-2 munkanapon belül visszakeresünk."
   },

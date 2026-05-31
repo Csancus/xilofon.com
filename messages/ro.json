@@ -2,6 +2,7 @@
   "Navbar": {
     "services": "Servicii",
     "about": "Despre noi",
+    "demos": "Exemple",
     "quote": "Solicită ofertă"
   },
   "Footer": {
@@ -118,6 +119,9 @@
     "t3Name": "Elena N.",
     "t3Role": "Contabil",
     "t3Text": "Mi-era teamă de marketing digital. Echipa m-a ghidat prin tot și acum am un website profesional care chiar aduce clienți.",
+    "demosTitle": "Asta construim",
+    "demosSubtitle": "Încearcă exemplele noastre — totul poate fi personalizat și poți solicita o ofertă individuală.",
+    "viewDemo": "Vezi →",
     "contactTitle": "Ia legătura!",
     "contactSubtitle": "Spune-ne despre afacerea ta – te contactăm în 1-2 zile lucrătoare."
   },

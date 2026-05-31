@@ -3,6 +3,8 @@ import { Link } from "@/i18n/navigation";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import ContactForm from "@/components/ContactForm";
+import DemoGrid from "@/components/DemoGrid";
+import type { Locale } from "@/lib/demos";
 import type { Metadata } from "next";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -21,6 +23,7 @@ export default async function HomePage({ params }: Props) {
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: "HomePage" });
+  const loc = locale as Locale;
 
   const serviceIcons = [Globe, Share2, MapPin, TrendingUp];
   const serviceKeys = ["web", "social", "gbp", "seo"] as const;
@@ -195,8 +198,21 @@ export default async function HomePage({ params }: Props) {
         </div>
       </section>
 
+      {/* Demo samples */}
+      <section className="py-24 bg-slate-50 dark:bg-zinc-900/30">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4 tracking-tight">
+              {t("demosTitle")}
+            </h2>
+            <p className="text-lg text-slate-500 dark:text-white/50 max-w-2xl mx-auto">{t("demosSubtitle")}</p>
+          </div>
+          <DemoGrid locale={loc} viewLabel={t("viewDemo")} />
+        </div>
+      </section>
+
       {/* Testimonials */}
-      <section className="py-24 bg-slate-50 dark:bg-zinc-900/30 relative overflow-hidden">
+      <section className="py-24 bg-white dark:bg-zinc-950 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-violet-400/10 dark:bg-violet-600/10 blur-[120px]" />
         </div>

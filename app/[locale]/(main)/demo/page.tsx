@@ -29,26 +29,30 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return { title: titles[locale] ?? titles.hu, description: descs[locale] ?? descs.hu };
 }
 
-const headings: Record<string, { title: string; subtitle: string; cta: string }> = {
+const headings: Record<string, { title: string; subtitle: string; note: string; cta: string }> = {
   hu: {
-    title: "Weboldal minták",
-    subtitle: "Így nézhet ki a te weboldalad is. Minden minta valódi one-pager, ugyanolyan, amit te is kaphatsz.",
-    cta: "Kérj ajánlatot",
+    title: "Példaoldalak – próbáld ki!",
+    subtitle: "Ezek valódi, működő one-pager weboldalak. Kattints rá bármelyikre és próbáld ki! Minden elem változtatható – szín, szöveg, kép, struktúra – és egyedi kéréseket is szívesen fogadunk.",
+    note: "Nem találtad meg a szakmádat? Írj nekünk – egyedi ajánlatot is küldünk!",
+    cta: "Egyedi ajánlatkérés",
   },
   en: {
-    title: "Website samples",
-    subtitle: "This is what your website could look like. Each sample is a real one-pager, exactly like what you'd get.",
-    cta: "Get a quote",
+    title: "Sample sites — try them out!",
+    subtitle: "These are real, working one-page websites. Click any card to try it out! Everything can be changed — colours, text, images, structure — and we welcome custom requests too.",
+    note: "Don't see your industry? Write to us — we'll send a personalised quote!",
+    cta: "Request a custom quote",
   },
   hr: {
-    title: "Uzorci web stranica",
-    subtitle: "Ovako može izgledati i vaša web stranica. Svaki uzorak je pravi one-pager, baš kao onaj koji biste dobili.",
-    cta: "Zatražite ponudu",
+    title: "Uzorci stranica — isprobajte!",
+    subtitle: "Ovo su stvarne, funkcionalne one-page web stranice. Kliknite na bilo koju i isprobajte! Sve se može promijeniti — boje, tekst, slike, struktura — a dočekujemo i posebne zahtjeve.",
+    note: "Niste pronašli svoju branšu? Pišite nam — poslat ćemo individualnu ponudu!",
+    cta: "Zatražite individualnu ponudu",
   },
   ro: {
-    title: "Exemple site-uri",
-    subtitle: "Așa ar putea arăta și site-ul tău. Fiecare exemplu este un one-pager real, exact ca cel pe care l-ai primi.",
-    cta: "Solicită ofertă",
+    title: "Pagini exemplu — încearcă-le!",
+    subtitle: "Acestea sunt site-uri one-page reale, funcționale. Apasă pe oricare și încearcă! Totul poate fi schimbat — culori, text, imagini, structură — și primim cu drag cereri personalizate.",
+    note: "Nu ți-ai găsit domeniul? Scrie-ne — îți trimitem o ofertă personalizată!",
+    cta: "Solicită ofertă personalizată",
   },
 };
 
@@ -64,7 +68,7 @@ export default async function DemoGalleryPage({ params }: Props) {
   setRequestLocale(locale);
   const loc = locale as Locale;
 
-  const h = headings[loc] ?? headings.hu;
+  const h = (headings[loc] ?? headings.hu) as typeof headings.hu;
   const viewLabel = viewLabels[loc] ?? viewLabels.hu;
 
   return (
@@ -75,15 +79,18 @@ export default async function DemoGalleryPage({ params }: Props) {
           <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
             {h.title}
           </h1>
-          <p className="text-slate-600 dark:text-white/60 text-lg max-w-2xl mx-auto mb-8">
+          <p className="text-slate-600 dark:text-white/60 text-lg max-w-2xl mx-auto mb-6">
             {h.subtitle}
           </p>
-          <Link
-            href="/landing"
-            className="inline-flex items-center px-6 py-3 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold transition-colors"
-          >
-            {h.cta}
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Link
+              href="/landing"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-violet-600 hover:bg-violet-500 text-white font-semibold transition-colors"
+            >
+              {h.cta}
+            </Link>
+          </div>
+          <p className="text-sm text-slate-400 dark:text-white/40 mt-6">{h.note}</p>
         </div>
       </div>
 
