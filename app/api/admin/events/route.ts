@@ -18,44 +18,64 @@ export async function GET(request: NextRequest) {
   const [allRes, recentRes] = await Promise.all([
     supabase
       .from("events")
-      .select("event, target, locale, page")
+      .select("event, target, locale, page, is_owner")
       .order("created_at", { ascending: false })
       .limit(10000),
     supabase
       .from("events")
-      .select("event, target, locale, page, created_at")
+      .select("event, target, locale, page, is_owner, created_at")
       .order("created_at", { ascending: false })
       .limit(100),
   ]);
 
-  type Row = { event: string; target: string | null; locale: string | null; page: string | null };
+  type Row = {
+    event: string;
+    target: string | null;
+    locale: string | null;
+    page: string | null;
+    is_owner: boolean | null;
+  };
   const all: Row[] = allRes.data ?? [];
 
-  const pageMap = new Map<string, { views: number; evts: Map<string, number> }>();
+  const pageMap = new Map<
+    string,
+    { views: number; ownerViews: number; evts: Map<string, { count: number; ownerCount: number }> }
+  >();
 
   for (const row of all) {
     const pg = row.page ?? "(ismeretlen oldal)";
-    if (!pageMap.has(pg)) pageMap.set(pg, { views: 0, evts: new Map() });
+    if (!pageMap.has(pg)) pageMap.set(pg, { views: 0, ownerViews: 0, evts: new Map() });
     const entry = pageMap.get(pg)!;
+    const owner = row.is_owner === true;
 
-    if (row.event === "page_view" || row.event === "demo_view") entry.views++;
+    if (row.event === "page_view" || row.event === "demo_view") {
+      entry.views++;
+      if (owner) entry.ownerViews++;
+    }
 
     const key = `${row.event}\x00${row.target ?? ""}`;
-    entry.evts.set(key, (entry.evts.get(key) ?? 0) + 1);
+    const curr = entry.evts.get(key) ?? { count: 0, ownerCount: 0 };
+    curr.count++;
+    if (owner) curr.ownerCount++;
+    entry.evts.set(key, curr);
   }
 
   const pages = [...pageMap.entries()]
     .sort((a, b) => b[1].views - a[1].views)
-    .map(([page, { views, evts }]) => ({
+    .map(([page, { views, ownerViews, evts }]) => ({
       page,
       views,
+      ownerViews,
       events: [...evts.entries()]
-        .sort((a, b) => b[1] - a[1])
-        .map(([key, count]) => {
+        .sort((a, b) => b[1].count - a[1].count)
+        .map(([key, { count, ownerCount }]) => {
           const sep = key.indexOf("\x00");
-          const event = key.slice(0, sep);
-          const target = key.slice(sep + 1) || null;
-          return { event, target, count };
+          return {
+            event: key.slice(0, sep),
+            target: key.slice(sep + 1) || null,
+            count,
+            ownerCount,
+          };
         }),
     }));
 
