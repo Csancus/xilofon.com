@@ -53,7 +53,7 @@ const copy: Record<Locale, {
     highlight: "94 EUR / év",
     normalPrice: "Normál ár: 188 EUR / év",
     offerPrice: "Júniusi ár: 94 EUR / év",
-    subtitle: "Júniusban 5 partnernek készítünk weboldalt 50% kedvezménnyel. Kedvezményes ár, referencia céljából.",
+    subtitle: "Júniusban 5 partnernek készítünk weboldalt 50% kedvezménnyel.",
     bullets: [
       "Személyre szabott one-page weboldal",
       "Domain és hosting benne",
@@ -89,7 +89,7 @@ const copy: Record<Locale, {
     highlight: "€94 / year",
     normalPrice: "Regular price: €188 / year",
     offerPrice: "June price: €94 / year",
-    subtitle: "In June we're building 5 websites at 50% off. Discounted price in exchange for a reference.",
+    subtitle: "In June we're building 5 websites at 50% off.",
     bullets: [
       "Custom one-page website",
       "Domain and hosting included",
@@ -125,7 +125,7 @@ const copy: Record<Locale, {
     highlight: "94 EUR / god",
     normalPrice: "Redovna cijena: 188 EUR / god",
     offerPrice: "Lipanjska cijena: 94 EUR / god",
-    subtitle: "U lipnju izrađujemo 5 web stranica s popustom od 50%. Snižena cijena u zamjenu za referencu.",
+    subtitle: "U lipnju izrađujemo 5 web stranica s popustom od 50%.",
     bullets: [
       "Personalizirana one-page web stranica",
       "Domena i hosting uključeni",
@@ -161,7 +161,7 @@ const copy: Record<Locale, {
     highlight: "94 EUR / an",
     normalPrice: "Preț normal: 188 EUR / an",
     offerPrice: "Preț iunie: 94 EUR / an",
-    subtitle: "În iunie realizăm 5 site-uri cu reducere de 50%. Preț redus în schimbul unei referințe.",
+    subtitle: "În iunie realizăm 5 site-uri cu reducere de 50%.",
     bullets: [
       "Site one-page personalizat",
       "Domeniu și hosting incluse",
