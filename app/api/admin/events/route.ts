@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   );
 
-  let [allRes, recentRes] = await Promise.all([
+  const [allRes, recentRes] = await Promise.all([
     supabase
       .from("events")
       .select("event, target, locale, page, is_owner")
@@ -28,22 +28,6 @@ export async function GET(request: NextRequest) {
       .limit(100),
   ]);
 
-  // Fallback if is_owner column doesn't exist yet
-  if (allRes.error) {
-    [allRes, recentRes] = await Promise.all([
-      supabase
-        .from("events")
-        .select("event, target, locale, page")
-        .order("created_at", { ascending: false })
-        .limit(10000),
-      supabase
-        .from("events")
-        .select("event, target, locale, page, created_at")
-        .order("created_at", { ascending: false })
-        .limit(100),
-    ]);
-  }
-
   type Row = {
     event: string;
     target: string | null;
@@ -51,7 +35,29 @@ export async function GET(request: NextRequest) {
     page: string | null;
     is_owner?: boolean | null;
   };
-  const all: Row[] = allRes.data ?? [];
+
+  // Fallback if is_owner column doesn't exist yet
+  const allData: Row[] = allRes.error
+    ? (
+        await supabase
+          .from("events")
+          .select("event, target, locale, page")
+          .order("created_at", { ascending: false })
+          .limit(10000)
+      ).data ?? []
+    : (allRes.data as Row[]) ?? [];
+
+  const recentData = recentRes.error
+    ? (
+        await supabase
+          .from("events")
+          .select("event, target, locale, page, created_at")
+          .order("created_at", { ascending: false })
+          .limit(100)
+      ).data ?? []
+    : recentRes.data ?? [];
+
+  const all: Row[] = allData;
 
   const pageMap = new Map<
     string,
@@ -95,5 +101,5 @@ export async function GET(request: NextRequest) {
         }),
     }));
 
-  return Response.json({ pages, recent: recentRes.data ?? [] });
+  return Response.json({ pages, recent: recentData });
 }
