@@ -77,7 +77,7 @@ const copy: Record<Locale, {
     ],
     reviews: [
       { name: "Horváth Eszter", role: "Masszőr", text: "Korábban csak Facebookon voltam. Most az oldalamon keresztül jönnek az új ügyfeleim, és minden hónapban több foglalást kapok." },
-      { name: "Fekete Dávid", role: "Személyi edző", text: "Két héttel az indítás után már az első oldalon voltam a Google-on a városomban. 188 euróért ez elképesztő eredmény." },
+      { name: "Fekete Dávid", role: "Személyi edző", text: "Két héttel az indítás után már az első oldalon voltam a Google-on a városomban. 94 euróért ez elképesztő eredmény." },
       { name: "Németh Katalin", role: "Könyvelő", text: "Eddig féltem az internet-marketingtől. A csapat végigvezetett mindenen, és most van egy profi weboldalam, ami valóban ügyfeleket hoz." },
     ],
     formDisclaimer: "A programba jelentkező vállalkozások közül a Xilofon választja ki az együttműködésre legalkalmasabb projekteket. A programban részt vevő partnerek hozzájárulnak ahhoz, hogy az elkészült weboldal referenciaanyagként megjelenjen a Xilofon kommunikációjában.",
@@ -113,7 +113,7 @@ const copy: Record<Locale, {
     ],
     reviews: [
       { name: "Sarah M.", role: "Massage therapist", text: "I used to rely only on Facebook. Now new clients come through my website, and I get more bookings every month." },
-      { name: "Michael O.", role: "Personal trainer", text: "Two weeks after launch I was already on the first page of Google. What you get for €188 is truly remarkable." },
+      { name: "Michael O.", role: "Personal trainer", text: "Two weeks after launch I was already on the first page of Google. What you get for €94 is truly remarkable." },
       { name: "Kate N.", role: "Accountant", text: "I was afraid of digital marketing. The team guided me through everything, and now I have a professional website that actually brings clients." },
     ],
     formDisclaimer: "Xilofon selects the most suitable projects from all applicants. Partners participating in the program agree that the completed website may be used as a reference in Xilofon's communications.",
@@ -149,7 +149,7 @@ const copy: Record<Locale, {
     ],
     reviews: [
       { name: "Ana Kovač", role: "Maserka", text: "Prije sam bila samo na Facebooku. Sada novi klijenti dolaze kroz moju web stranicu i svaki mjesec imam više rezervacija." },
-      { name: "Tomislav Jurić", role: "Osobni trener", text: "Dva tjedna nakon objave već sam bio na prvoj stranici Googlea. Za 188 eura ovo je nevjerojatan rezultat." },
+      { name: "Tomislav Jurić", role: "Osobni trener", text: "Dva tjedna nakon objave već sam bio na prvoj stranici Googlea. Za 94 eura ovo je nevjerojatan rezultat." },
       { name: "Maja Novak", role: "Računovođa", text: "Bojala sam se digitalnog marketinga. Tim me proveo kroz sve, a sada imam profesionalnu web stranicu koja stvarno donosi klijente." },
     ],
     formDisclaimer: "Xilofon odabire najprikladnije projekte među svim prijavama. Partneri koji sudjeluju u programu pristaju da dovršena web stranica može biti korištena kao referenca u Xilofonovim komunikacijama.",
@@ -185,7 +185,7 @@ const copy: Record<Locale, {
     ],
     reviews: [
       { name: "Maria C.", role: "Terapeut de masaj", text: "Înainte mă bazam doar pe Facebook. Acum clienți noi vin prin website-ul meu și primesc mai multe rezervări în fiecare lună." },
-      { name: "Andrei B.", role: "Antrenor personal", text: "La două săptămâni după lansare eram deja pe prima pagină Google. Ce obții pentru 188 de euro este cu adevărat remarcabil." },
+      { name: "Andrei B.", role: "Antrenor personal", text: "La două săptămâni după lansare eram deja pe prima pagină Google. Ce obții pentru 94 de euro este cu adevărat remarcabil." },
       { name: "Elena N.", role: "Contabil", text: "Mi-era teamă de marketing digital. Echipa m-a ghidat prin tot și acum am un website profesional care chiar aduce clienți." },
     ],
     formDisclaimer: "Xilofon selectează proiectele cele mai potrivite dintre toate aplicațiile. Partenerii care participă în program sunt de acord ca site-ul realizat să fie utilizat ca material de referință în comunicările Xilofon.",

@@ -61,7 +61,7 @@ export default async function AboutPage({ params }: Props) {
               <div className="text-center space-y-6">
                 <div>
                   <div className="text-5xl font-bold bg-gradient-to-r from-violet-600 to-indigo-500 dark:from-violet-400 dark:to-indigo-400 bg-clip-text text-transparent mb-1">
-                    140 €
+                    188 €
                   </div>
                   <div className="text-slate-700 dark:text-white/70 font-medium text-sm">{t("priceLabel")}</div>
                   <div className="text-slate-400 dark:text-white/40 text-xs mt-0.5">{t("priceSub")}</div>

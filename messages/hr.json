@@ -17,7 +17,7 @@
     "copyright": "© {year} Xilofon Digital. Sva prava pridržana.",
     "demosTitle": "Uzorci web stranica",
     "demosAll": "Svi uzorci",
-    "sorolas": "Lipanjska referentna ponuda – 70 EUR"
+    "sorolas": "Lipanjska referentna ponuda – 94 EUR"
   },
   "LanguageSwitcher": {
     "label": "Jezik"
@@ -44,10 +44,10 @@
   "HomePage": {
     "meta": {
       "title": "Xilofon Digital | Izrada web stranica za male poduzetnike",
-      "description": "Profesionalna web stranica po fiksnoj cijeni 140 EUR/god. SEO optimizacija, Facebook kampanje, Google Business i SEO savjetovanje."
+      "description": "Profesionalna web stranica po fiksnoj cijeni 188 EUR/god. SEO optimizacija, Facebook kampanje, Google Business i SEO savjetovanje."
     },
     "hero": {
-      "badge": "Fiksna cijena • 140 EUR / god • Bez iznenađenja",
+      "badge": "Fiksna cijena • 188 EUR / god • Bez iznenađenja",
       "title": "Profesionalna web stranica",
       "highlight": "koja dovodi klijente",
       "subtitle": "Izrađujemo web stranice za samostalne poduzetnike i male tvrtke. Godišnja fiksna naknada – domena, hosting i godišnje održavanje su uključeni.",
@@ -67,7 +67,7 @@
     "web": {
       "title": "Izrada web stranice",
       "desc": "Personalizirana, SEO optimizirana jednospratna web stranica izrađena s pažnjom. Godišnja naknada pokriva domenu, hosting i godišnji pregled i osvježavanje.",
-      "tag": "140 EUR / god"
+      "tag": "188 EUR / god"
     },
     "social": {
       "title": "Facebook kampanje i oglasi",
@@ -113,7 +113,7 @@
     "t1Text": "Prije sam bila samo na Facebooku. Sada novi klijenti dolaze kroz moju web stranicu i svaki mjesec imam više rezervacija.",
     "t2Name": "Tomislav Jurić",
     "t2Role": "Osobni trener",
-    "t2Text": "Dva tjedna nakon objave već sam bio na prvoj stranici Googlea. Za 140 eura ovo je nevjerojatan rezultat.",
+    "t2Text": "Dva tjedna nakon objave već sam bio na prvoj stranici Googlea. Za 188 eura ovo je nevjerojatan rezultat.",
     "t3Name": "Maja Novak",
     "t3Role": "Računovođa",
     "t3Text": "Bojala sam se digitalnog marketinga. Tim me proveo kroz sve, a sada imam profesionalnu web stranicu koja stvarno donosi klijente.",
@@ -123,12 +123,12 @@
   "LandingPage": {
     "meta": {
       "title": "Zatražite web ponudu | Xilofon Digital",
-      "description": "Zatražite besplatnu ponudu! Moderna web stranica za poduzetnike i male tvrtke. Fiksnih 140 EUR/god."
+      "description": "Zatražite besplatnu ponudu! Moderna web stranica za poduzetnike i male tvrtke. Fiksnih 188 EUR/god."
     },
     "available": "Slobodni termini dostupni",
     "title": "Dobijte profesionalnu web stranicu",
     "highlight": "koja dovodi klijente",
-    "price": "– 140 EUR/god",
+    "price": "– 188 EUR/god",
     "subtitle": "Izrađujemo web stranice za poduzetnike i male tvrtke. Jedna poruka i vaša stranica je uživo za 1-2 tjedna.",
     "benefits": [
       "Profesionalna web stranica za 1-2 tjedna",
@@ -136,7 +136,7 @@
       "SEO optimizirana, pronađena na Googleu",
       "Kontakt forma za vaše klijente",
       "Personalizirani dizajn",
-      "Fiksna cijena – 140 EUR / god, bez iznenađenja",
+      "Fiksna cijena – 188 EUR / god, bez iznenađenja",
       "Godišnji pregled i osvježavanje",
       "Brza i prilagođena mobitelu"
     ],
@@ -144,7 +144,7 @@
     "clientsLabel": "zadovoljnih klijenata",
     "timeNum": "1-2 tj.",
     "timeLabel": "rok isporuke",
-    "priceNum": "140 €",
+    "priceNum": "188 €",
     "priceLabel": "fiksna godišnja naknada",
     "formTitle": "Besplatna ponuda",
     "formSubtitle": "Odgovaramo u roku 1-2 radna dana.",
@@ -153,7 +153,7 @@
   "ServicesPage": {
     "meta": {
       "title": "Usluge",
-      "description": "Izrada web stranice za 140 EUR/god, upravljanje Facebook kampanjama, Google Business profil i SEO savjetovanje."
+      "description": "Izrada web stranice za 188 EUR/god, upravljanje Facebook kampanjama, Google Business profil i SEO savjetovanje."
     },
     "heroTitle": "Sve što trebate za vaš",
     "heroHighlight": "online nastup",
@@ -165,7 +165,7 @@
     "ctaBtn": "Besplatna ponuda",
     "web": {
       "title": "Izrada web stranice",
-      "price": "140 EUR / god",
+      "price": "188 EUR / god",
       "tagline": "Jednom izgradimo, radi godinama.",
       "desc": "Izrađujemo personaliziranu, SEO optimiziranu jednospratnu web stranicu od nule. Godišnja naknada pokriva obnovu domene, hosting i jednom godišnji pregled i osvježavanje. Svaki dodatni zahtjev izvan tog opsega – kao što su nove sekcije ili dizajnerske promjene – naplaćuje se zasebno.",
       "includes": ["Personalizirani one-page dizajn","Registracija domene i hosting","Kontakt forma na vašoj stranici","SEO osnove (meta, alt tagovi, brzina)","Mobilno prilagođen, responzivan","SSL certifikat (https)","Godišnji pregled: osvježavanje i trend-praćenje","Dodatni zahtjevi se naplaćuju zasebno"]

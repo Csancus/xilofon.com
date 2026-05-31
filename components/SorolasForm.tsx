@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AlertCircle } from "lucide-react";
 import type { Locale } from "@/lib/demos";
+import { track } from "@/lib/track";
 
 type Props = { locale: Locale };
 
@@ -181,7 +182,7 @@ export default function SorolasForm({ locale }: Props) {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label className="block text-xs font-semibold text-slate-600 dark:text-white/50 mb-1.5">{l.name} *</label>
-        <input required className={inputClass} placeholder={l.namePh} value={form.name} onChange={set("name")} />
+        <input required className={inputClass} placeholder={l.namePh} value={form.name} onChange={set("name")} onFocus={() => track("field_focus", "name", locale)} />
       </div>
 
       <div>
@@ -194,6 +195,7 @@ export default function SorolasForm({ locale }: Props) {
           value={form.email}
           onChange={set("email")}
           onBlur={() => setEmailTouched(true)}
+          onFocus={() => track("field_focus", "email", locale)}
         />
         {showEmailError && (
           <div className="flex items-center gap-1.5 mt-1.5 text-red-500 dark:text-red-400 text-xs">
@@ -211,6 +213,7 @@ export default function SorolasForm({ locale }: Props) {
           className={inputClass}
           placeholder={l.phonePh}
           value={form.phone}
+          onFocus={() => track("field_focus", "phone", locale)}
           onChange={(e) => {
             const clean = e.target.value.replace(/[^\d+]/g, "").replace(/(?<=.)\+/g, "");
             setForm((f) => ({ ...f, phone: clean }));
@@ -247,6 +250,7 @@ export default function SorolasForm({ locale }: Props) {
           placeholder={l.industryPh}
           value={form.industry}
           onChange={set("industry")}
+          onFocus={() => track("field_focus", "industry", locale)}
         />
       </div>
 

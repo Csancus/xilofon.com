@@ -17,7 +17,7 @@
     "copyright": "© {year} Xilofon Digital. All rights reserved.",
     "demosTitle": "Website samples",
     "demosAll": "All samples",
-    "sorolas": "June reference offer – €70"
+    "sorolas": "June reference offer – €94"
   },
   "LanguageSwitcher": {
     "label": "Language"
@@ -44,10 +44,10 @@
   "HomePage": {
     "meta": {
       "title": "Xilofon Digital | Website Design for Small Businesses",
-      "description": "Professional website creation at a fixed €140/year. SEO-friendly pages, Facebook ad management, Google Business and SEO consulting."
+      "description": "Professional website creation at a fixed €188/year. SEO-friendly pages, Facebook ad management, Google Business and SEO consulting."
     },
     "hero": {
-      "badge": "Fixed price • €140 / year • No surprises",
+      "badge": "Fixed price • €188 / year • No surprises",
       "title": "Professional website",
       "highlight": "that brings you clients",
       "subtitle": "We build SEO-friendly websites for freelancers and small businesses. One fixed annual fee – domain, hosting and yearly maintenance all included.",
@@ -67,7 +67,7 @@
     "web": {
       "title": "Website creation",
       "desc": "A custom, SEO-friendly one-page website we build with care. The annual fee covers domain, hosting and one yearly review and refresh.",
-      "tag": "€140 / year"
+      "tag": "€188 / year"
     },
     "social": {
       "title": "Facebook campaigns & ads",
@@ -113,7 +113,7 @@
     "t1Text": "I used to rely only on Facebook. Now new clients come through my website, and I get more bookings every month.",
     "t2Name": "Michael O.",
     "t2Role": "Personal trainer",
-    "t2Text": "Two weeks after launch I was already on the first page of Google. What you get for €140 is truly remarkable.",
+    "t2Text": "Two weeks after launch I was already on the first page of Google. What you get for €188 is truly remarkable.",
     "t3Name": "Kate N.",
     "t3Role": "Accountant",
     "t3Text": "I was afraid of digital marketing. The team guided me through everything, and now I have a professional website that actually brings clients.",
@@ -123,12 +123,12 @@
   "LandingPage": {
     "meta": {
       "title": "Website quote request | Xilofon Digital",
-      "description": "Get a free quote! Modern website for freelancers and small businesses. Fixed €140/year."
+      "description": "Get a free quote! Modern website for freelancers and small businesses. Fixed €188/year."
     },
     "available": "Slots available now",
     "title": "Get a professional website",
     "highlight": "that brings you clients",
-    "price": "– €140/year",
+    "price": "– €188/year",
     "subtitle": "We build SEO-friendly websites for freelancers and small businesses. One message, and your site is live within 1-2 weeks.",
     "benefits": [
       "Professional website, live in 1-2 weeks",
@@ -136,7 +136,7 @@
       "SEO-optimized, found on Google",
       "Contact form for your clients",
       "Custom one-page design",
-      "Fixed price – €140 / year, no surprises",
+      "Fixed price – €188 / year, no surprises",
       "Annual review and refresh included",
       "Fast and mobile-friendly"
     ],
@@ -144,7 +144,7 @@
     "clientsLabel": "happy clients",
     "timeNum": "1-2 wks",
     "timeLabel": "turnaround",
-    "priceNum": "€140",
+    "priceNum": "€188",
     "priceLabel": "fixed annual fee",
     "formTitle": "Free quote request",
     "formSubtitle": "We reply within 1-2 business days.",
@@ -153,7 +153,7 @@
   "ServicesPage": {
     "meta": {
       "title": "Services",
-      "description": "Website creation at €140/year, Facebook ad campaign management, Google Business Profile setup and SEO consulting."
+      "description": "Website creation at €188/year, Facebook ad campaign management, Google Business Profile setup and SEO consulting."
     },
     "heroTitle": "Everything you need for your",
     "heroHighlight": "online presence",
@@ -165,7 +165,7 @@
     "ctaBtn": "Free quote request",
     "web": {
       "title": "Website creation",
-      "price": "€140 / year",
+      "price": "€188 / year",
       "tagline": "Built once, works for years.",
       "desc": "We build a custom, SEO-friendly one-page website from scratch – design, copy, domain and hosting all included. The annual fee covers domain renewal, hosting and one yearly review and refresh. Any additional requests beyond this scope – such as new sections or design changes – are charged separately.",
       "includes": ["Custom one-page design","Domain registration and hosting","Contact form on your site","SEO basics (meta, alt tags, speed)","Mobile-friendly, responsive","SSL certificate (https)","Annual review: refresh & trend update","Extra requests charged separately"]

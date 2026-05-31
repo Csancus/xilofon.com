@@ -68,6 +68,8 @@ export default async function Footer() {
 
         <div className="border-t border-white/[0.06] pt-6 text-xs text-center text-white/30">
           {t("copyright", { year })}
+          {" · "}
+          <a href="/admin" className="hover:text-white/50 transition-colors">admin</a>
         </div>
       </div>
     </footer>

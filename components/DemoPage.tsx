@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useEffect } from "react";
+import { track } from "@/lib/track";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import {
@@ -65,6 +66,10 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { theme } = demo;
   const al = adminLabels[locale];
+
+  useEffect(() => {
+    track("demo_view", demo.slug, locale);
+  }, [demo.slug, locale]);
 
   const editable = useCallback(
     (value: string, onChange: (v: string) => void, tag: "span" | "p" | "div" = "span", className = "") => {

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Xilofon Digital",
   },
   description:
-    "Modern weboldal készítés fix 140 EUR/év áron. Google-barát one-pager oldalak, Facebook és social media kezelés, Google Business profil és SEO tanácsadás.",
+    "Modern weboldal készítés fix 188 EUR/év áron. Google-barát one-pager oldalak, Facebook és social media kezelés, Google Business profil és SEO tanácsadás.",
   metadataBase: new URL("https://xilofon.com"),
 };
 
