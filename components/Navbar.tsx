@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { track } from "@/lib/track";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
@@ -13,6 +14,10 @@ export default function Navbar() {
   const locale = useLocale();
   const pathname = usePathname();
   const { theme, toggle } = useTheme();
+
+  useEffect(() => {
+    track("page_view", pathname, locale);
+  }, [pathname, locale]);
 
   const links = [
     { href: "/szolgaltatasok" as const, label: t("services") },
@@ -60,6 +65,7 @@ export default function Navbar() {
             </button>
             <Link
               href="/landing"
+              onClick={() => track("nav_click", "quote_cta", locale)}
               className="inline-flex items-center px-5 py-2 rounded-full bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-colors"
             >
               {t("quote")}
@@ -100,7 +106,7 @@ export default function Navbar() {
             </div>
             <Link
               href="/landing"
-              onClick={() => setOpen(false)}
+              onClick={() => { setOpen(false); track("nav_click", "quote_cta_mobile", locale); }}
               className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-colors"
             >
               {t("quote")}

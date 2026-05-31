@@ -1,8 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
-import { Link } from "@/i18n/navigation";
-import { demos } from "@/lib/demos";
 import type { Locale } from "@/lib/demos";
+import DemoGrid from "@/components/DemoGrid";
 import SorolasForm from "@/components/SorolasForm";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -284,29 +283,7 @@ export default async function SorolasPage({ params }: Props) {
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white text-center mb-2">{c.demosTitle}</h2>
           <p className="text-slate-500 dark:text-white/50 text-center mb-10">{c.demosSubtitle}</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {demos.map((demo) => {
-              const label = demo.galleryLabel[loc];
-              return (
-                <Link
-                  key={demo.slug}
-                  href={`/demo/${demo.slug}` as "/demo/[slug]"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block rounded-2xl overflow-hidden border border-slate-200 dark:border-white/[0.07] hover:border-violet-300 dark:hover:border-violet-500/50 hover:shadow-md transition-all bg-white dark:bg-white/[0.03]"
-                >
-                  <div className={`h-20 ${demo.theme.heroBg} flex items-center justify-center text-3xl`}>
-                    {demo.emoji}
-                  </div>
-                  <div className="p-4">
-                    <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 dark:text-white/40 mb-0.5">{label.type}</div>
-                    <div className="font-bold text-slate-900 dark:text-white mb-1">{label.name}</div>
-                    <div className={`text-xs font-semibold ${demo.theme.accentText} group-hover:underline`}>{c.viewDemo}</div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
+          <DemoGrid locale={loc} viewLabel={c.viewDemo} />
         </div>
       </section>
 

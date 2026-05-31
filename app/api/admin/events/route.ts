@@ -15,30 +15,49 @@ export async function GET(request: NextRequest) {
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   );
 
-  const [demosRes, fieldsRes, recentRes] = await Promise.all([
-    supabase.from("events").select("target").eq("event", "demo_view"),
-    supabase.from("events").select("target").eq("event", "field_focus"),
+  const [allRes, recentRes] = await Promise.all([
     supabase
       .from("events")
-      .select("event, target, locale, created_at")
+      .select("event, target, locale, page")
+      .order("created_at", { ascending: false })
+      .limit(10000),
+    supabase
+      .from("events")
+      .select("event, target, locale, page, created_at")
       .order("created_at", { ascending: false })
       .limit(100),
   ]);
 
-  const countBy = (arr: { target: string | null }[]) => {
-    const map: Record<string, number> = {};
-    for (const row of arr ?? []) {
-      const k = row.target ?? "(unknown)";
-      map[k] = (map[k] ?? 0) + 1;
-    }
-    return Object.entries(map)
-      .sort((a, b) => b[1] - a[1])
-      .map(([target, count]) => ({ target, count }));
-  };
+  type Row = { event: string; target: string | null; locale: string | null; page: string | null };
+  const all: Row[] = allRes.data ?? [];
 
-  return Response.json({
-    demos: countBy(demosRes.data ?? []),
-    fields: countBy(fieldsRes.data ?? []),
-    recent: recentRes.data ?? [],
-  });
+  const pageMap = new Map<string, { views: number; evts: Map<string, number> }>();
+
+  for (const row of all) {
+    const pg = row.page ?? "(ismeretlen oldal)";
+    if (!pageMap.has(pg)) pageMap.set(pg, { views: 0, evts: new Map() });
+    const entry = pageMap.get(pg)!;
+
+    if (row.event === "page_view" || row.event === "demo_view") entry.views++;
+
+    const key = `${row.event}\x00${row.target ?? ""}`;
+    entry.evts.set(key, (entry.evts.get(key) ?? 0) + 1);
+  }
+
+  const pages = [...pageMap.entries()]
+    .sort((a, b) => b[1].views - a[1].views)
+    .map(([page, { views, evts }]) => ({
+      page,
+      views,
+      events: [...evts.entries()]
+        .sort((a, b) => b[1] - a[1])
+        .map(([key, count]) => {
+          const sep = key.indexOf("\x00");
+          const event = key.slice(0, sep);
+          const target = key.slice(sep + 1) || null;
+          return { event, target, count };
+        }),
+    }));
+
+  return Response.json({ pages, recent: recentRes.data ?? [] });
 }

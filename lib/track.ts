@@ -3,6 +3,11 @@ export function track(event: string, target: string, locale?: string): void {
   fetch("/api/track", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ event, target, locale: locale ?? null }),
+    body: JSON.stringify({
+      event,
+      target,
+      page: window.location.pathname,
+      locale: locale ?? null,
+    }),
   }).catch(() => {});
 }

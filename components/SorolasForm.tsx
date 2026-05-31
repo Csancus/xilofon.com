@@ -118,8 +118,10 @@ export default function SorolasForm({ locale }: Props) {
     (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
       setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const setRadio = (k: keyof typeof form, v: string) =>
+  const setRadio = (k: keyof typeof form, v: string) => {
     setForm((f) => ({ ...f, [k]: v }));
+    track("radio_select", `${k}:${v}`, locale);
+  };
 
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(form.email);
   const showEmailError = emailTouched && !emailValid;
@@ -128,6 +130,7 @@ export default function SorolasForm({ locale }: Props) {
     e.preventDefault();
     setEmailTouched(true);
     if (!emailValid) return;
+    track("form_submit", "sorolas", locale);
     setStatus("sending");
     try {
       const res = await fetch("/api/sorolas", {
@@ -136,6 +139,7 @@ export default function SorolasForm({ locale }: Props) {
         body: JSON.stringify({ ...form, lottery: "–", locale }),
       });
       if (!res.ok) throw new Error();
+      track("form_success", "sorolas", locale);
       setStatus("success");
       setConsent(false);
       window.scrollTo({ top: 0, behavior: "smooth" });
@@ -268,7 +272,10 @@ export default function SorolasForm({ locale }: Props) {
           type="checkbox"
           required
           checked={consent}
-          onChange={(e) => setConsent(e.target.checked)}
+          onChange={(e) => {
+            setConsent(e.target.checked);
+            track("checkbox_change", `consent:${e.target.checked}`, locale);
+          }}
           className="mt-0.5 w-4 h-4 rounded accent-violet-600 flex-shrink-0"
         />
         <span className="text-xs text-slate-500 dark:text-white/50 leading-relaxed">

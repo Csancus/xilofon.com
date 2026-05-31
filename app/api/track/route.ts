@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 
 export async function POST(request: Request) {
   try {
-    const { event, target, locale } = await request.json();
+    const { event, target, locale, page } = await request.json();
     if (!event) return Response.json({ ok: false }, { status: 400 });
 
     const supabase = createClient(
@@ -14,6 +14,7 @@ export async function POST(request: Request) {
       event,
       target: target ?? null,
       locale: locale ?? null,
+      page: page ?? null,
     });
 
     return Response.json({ ok: true });
