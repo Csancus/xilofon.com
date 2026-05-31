@@ -241,7 +241,25 @@ export default async function SorolasPage({ params }: Props) {
                 <span className="text-violet-600 dark:text-violet-400 font-bold text-xs sm:text-base md:text-lg whitespace-nowrap">{c.offerPrice}</span>
               </div>
 
-              <p className="text-slate-600 dark:text-white/60 text-lg leading-relaxed mb-8">{c.subtitle}</p>
+              <p className="text-slate-600 dark:text-white/60 text-lg leading-relaxed mb-6">{c.subtitle}</p>
+
+              {loc === "hr" && (
+                <div className="mb-8 flex items-start gap-3 bg-blue-50 dark:bg-blue-500/10 border border-blue-200 dark:border-blue-500/20 rounded-xl px-4 py-3">
+                  <span className="text-lg flex-shrink-0 mt-0.5">📊</span>
+                  <p className="text-sm text-blue-900 dark:text-blue-200 leading-relaxed">
+                    Prema{" "}
+                    <a
+                      href="https://podaci.dzs.hr/2024/hr/76941"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline underline-offset-2 font-semibold hover:text-blue-700 dark:hover:text-blue-100"
+                    >
+                      Hrvatskom zavodu za statistiku
+                    </a>
+                    , 4 od 10 tvrtki još nema web stranicu. Ne zaostajite — pretecite svoju konkurenciju!
+                  </p>
+                </div>
+              )}
 
               {/* Bullets */}
               <ul className="space-y-2.5">
