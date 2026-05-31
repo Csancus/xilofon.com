@@ -15,7 +15,7 @@ export async function GET(request: NextRequest) {
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   );
 
-  const [allRes, recentRes] = await Promise.all([
+  let [allRes, recentRes] = await Promise.all([
     supabase
       .from("events")
       .select("event, target, locale, page, is_owner")
@@ -28,12 +28,28 @@ export async function GET(request: NextRequest) {
       .limit(100),
   ]);
 
+  // Fallback if is_owner column doesn't exist yet
+  if (allRes.error) {
+    [allRes, recentRes] = await Promise.all([
+      supabase
+        .from("events")
+        .select("event, target, locale, page")
+        .order("created_at", { ascending: false })
+        .limit(10000),
+      supabase
+        .from("events")
+        .select("event, target, locale, page, created_at")
+        .order("created_at", { ascending: false })
+        .limit(100),
+    ]);
+  }
+
   type Row = {
     event: string;
     target: string | null;
     locale: string | null;
     page: string | null;
-    is_owner: boolean | null;
+    is_owner?: boolean | null;
   };
   const all: Row[] = allRes.data ?? [];
 

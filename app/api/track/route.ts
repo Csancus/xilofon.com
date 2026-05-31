@@ -18,13 +18,14 @@ export async function POST(request: NextRequest) {
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
-    await supabase.from("events").insert({
-      event,
-      target: target ?? null,
-      locale: locale ?? null,
-      page: page ?? null,
-      is_owner: isOwner,
-    });
+    const base = { event, target: target ?? null, locale: locale ?? null, page: page ?? null };
+
+    const { error } = await supabase.from("events").insert({ ...base, is_owner: isOwner });
+
+    if (error) {
+      // is_owner column may not exist yet — insert without it
+      await supabase.from("events").insert(base);
+    }
 
     return Response.json({ ok: true });
   } catch {
