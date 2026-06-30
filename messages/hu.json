@@ -45,10 +45,10 @@
   "HomePage": {
     "meta": {
       "title": "Xilofon Digital | Weboldal készítés vállalkozásoknak",
-      "description": "Modern weboldal készítés fix 188 EUR/év áron. Google-barát oldalak, Facebook kampánykezelés, Google Business profil és SEO tanácsadás."
+      "description": "Modern weboldal készítés fix 90.000 Ft + ÁFA/év áron. Google-barát oldalak, Facebook kampánykezelés, Google Business profil és SEO tanácsadás."
     },
     "hero": {
-      "badge": "Fix ár • 188 EUR / év • Nincs meglepetés",
+      "badge": "Fix ár • 90.000 Ft + ÁFA / év • Nincs meglepetés",
       "title": "Profi weboldal,",
       "highlight": "ami ügyfeleket hoz",
       "subtitle": "Egyéni vállalkozóknak és kis cégeknek készítünk Google-barát weboldalakat. Fix éves díjért – domain, hosting és éves karbantartás mind benne.",
@@ -68,7 +68,7 @@
     "web": {
       "title": "Weboldal készítés",
       "desc": "Egyedi, Google-barát one-pager weboldal, amit gondosan felépítünk. Az éves díjba beletartozik a domain, a hosting és az évente egyszeri átnézés-frissítés.",
-      "tag": "188 EUR / év"
+      "tag": "90.000 Ft + ÁFA / év"
     },
     "social": {
       "title": "Facebook kampányok és hirdetések",
@@ -115,7 +115,7 @@
     "t1Text": "Korábban csak Facebookon voltam. Most az oldalamon keresztül jönnek az új ügyfeleim, és minden hónapban több foglalást kapok.",
     "t2Name": "Fekete Dávid",
     "t2Role": "Személyi edző",
-    "t2Text": "Két héttel az indítás után már az első oldalon voltam a Google-on a városomban. 188 euróért ez elképesztő eredmény.",
+    "t2Text": "Két héttel az indítás után már az első oldalon voltam a Google-on a városomban. 90.000 Ft + ÁFA – ez elképesztő eredmény.",
     "t3Name": "Németh Katalin",
     "t3Role": "Könyvelő",
     "t3Text": "Eddig féltem az internet-marketingtől. A csapat végigvezetett mindenen, és most van egy profi weboldalam, ami valóban ügyfeleket hoz.",
@@ -128,12 +128,12 @@
   "LandingPage": {
     "meta": {
       "title": "Weboldal ajánlatkérés | Xilofon Digital",
-      "description": "Kérj ingyenes ajánlatot! Modern weboldal egyéni vállalkozóknak és kis cégeknek. Fix 188 EUR/év ár."
+      "description": "Kérj ingyenes ajánlatot! Modern weboldal egyéni vállalkozóknak és kis cégeknek. Fix 90.000 Ft + ÁFA/év ár."
     },
     "available": "Szabad időpontok vannak",
     "title": "Legyen profi weboldalad,",
     "highlight": "ami ügyfeleket hoz",
-    "price": "– 188 EUR/év",
+    "price": "– 90.000 Ft + ÁFA/év",
     "subtitle": "Egyéni vállalkozók és kis cégek számára készítünk Google-barát weboldalakat. Egy ajánlatkérés, és 1-2 héten belül él az oldalad.",
     "benefits": [
       "Profi weboldal, élő 1-2 héten belül",
@@ -141,7 +141,7 @@
       "Google-barát, SEO-optimalizált",
       "Kapcsolatfelvételi form az ügyfeleknek",
       "Személyre szabott design",
-      "Fix ár – 188 EUR / év, nincs meglepetés",
+      "Fix ár – 90.000 Ft + ÁFA / év, nincs meglepetés",
       "Évente egyszer átnézzük és frissítjük",
       "Gyors és mobilbarát"
     ],
@@ -149,8 +149,8 @@
     "clientsLabel": "elégedett ügyfél",
     "timeNum": "1-2 hét",
     "timeLabel": "átfutási idő",
-    "priceNum": "188 €",
-    "priceLabel": "fix éves díj",
+    "priceNum": "90.000 Ft",
+    "priceLabel": "fix éves díj + ÁFA",
     "formTitle": "Ingyenes ajánlatkérés",
     "formSubtitle": "1-2 munkanapon belül visszajelzünk.",
     "callText": "Van kérdésed? Hívj minket"
@@ -158,7 +158,7 @@
   "ServicesPage": {
     "meta": {
       "title": "Szolgáltatások",
-      "description": "Weboldal készítés 188 EUR/év áron, Facebook kampánykezelés, Google Business profil és SEO tanácsadás."
+      "description": "Weboldal készítés 90.000 Ft + ÁFA/év áron, Facebook kampánykezelés, Google Business profil és SEO tanácsadás."
     },
     "heroTitle": "Minden, amire szükséged van az",
     "heroHighlight": "online jelenléthez",
@@ -170,7 +170,7 @@
     "ctaBtn": "Ingyenes ajánlatkérés",
     "web": {
       "title": "Weboldal készítés",
-      "price": "188 EUR / év",
+      "price": "90.000 Ft + ÁFA / év",
       "tagline": "Egyszer elkészítjük, aztán dolgozik helyetted.",
       "desc": "Egyedi, Google-barát one-pager weboldalt készítünk – a tervezéstől az élesítésig minden a mi dolgunk. Az éves díjban benne van a domain, a hosting és az évente esedékes egyszeri átnézés-frissítés. Ha ezen felül változtatást kérsz – például új szekció vagy designbeli módosítás –, az külön díjas plusz munka.",
       "includes": ["Személyre szabott one-pager design","Domain regisztráció és hosting","Kapcsolatfelvételi form az oldaladon","SEO alapok (meta, alt tagek, betöltési sebesség)","Mobilbarát, reszponzív megjelenés","SSL tanúsítvány (https)","Évente egyszer: átnézés, frissítés, trend-követés","Extra kérések külön díj ellenében teljesíthetők"]
