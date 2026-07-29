@@ -40,7 +40,12 @@
     "errorText": "Something went wrong. Please try again or send us an email.",
     "privacyNote": "Read how we handle your data in our <link>Privacy Policy</link>.",
     "privacyLink": "Privacy Policy",
-    "consent": "I accept the <privacyLink>Privacy Policy</privacyLink> and <aszfLink>Terms of Service</aszfLink>."
+    "consent": "I accept the <privacyLink>Privacy Policy</privacyLink> and <aszfLink>Terms of Service</aszfLink>.",
+    "captcha": "Verification: what is {a} + {b}?",
+    "captchaPlaceholder": "Result",
+    "captchaErrorWrong": "Wrong answer, please try again.",
+    "captchaErrorExpired": "The verification expired, please add the new numbers.",
+    "captchaErrorLoading": "Verification is still loading, please try again in a few seconds."
   },
   "HomePage": {
     "meta": {

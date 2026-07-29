@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { useCaptcha } from "./useCaptcha";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -11,7 +12,8 @@ export default function ContactForm() {
   const t = useTranslations("ContactForm");
   const [status, setStatus] = useState<Status>("idle");
   const [consent, setConsent] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "", website: "" });
+  const { challenge, answer, setAnswer, captchaError, setCaptchaError, refresh, validate, payload } = useCaptcha();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -19,17 +21,28 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validate()) return;
     setStatus("loading");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, captcha: payload }),
       });
-      if (!res.ok) throw new Error();
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        if (body?.error === "captcha") {
+          setStatus("idle");
+          setCaptchaError("expired");
+          refresh();
+          return;
+        }
+        throw new Error();
+      }
       setStatus("success");
-      setForm({ name: "", email: "", phone: "", message: "" });
+      setForm({ name: "", email: "", phone: "", message: "", website: "" });
       setConsent(false);
+      refresh();
     } catch {
       setStatus("error");
     }
@@ -102,6 +115,50 @@ export default function ContactForm() {
           placeholder={t("messagePlaceholder")}
           className={`${inputClass} resize-none`}
         />
+      </div>
+
+      {/* Honeypot — emberi látogató nem látja, bot kitölti */}
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        value={form.website}
+        onChange={handleChange}
+        className="hidden"
+        aria-hidden="true"
+      />
+
+      {/* Spam-védelem: egyszerű összeadás */}
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="captcha" className="text-sm font-medium text-slate-600 dark:text-white/60">
+          {challenge
+            ? t("captcha", { a: challenge.a, b: challenge.b })
+            : t("captcha", { a: "…", b: "…" })}{" "}
+          <span className="text-violet-500">*</span>
+        </label>
+        <input
+          id="captcha"
+          type="text"
+          inputMode="numeric"
+          required
+          value={answer}
+          onChange={(e) => {
+            setAnswer(e.target.value);
+            setCaptchaError(null);
+          }}
+          placeholder={t("captchaPlaceholder")}
+          className={`${inputClass} sm:max-w-[180px]`}
+        />
+        {captchaError && (
+          <p className="text-sm text-red-600 dark:text-red-400">
+            {captchaError === "wrong"
+              ? t("captchaErrorWrong")
+              : captchaError === "expired"
+                ? t("captchaErrorExpired")
+                : t("captchaErrorLoading")}
+          </p>
+        )}
       </div>
 
       {/* Consent checkbox */}

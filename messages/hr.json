@@ -40,7 +40,12 @@
     "errorText": "Došlo je do pogreške. Molimo pokušajte ponovo.",
     "privacyNote": "Pročitajte kako rukujemo vašim podacima u našoj <link>Politici privatnosti</link>.",
     "privacyLink": "Politici privatnosti",
-    "consent": "Prihvaćam <privacyLink>Pravila privatnosti</privacyLink> i <aszfLink>Opće uvjete poslovanja</aszfLink>."
+    "consent": "Prihvaćam <privacyLink>Pravila privatnosti</privacyLink> i <aszfLink>Opće uvjete poslovanja</aszfLink>.",
+    "captcha": "Provjera: koliko je {a} + {b}?",
+    "captchaPlaceholder": "Rezultat",
+    "captchaErrorWrong": "Pogrešan odgovor, pokušajte ponovno.",
+    "captchaErrorExpired": "Provjera je istekla, zbrojite nove brojeve.",
+    "captchaErrorLoading": "Provjera se još učitava, pokušajte ponovno za nekoliko sekundi."
   },
   "HomePage": {
     "meta": {

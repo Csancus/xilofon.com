@@ -40,7 +40,12 @@
     "errorText": "A apărut o eroare. Te rugăm să încerci din nou.",
     "privacyNote": "Citește cum gestionăm datele tale în <link>Politica de confidențialitate</link>.",
     "privacyLink": "Politica de confidențialitate",
-    "consent": "Accept <privacyLink>Politica de confidențialitate</privacyLink> și <aszfLink>Termenii și condițiile</aszfLink>."
+    "consent": "Accept <privacyLink>Politica de confidențialitate</privacyLink> și <aszfLink>Termenii și condițiile</aszfLink>.",
+    "captcha": "Verificare: cât este {a} + {b}?",
+    "captchaPlaceholder": "Rezultat",
+    "captchaErrorWrong": "Răspuns greșit, încercați din nou.",
+    "captchaErrorExpired": "Verificarea a expirat, adunați noile numere.",
+    "captchaErrorLoading": "Verificarea se încarcă, încercați din nou în câteva secunde."
   },
   "HomePage": {
     "meta": {

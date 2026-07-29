@@ -19,6 +19,7 @@ import {
   Send,
 } from "lucide-react";
 import type { Demo, DemoContent, DemoWhyUs, DemoFaq, Locale } from "@/lib/demos";
+import { useCaptcha } from "./useCaptcha";
 
 type CustomField = {
   id: string;
@@ -63,6 +64,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
   const [openFaq, setOpenFaq] = useState<number | null>(null);
   const [formState, setFormState] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const formRef = useRef<HTMLFormElement>(null);
+  const { challenge, answer, setAnswer, captchaError, setCaptchaError, refresh, validate, payload } = useCaptcha();
   const fileInputRef = useRef<HTMLInputElement>(null);
   const { theme } = demo;
   const al = adminLabels[locale];
@@ -91,6 +93,7 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
 
   async function handleFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!validate()) return;
     setFormState("sending");
     const fd = new FormData(e.currentTarget);
     try {
@@ -102,12 +105,24 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
           email: fd.get("email"),
           phone: fd.get("phone") ?? "",
           message: fd.get("message"),
+          website: fd.get("website") ?? "",
+          captcha: payload,
           source: `demo-${demo.slug}`,
         }),
       });
-      if (!res.ok) throw new Error("err");
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        if (body?.error === "captcha") {
+          setFormState("idle");
+          setCaptchaError("expired");
+          refresh();
+          return;
+        }
+        throw new Error("err");
+      }
       setFormState("sent");
       formRef.current?.reset();
+      refresh();
     } catch {
       setFormState("error");
     }
@@ -694,6 +709,46 @@ export default function DemoPage({ demo, content: initialContent, locale }: Prop
                   </button>
                 </div>
               )}
+
+              {/* Honeypot — emberi látogató nem látja, bot kitölti */}
+              <input
+                type="text"
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                defaultValue=""
+                className="hidden"
+                aria-hidden="true"
+              />
+
+              {/* Spam-védelem: egyszerű összeadás */}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 mb-1.5">
+                  {(locale === "hu" ? "Ellenőrzés: mennyi" : locale === "en" ? "Verification: what is" : locale === "hr" ? "Provjera: koliko je" : "Verificare: cât este")}{" "}
+                  {challenge ? `${challenge.a} + ${challenge.b}` : "… + …"}?
+                </label>
+                <input
+                  type="text"
+                  inputMode="numeric"
+                  required
+                  value={answer}
+                  onChange={(e) => {
+                    setAnswer(e.target.value);
+                    setCaptchaError(null);
+                  }}
+                  placeholder={locale === "hu" ? "Eredmény" : locale === "en" ? "Result" : "Rezultat"}
+                  className="w-full sm:max-w-[180px] border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-violet-400"
+                />
+                {captchaError && (
+                  <p className="text-red-600 text-sm mt-1.5">
+                    {captchaError === "wrong"
+                      ? (locale === "hu" ? "Hibás eredmény, kérjük számold újra." : locale === "en" ? "Wrong answer, please try again." : locale === "hr" ? "Pogrešan odgovor, pokušajte ponovno." : "Răspuns greșit, încercați din nou.")
+                      : captchaError === "expired"
+                        ? (locale === "hu" ? "Az ellenőrzés lejárt, kérjük add össze az új számokat." : locale === "en" ? "The verification expired, please add the new numbers." : locale === "hr" ? "Provjera je istekla, zbrojite nove brojeve." : "Verificarea a expirat, adunați noile numere.")
+                        : (locale === "hu" ? "Az ellenőrzés még töltődik, próbáld újra pár másodperc múlva." : locale === "en" ? "Verification is still loading, please try again in a few seconds." : locale === "hr" ? "Provjera se još učitava, pokušajte ponovno." : "Verificarea se încarcă, încercați din nou.")}
+                  </p>
+                )}
+              </div>
 
               {formState === "error" && (
                 <p className="text-red-600 text-sm">{locale === "hu" ? "Hiba történt. Kérjük, próbáld újra." : locale === "en" ? "Something went wrong. Please try again." : locale === "hr" ? "Došlo je do pogreške." : "A apărut o eroare."}</p>

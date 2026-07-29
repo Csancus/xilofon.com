@@ -40,7 +40,12 @@
     "errorText": "Hiba történt. Kérjük, próbáld újra, vagy írj e-mailt.",
     "privacyNote": "Az adataid kezeléséről az <link>adatkezelési tájékoztatóban</link> olvashatsz.",
     "privacyLink": "adatkezelési tájékoztatóban",
-    "consent": "Elfogadom az <privacyLink>adatkezelési tájékoztatót</privacyLink> és az <aszfLink>ÁSZF</aszfLink>-et."
+    "consent": "Elfogadom az <privacyLink>adatkezelési tájékoztatót</privacyLink> és az <aszfLink>ÁSZF</aszfLink>-et.",
+    "captcha": "Ellenőrzés: mennyi {a} + {b}?",
+    "captchaPlaceholder": "Eredmény",
+    "captchaErrorWrong": "Hibás eredmény, kérjük számold újra.",
+    "captchaErrorExpired": "Az ellenőrzés lejárt, kérjük add össze az új számokat.",
+    "captchaErrorLoading": "Az ellenőrzés még töltődik, próbáld újra pár másodperc múlva."
   },
   "HomePage": {
     "meta": {

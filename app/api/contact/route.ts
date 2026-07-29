@@ -1,8 +1,25 @@
 import { Resend } from "resend";
 import { createClient } from "@supabase/supabase-js";
+import { createCaptchaChallenge, verifyCaptcha } from "@/lib/captcha";
+
+export async function GET() {
+  return Response.json(createCaptchaChallenge(), {
+    headers: { "Cache-Control": "no-store" },
+  });
+}
 
 export async function POST(request: Request) {
-  const { name, email, phone, message } = await request.json();
+  const body = await request.json();
+  const { name, email, phone, message } = body;
+
+  // Honeypot: rejtett mező, amit csak botok töltenek ki — csendben "siker"
+  if (typeof body.website === "string" && body.website.trim() !== "") {
+    return Response.json({ ok: true });
+  }
+
+  if (!verifyCaptcha(body.captcha)) {
+    return Response.json({ error: "captcha" }, { status: 400 });
+  }
 
   if (!name || !email || !message) {
     return Response.json({ error: "Hiányzó mezők" }, { status: 400 });
