@@ -45,7 +45,8 @@
     "captchaPlaceholder": "Rezultat",
     "captchaErrorWrong": "Pogrešan odgovor, pokušajte ponovno.",
     "captchaErrorExpired": "Provjera je istekla, zbrojite nove brojeve.",
-    "captchaErrorLoading": "Provjera se još učitava, pokušajte ponovno za nekoliko sekundi."
+    "captchaErrorLoading": "Provjera se još učitava, pokušajte ponovno za nekoliko sekundi.",
+    "disabledNotice": "Obrazac je privremeno nedostupan. Molimo pišite nam direktno na e-mail:"
   },
   "HomePage": {
     "meta": {

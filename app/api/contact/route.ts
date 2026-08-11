@@ -2,13 +2,25 @@ import { Resend } from "resend";
 import { createClient } from "@supabase/supabase-js";
 import { createCaptchaChallenge, verifyCaptcha } from "@/lib/captcha";
 
+// Kontakt form kikapcsolva (spam miatt). Visszakapcsoláshoz: true
+// — a kliens oldali párja: components/ContactForm.tsx FORM_ENABLED
+const FORM_ENABLED = false;
+
 export async function GET() {
+  if (!FORM_ENABLED) {
+    return new Response(null, { status: 404 });
+  }
   return Response.json(createCaptchaChallenge(), {
     headers: { "Cache-Control": "no-store" },
   });
 }
 
 export async function POST(request: Request) {
+  // Semmilyen feldolgozás: nincs DB-írás, nincs e-mail
+  if (!FORM_ENABLED) {
+    return new Response(null, { status: 404 });
+  }
+
   const body = await request.json();
   const { name, email, phone, message } = body;
 

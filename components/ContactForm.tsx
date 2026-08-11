@@ -8,6 +8,10 @@ import { useCaptcha } from "./useCaptcha";
 
 type Status = "idle" | "loading" | "success" | "error";
 
+// Form kikapcsolva (spam miatt). Visszakapcsoláshoz: true
+// — a szerver oldali párja: app/api/contact/route.ts FORM_ENABLED
+const FORM_ENABLED = false;
+
 export default function ContactForm() {
   const t = useTranslations("ContactForm");
   const [status, setStatus] = useState<Status>("idle");
@@ -21,6 +25,7 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!FORM_ENABLED) return;
     if (!validate()) return;
     setStatus("loading");
     try {
@@ -130,6 +135,7 @@ export default function ContactForm() {
       />
 
       {/* Spam-védelem: egyszerű összeadás */}
+      {FORM_ENABLED && (
       <div className="flex flex-col gap-1.5">
         <label htmlFor="captcha" className="text-sm font-medium text-slate-600 dark:text-white/60">
           {challenge
@@ -160,6 +166,7 @@ export default function ContactForm() {
           </p>
         )}
       </div>
+      )}
 
       {/* Consent checkbox */}
       <label className="flex items-start gap-3 cursor-pointer group">
@@ -190,9 +197,21 @@ export default function ContactForm() {
         </div>
       )}
 
+      {!FORM_ENABLED && (
+        <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 text-amber-800 dark:text-amber-300">
+          <AlertCircle size={18} className="flex-shrink-0 mt-0.5" />
+          <span className="text-sm font-medium">
+            {t("disabledNotice")}{" "}
+            <a href="mailto:info@xilofon.com" className="underline font-semibold hover:opacity-80">
+              info@xilofon.com
+            </a>
+          </span>
+        </div>
+      )}
+
       <button
         type="submit"
-        disabled={status === "loading" || !consent}
+        disabled={!FORM_ENABLED || status === "loading" || !consent}
         className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-violet-600 hover:bg-violet-500 disabled:opacity-50 disabled:cursor-not-allowed text-white font-semibold transition-colors"
       >
         {status === "loading" ? (

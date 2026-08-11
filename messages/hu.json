@@ -45,7 +45,8 @@
     "captchaPlaceholder": "Eredmény",
     "captchaErrorWrong": "Hibás eredmény, kérjük számold újra.",
     "captchaErrorExpired": "Az ellenőrzés lejárt, kérjük add össze az új számokat.",
-    "captchaErrorLoading": "Az ellenőrzés még töltődik, próbáld újra pár másodperc múlva."
+    "captchaErrorLoading": "Az ellenőrzés még töltődik, próbáld újra pár másodperc múlva.",
+    "disabledNotice": "Az űrlap ideiglenesen nem elérhető. Kérjük, írj közvetlenül e-mailben:"
   },
   "HomePage": {
     "meta": {

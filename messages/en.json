@@ -45,7 +45,8 @@
     "captchaPlaceholder": "Result",
     "captchaErrorWrong": "Wrong answer, please try again.",
     "captchaErrorExpired": "The verification expired, please add the new numbers.",
-    "captchaErrorLoading": "Verification is still loading, please try again in a few seconds."
+    "captchaErrorLoading": "Verification is still loading, please try again in a few seconds.",
+    "disabledNotice": "The form is temporarily unavailable. Please email us directly:"
   },
   "HomePage": {
     "meta": {

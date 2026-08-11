@@ -45,7 +45,8 @@
     "captchaPlaceholder": "Rezultat",
     "captchaErrorWrong": "Răspuns greșit, încercați din nou.",
     "captchaErrorExpired": "Verificarea a expirat, adunați noile numere.",
-    "captchaErrorLoading": "Verificarea se încarcă, încercați din nou în câteva secunde."
+    "captchaErrorLoading": "Verificarea se încarcă, încercați din nou în câteva secunde.",
+    "disabledNotice": "Formularul este temporar indisponibil. Vă rugăm să ne scrieți direct pe e-mail:"
   },
   "HomePage": {
     "meta": {
