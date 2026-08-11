@@ -20,6 +20,7 @@ const labels: Record<Locale, {
   consentPrivacy: string; consentAszf: string; consentLabel: string;
   interestedLabel: string; interestedYes: string; interestedNo: string;
   emailError: string;
+  disabledNotice: string;
 }> = {
   hu: {
     name: "Teljes neve", namePh: "Kovács János",
@@ -40,6 +41,7 @@ const labels: Record<Locale, {
     interestedLabel: "Ha nem kerülnél be az 5 partner közé, akkor is érdekel az oldal évi 188 EUR-ért?",
     interestedYes: "Igen, érdekel", interestedNo: "Nem most",
     emailError: "Kérjük, adj meg egy érvényes e-mail címet (pl. nev@domain.hu)",
+    disabledNotice: "A jelentkezés ideiglenesen nem elérhető. Kérjük, írj közvetlenül e-mailben:",
   },
   en: {
     name: "Full name", namePh: "John Smith",
@@ -60,6 +62,7 @@ const labels: Record<Locale, {
     interestedLabel: "If you don't get selected as one of the 5 partners, would you still be interested in the site for €188/year?",
     interestedYes: "Yes, I'm interested", interestedNo: "Not right now",
     emailError: "Please enter a valid email address (e.g. name@domain.com)",
+    disabledNotice: "Applications are temporarily unavailable. Please email us directly:",
   },
   hr: {
     name: "Puno ime", namePh: "Ivan Horvat",
@@ -79,6 +82,7 @@ const labels: Record<Locale, {
     interestedLabel: "",
     interestedYes: "", interestedNo: "",
     emailError: "Unesite valjanu e-mail adresu (npr. ime@domena.hr)",
+    disabledNotice: "Prijava je privremeno nedostupna. Molimo pišite nam direktno na e-mail:",
   },
   ro: {
     name: "Nume complet", namePh: "Ion Popescu",
@@ -99,10 +103,15 @@ const labels: Record<Locale, {
     interestedLabel: "Dacă nu ești selectat/ă dintre cei 5 parteneri, te interesează site-ul la 188 EUR/an?",
     interestedYes: "Da, mă interesează", interestedNo: "Nu acum",
     emailError: "Introduceți o adresă de e-mail validă (ex. nume@domeniu.ro)",
+    disabledNotice: "Înscrierea este temporar indisponibilă. Vă rugăm să ne scrieți direct pe e-mail:",
   },
 };
 
 type Status = "idle" | "sending" | "success" | "error";
+
+// Form kikapcsolva (spam miatt). Visszakapcsoláshoz: true
+// — a szerver oldali párja: app/api/sorolas/route.ts FORM_ENABLED
+const FORM_ENABLED = false;
 
 export default function SorolasForm({ locale }: Props) {
   const l = labels[locale];
@@ -128,6 +137,7 @@ export default function SorolasForm({ locale }: Props) {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!FORM_ENABLED) return;
     setEmailTouched(true);
     if (!emailValid) return;
     track("form_submit", "sorolas", locale);
@@ -294,9 +304,21 @@ export default function SorolasForm({ locale }: Props) {
         </div>
       )}
 
+      {!FORM_ENABLED && (
+        <div className="flex items-start gap-3 p-4 rounded-xl bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 text-amber-800 dark:text-amber-300">
+          <AlertCircle size={18} className="flex-shrink-0 mt-0.5" />
+          <span className="text-sm font-medium">
+            {l.disabledNotice}{" "}
+            <a href="mailto:info@xilofon.com" className="underline font-semibold hover:opacity-80">
+              info@xilofon.com
+            </a>
+          </span>
+        </div>
+      )}
+
       <button
         type="submit"
-        disabled={status === "sending" || !consent}
+        disabled={!FORM_ENABLED || status === "sending" || !consent}
         className="w-full py-3 rounded-full bg-violet-600 hover:bg-violet-500 disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold transition-colors"
       >
         {status === "sending" ? l.sending : l.submit}

@@ -121,7 +121,16 @@ function buildConfirmationHtml(name: string, platform: string, locale: string): 
 </html>`;
 }
 
+// Jelentkezési form kikapcsolva (spam miatt). Visszakapcsoláshoz: true
+// — a kliens oldali párja: components/SorolasForm.tsx FORM_ENABLED
+const FORM_ENABLED = false;
+
 export async function POST(request: Request) {
+  // Semmilyen feldolgozás: nincs DB-írás, nincs e-mail
+  if (!FORM_ENABLED) {
+    return new Response(null, { status: 404 });
+  }
+
   const body = await request.json();
   const { name, email, phone, lottery, interested, platform, domain, industry, locale = "hu" } = body;
 
