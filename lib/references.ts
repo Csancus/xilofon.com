@@ -12,6 +12,25 @@ export type Reference = {
 
 export const references: Reference[] = [
   {
+    domain: "zsuzsi-neni-mesei.hu",
+    url: "https://www.zsuzsi-neni-mesei.hu/",
+    emoji: "🌙",
+    heroBg: "bg-gradient-to-br from-indigo-50 via-violet-50 to-amber-50",
+    accentText: "text-indigo-600",
+    cat: {
+      hu: "Esti mesék",
+      en: "Bedtime stories",
+      hr: "Priče za laku noć",
+      ro: "Povești de seară",
+    },
+    desc: {
+      hu: "Zsuzsi néni meséi: minden este három esti mese e-mailben, 500+ mesével és képeskönyvekkel.",
+      en: "Bedtime story subscription: three stories by email every evening, 500+ stories and picture books.",
+      hr: "Pretplata na priče za laku noć: tri priče e-poštom svake večeri, 500+ priča i slikovnica.",
+      ro: "Abonament la povești de seară: trei povești pe e-mail în fiecare seară, peste 500 de povești și cărți ilustrate.",
+    },
+  },
+  {
     domain: "lelkekgyogyasza.hu",
     url: "https://lelkekgyogyasza.hu/",
     emoji: "🌿",
